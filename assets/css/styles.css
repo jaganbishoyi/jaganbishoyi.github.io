@@ -4154,7 +4154,7 @@ BLOG Pagination
 /*# sourceMappingURL=styles.css.map */
 
 blockquote {
-  box-shadow: rgba(0, 0, 0, 0.84) 3px 0px 0px 0px inset;
+  /* box-shadow: rgba(0, 0, 0, 0.84) 3px 0px 0px 0px inset; */
   padding-left: 15px;
 }
 

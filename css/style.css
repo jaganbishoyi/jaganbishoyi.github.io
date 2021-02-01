@@ -1,8 +1,10 @@
 .sec-title p {
-    margin-bottom: 20px;
-    opacity: 0.8;
-    margin: 0 0 20px;
-}.contact-button {
+  margin-bottom: 20px;
+  opacity: 0.8;
+  margin: 0 0 20px;
+}
+
+.contact-button {
   padding: 7px 7px 7px 40px;
   border-radius: 100px;
   display: inline-block;
@@ -20,7 +22,8 @@
   box-shadow: 0 19px 24px 0 rgba(17, 37, 33, 0.1);
 }
 
-.contact-button:hover, .contact-button:focus {
+.contact-button:hover,
+.contact-button:focus {
   background-color: #1cb18f;
   border-color: #1cb18f;
   outline: 0;
@@ -57,7 +60,8 @@
   box-shadow: 0 19px 24px 0 rgba(17, 37, 33, 0.1);
 }
 
-.view-doc-button:hover, .view-doc-button:focus {
+.view-doc-button:hover,
+.view-doc-button:focus {
   background-color: #1cb18f;
   border-color: #1cb18f;
   outline: 0;
@@ -152,7 +156,8 @@
   transition: all 0.2s ease-in-out;
 }
 
-.link-text:hover, .link-text:focus {
+.link-text:hover,
+.link-text:focus {
   text-decoration: none;
   outline: none;
   color: #20c7a1;
@@ -278,28 +283,32 @@ img {
   font-size: 14px;
 }
 
-.input-field:hover::-webkit-input-placeholder, .input-field:focus::-webkit-input-placeholder {
+.input-field:hover::-webkit-input-placeholder,
+.input-field:focus::-webkit-input-placeholder {
   color: #FAFBFB;
   opacity: 1;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
-.input-field:hover:-ms-input-placeholder, .input-field:focus:-ms-input-placeholder {
+.input-field:hover:-ms-input-placeholder,
+.input-field:focus:-ms-input-placeholder {
   color: #FAFBFB;
   opacity: 1;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
-.input-field:hover::-ms-input-placeholder, .input-field:focus::-ms-input-placeholder {
+.input-field:hover::-ms-input-placeholder,
+.input-field:focus::-ms-input-placeholder {
   color: #FAFBFB;
   opacity: 1;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
-.input-field:hover::placeholder, .input-field:focus::placeholder {
+.input-field:hover::placeholder,
+.input-field:focus::placeholder {
   color: #FAFBFB;
   opacity: 1;
   -webkit-transition: all 0.2s ease-in-out;
@@ -481,7 +490,7 @@ footer .footer-content p {
 
 .demos-item:hover img {
   -webkit-box-shadow: 0 99px 93px 0 rgba(0, 0, 0, 0.13);
-          box-shadow: 0 99px 93px 0 rgba(0, 0, 0, 0.13);
+  box-shadow: 0 99px 93px 0 rgba(0, 0, 0, 0.13);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -504,7 +513,7 @@ footer .footer-content p {
 .demos-item img {
   border-radius: 5px 5px 5px 5px;
   -webkit-box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.13);
-          box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.13);
+  box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0.13);
   /*//min-height: 500px;*/
   /*//max-width: 500px;*/
   -webkit-transition: all 0.3s ease-in-out;
@@ -524,9 +533,9 @@ footer .footer-content p {
   left: 17%;
   border-radius: 50%;
   -webkit-animation: moving 40s infinite;
-          animation: moving 40s infinite;
+  animation: moving 40s infinite;
   -webkit-animation-direction: alternate;
-          animation-direction: alternate;
+  animation-direction: alternate;
 }
 
 .cloude-move-rev {
@@ -538,9 +547,9 @@ footer .footer-content p {
   left: 17%;
   border-radius: 50%;
   -webkit-animation: movingr 40s infinite;
-          animation: movingr 40s infinite;
+  animation: movingr 40s infinite;
   -webkit-animation-direction: alternate;
-          animation-direction: alternate;
+  animation-direction: alternate;
 }
 
 .cloude-move-ctl {
@@ -552,9 +561,9 @@ footer .footer-content p {
   left: 50%;
   border-radius: 50%;
   -webkit-animation: movingctl 40s infinite;
-          animation: movingctl 40s infinite;
+  animation: movingctl 40s infinite;
   -webkit-animation-direction: alternate;
-          animation-direction: alternate;
+  animation-direction: alternate;
 }
 
 .cloude-move-ctr {
@@ -566,9 +575,9 @@ footer .footer-content p {
   left: 50%;
   border-radius: 50%;
   -webkit-animation: movingctr 40s infinite;
-          animation: movingctr 40s infinite;
+  animation: movingctr 40s infinite;
   -webkit-animation-direction: alternate;
-          animation-direction: alternate;
+  animation-direction: alternate;
 }
 
 .btn-2 {
@@ -761,7 +770,7 @@ footer .footer-content p {
   border-radius: 30px;
   margin-bottom: 20px;
   -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.13);
-          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.13);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.13);
 }
 
 .core-feature .code-feature img {
@@ -787,11 +796,13 @@ footer .footer-content p {
   text-align: left;
   padding-left: 10%;
 }
-.feature-one .each-feature-inner img{
-    padding-left: 0;
-    height: auto;
-    width: 250px;
+
+.feature-one .each-feature-inner img {
+  padding-left: 0;
+  height: auto;
+  width: 250px;
 }
+
 .feature-one h2 {
   font-size: 40px;
   font-weight: bold;
@@ -810,9 +821,10 @@ footer .footer-content p {
   text-align: center;
   background: #fff;
 }
-.feature-two .section-separator{
-    padding-top: 30px;
-    padding-bottom: 100px;
+
+.feature-two .section-separator {
+  padding-top: 30px;
+  padding-bottom: 100px;
 }
 
 .feature-two img {
@@ -846,8 +858,9 @@ footer .footer-content p {
 .maha-features {
   padding: 20px;
 }
-.maha-features .section-separator{
-    padding-bottom: 0;
+
+.maha-features .section-separator {
+  padding-bottom: 0;
 }
 
 .maha-features .feature-item {
@@ -935,32 +948,36 @@ footer .footer-content p {
 }
 
 @media only screen and (max-width: 767px) {
-    .feature-two .each-feature-inner {
-        padding: 7%;
-        text-align: left;
-        padding-right: 7%;
-        margin-bottom: 30px;
-    }
-    .evbtn {
-        opacity: 1;
-    }
-    .demo-header .demo-header-content {
-        padding: 60px 0;
-        color: #ffffff;
-        position: relative;
-        padding-top: 30px;
-    }
-    .feature-one .each-feature-inner {
-        padding: 5%;
-        text-align: left;
-        padding-left: 5%;
-        margin-top: 30px;
-    }
-    .feature-two .each-feature-inner {
-        padding: 5%;
-        text-align: left;
-        padding-right: 5%;
-    }
+  .feature-two .each-feature-inner {
+    padding: 7%;
+    text-align: left;
+    padding-right: 7%;
+    margin-bottom: 30px;
+  }
+
+  .evbtn {
+    opacity: 1;
+  }
+
+  .demo-header .demo-header-content {
+    padding: 60px 0;
+    color: #ffffff;
+    position: relative;
+    padding-top: 30px;
+  }
+
+  .feature-one .each-feature-inner {
+    padding: 5%;
+    text-align: left;
+    padding-left: 5%;
+    margin-top: 30px;
+  }
+
+  .feature-two .each-feature-inner {
+    padding: 5%;
+    text-align: left;
+    padding-right: 5%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

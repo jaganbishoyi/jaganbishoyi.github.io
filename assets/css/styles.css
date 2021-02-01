@@ -222,7 +222,7 @@ a:focus {
   -webkit-background-size: cover;
 }
 
-.body-video-bg > .section-video {
+.body-video-bg>.section-video {
   position: fixed;
   top: 0;
   left: 0;
@@ -1059,6 +1059,7 @@ h6 {
 .white-vertion.home-slider .img-color-overlay {
   background-color: rgba(255, 247, 247, 0.6);
 }
+
 .white-vertion.home-slider .mh-black-header .img-color-overlay {
   background-color: rgba(0, 0, 0, 0.6);
 }
@@ -1347,13 +1348,7 @@ h6 {
   text-align: right;
 }
 
-.mh-rtl
-  .mh-work
-  .mh-experience-deatils
-  .mh-work-item
-  .work-responsibility
-  li
-  .fa {
+.mh-rtl .mh-work .mh-experience-deatils .mh-work-item .work-responsibility li .fa {
   margin-left: 10px;
 }
 
@@ -1434,6 +1429,7 @@ h6 {
     height: 0;
     opacity: 1;
   }
+
   100% {
     top: 57px;
     left: 57px;
@@ -1451,6 +1447,7 @@ h6 {
     height: 0;
     opacity: 1;
   }
+
   100% {
     top: 57px;
     left: 57px;
@@ -2410,12 +2407,15 @@ h6 {
 .mh-footer ::-webkit-input-placeholder {
   opacity: 0.9;
 }
+
 .mh-footer :-ms-input-placeholder {
   opacity: 0.9;
 }
+
 .mh-footer ::-ms-input-placeholder {
   opacity: 0.9;
 }
+
 .mh-footer ::placeholder {
   opacity: 0.9;
 }
@@ -2667,14 +2667,10 @@ h6 {
   padding: 0;
   background-color: #0bceaf;
   transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
   -webkit-font-smoothing: antialiased;
@@ -2686,10 +2682,8 @@ h6 {
   transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -o-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
 }
 
 .old .collapse {
@@ -2710,16 +2704,11 @@ h6 {
 }
 
 .old .navbar-toggler .icon {
-  transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg)
-    scale(1);
-  -o-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0)
-    rotate(0deg) scale(1);
+  transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg) scale(1);
+  -o-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg) scale(1);
 }
 
 .old .navbar-toggler .icon,
@@ -2747,50 +2736,34 @@ h6 {
 
 .old .navbar-toggler .icon::after {
   transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg) scale(1);
 }
 
 .old .navbar-toggler .icon::before {
   transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg) scale(1);
 }
 
 .old .navbar-toggler.active .icon::after {
   transform: translateX(0) translateY(0) translateZ(0) rotate(138deg) scale(1);
-  -o-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg)
-    scale(1);
-  -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg)
-    scale(1);
-  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg)
-    scale(1);
-  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg)
-    scale(1);
+  -o-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg) scale(1);
+  -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg) scale(1);
+  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg) scale(1);
+  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg) scale(1);
 }
 
 .old .navbar-toggler.active .icon::before {
   transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg) scale(1);
-  -o-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg)
-    scale(1);
-  -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg)
-    scale(1);
-  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg)
-    scale(1);
-  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg)
-    scale(1);
+  -o-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg) scale(1);
+  -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg) scale(1);
+  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg) scale(1);
+  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg) scale(1);
 }
 
 .old .navbar-toggler.active .icon::after,
@@ -2864,14 +2837,10 @@ h6 {
   padding: 0;
   background-color: #0bceaf;
   transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
   -webkit-font-smoothing: antialiased;
@@ -2923,10 +2892,8 @@ h6 {
   transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -o-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
 }
 
 .old .collapse.in {
@@ -2964,14 +2931,10 @@ h6 {
   padding: 0;
   background-color: #0bceaf;
   transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
   -webkit-font-smoothing: antialiased;
@@ -2983,10 +2946,8 @@ h6 {
   transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -o-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
 }
 
 .new .collapse {
@@ -3007,16 +2968,11 @@ h6 {
 }
 
 .new .navbar-toggler .icon {
-  transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg)
-    scale(1);
-  -o-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0)
-    rotate(0deg) scale(1);
+  transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg) scale(1);
+  -o-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) rotate(0deg) scale(1);
 }
 
 .new .navbar-toggler .icon,
@@ -3044,50 +3000,34 @@ h6 {
 
 .new .navbar-toggler .icon::after {
   transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(0) translateY(6px) translateZ(0) rotate(0deg) scale(1);
 }
 
 .new .navbar-toggler .icon::before {
   transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(0) translateY(-6px) translateZ(0) rotate(0deg) scale(1);
 }
 
 .new .navbar-toggler.active .icon::after {
   transform: translateX(0) translateY(0) translateZ(0) rotate(138deg) scale(1);
-  -o-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg)
-    scale(1);
-  -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg)
-    scale(1);
-  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg)
-    scale(1);
-  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg)
-    scale(1);
+  -o-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg) scale(1);
+  -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg) scale(1);
+  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg) scale(1);
+  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(138deg) scale(1);
 }
 
 .new .navbar-toggler.active .icon::before {
   transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg) scale(1);
-  -o-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg)
-    scale(1);
-  -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg)
-    scale(1);
-  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg)
-    scale(1);
-  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg)
-    scale(1);
+  -o-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg) scale(1);
+  -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg) scale(1);
+  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg) scale(1);
+  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(-135deg) scale(1);
 }
 
 .new .navbar-toggler.active .icon::after,
@@ -3161,14 +3101,10 @@ h6 {
   padding: 0;
   background-color: #0bceaf;
   transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(-100%) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
   -webkit-font-smoothing: antialiased;
@@ -3220,10 +3156,8 @@ h6 {
   transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -o-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
 }
 
 .new .collapse.in {
@@ -3307,14 +3241,10 @@ h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(0.95);
-  -o-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(0.95);
-  -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(0.95);
-  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(0.95);
-  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(0.95);
+  -o-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(0.95);
+  -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(0.95);
+  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(0.95);
+  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(0.95);
   z-index: -1;
   opacity: 0;
 }
@@ -3332,14 +3262,10 @@ h6 {
   top: 45%;
   margin-top: -22px;
   transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   opacity: 0;
@@ -3361,14 +3287,10 @@ h6 {
   margin-top: 30px;
   margin-top: -2px;
   transform: translateX(80px) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(80px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(80px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(80px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(80px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(80px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(80px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(80px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(80px) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
   -webkit-font-smoothing: antialiased;
@@ -3388,14 +3310,10 @@ h6 {
   top: 50%;
   margin-top: 30px;
   transform: translateX(-70px) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(-70px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(-70px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(-70px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(-70px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(-70px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(-70px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(-70px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(-70px) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -webkit-transition: 0.5s;
   transition: 0.5s;
   -webkit-font-smoothing: antialiased;
@@ -3433,10 +3351,8 @@ h6 {
   transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -o-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -ms-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -moz-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
   -webkit-font-smoothing: antialiased;
@@ -3445,14 +3361,10 @@ h6 {
 
 .mh-project-gallery .grid-item figure:hover figcaption .fa {
   transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -webkit-transition: 0.2s;
   transition: 0.2s;
   opacity: 1;
@@ -3460,14 +3372,10 @@ h6 {
 
 .mh-project-gallery .grid-item figure:hover figcaption .title {
   transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -webkit-transition: 0.4s;
   transition: 0.4s;
   opacity: 1;
@@ -3475,14 +3383,10 @@ h6 {
 
 .mh-project-gallery .grid-item figure:hover figcaption .sub-title {
   transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
-  -o-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -ms-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -moz-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
-  -webkit-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg)
-    scale(1);
+  -o-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -ms-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -moz-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
+  -webkit-transform: translateX(0px) translateY(0) translateZ(0) rotate(0deg) scale(1);
   -webkit-transition: 0.6s;
   transition: 0.6s;
   opacity: 1;
@@ -3501,10 +3405,7 @@ h6 {
   margin: 30px 0;
 }
 
-.mh-featured-project
-  .mh-featured-item
-  .mh-featured-project-content
-  .project-category {
+.mh-featured-project .mh-featured-item .mh-featured-project-content .project-category {
   font-size: 14px;
   color: #0bceaf;
   margin-top: 0;
@@ -3531,49 +3432,25 @@ h6 {
   margin-bottom: 20px;
 }
 
-.mh-featured-project
-  .mh-featured-item
-  .mh-featured-project-content
-  .mh-testimonial
-  blockquote {
+.mh-featured-project .mh-featured-item .mh-featured-project-content .mh-testimonial blockquote {
   padding: 0;
   margin: 0;
   margin-top: 30px;
 }
 
-.mh-featured-project
-  .mh-featured-item
-  .mh-featured-project-content
-  .mh-testimonial
-  blockquote
-  q {
+.mh-featured-project .mh-featured-item .mh-featured-project-content .mh-testimonial blockquote q {
   font-style: italic;
 }
 
-.mh-featured-project
-  .mh-featured-item
-  .mh-featured-project-content
-  .mh-testimonial
-  blockquote
-  q::before {
+.mh-featured-project .mh-featured-item .mh-featured-project-content .mh-testimonial blockquote q::before {
   content: open-quote;
 }
 
-.mh-featured-project
-  .mh-featured-item
-  .mh-featured-project-content
-  .mh-testimonial
-  blockquote
-  q::after {
+.mh-featured-project .mh-featured-item .mh-featured-project-content .mh-testimonial blockquote q::after {
   content: close-quote;
 }
 
-.mh-featured-project
-  .mh-featured-item
-  .mh-featured-project-content
-  .mh-testimonial
-  blockquote
-  cite {
+.mh-featured-project .mh-featured-item .mh-featured-project-content .mh-testimonial blockquote cite {
   display: block;
   font-size: 16px;
   font-style: normal;
@@ -3658,13 +3535,16 @@ h6 {
   font-size: 50px;
   margin: 7px 0;
 }
+
 .img-fluid {
   border-radius: 1-px 10px 0 0;
 }
+
 .blog-card-img {
   height: 262px;
   width: 100%;
 }
+
 .mh-service .mh-service-item .fa.purple-color {
   color: #9774fa;
 }
@@ -4041,12 +3921,12 @@ BLOG Pagination
   margin-left: 10px;
 }
 
-.header-slider .slide-tablecell .slide-text > *:nth-child(1) {
+.header-slider .slide-tablecell .slide-text>*:nth-child(1) {
   -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s;
 }
 
-.header-slider .slide-tablecell .slide-text > *:nth-child(2) {
+.header-slider .slide-tablecell .slide-text>*:nth-child(2) {
   -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s;
   -webkit-animation-delay: 0.3s;
@@ -4054,7 +3934,7 @@ BLOG Pagination
   margin-bottom: 30px;
 }
 
-.header-slider .slide-tablecell .slide-text > *:nth-child(3) {
+.header-slider .slide-tablecell .slide-text>*:nth-child(3) {
   -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s;
   -webkit-animation-delay: 0.6s;
@@ -4062,7 +3942,7 @@ BLOG Pagination
   margin-top: 30px;
 }
 
-.header-slider .slide-tablecell .slide-text > *:nth-child(4) {
+.header-slider .slide-tablecell .slide-text>*:nth-child(4) {
   -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s;
   -webkit-animation-delay: 0.9s;
@@ -4151,6 +4031,7 @@ BLOG Pagination
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 /*# sourceMappingURL=styles.css.map */
 
 blockquote {
@@ -4170,4 +4051,15 @@ blockquote p {
   word-break: break-word;
   color: rgba(0, 0, 0, 0.84) !important;
   font-weight: 400;
+}
+
+.npm {
+  margin-bottom: 20px;
+}
+
+.npm img.npm-badge {
+  width: 100px !important;
+  display: inline-block !important;
+  height: 20px !important;
+  margin-right: 10px;
 }

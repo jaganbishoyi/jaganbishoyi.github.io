@@ -1062,6 +1062,7 @@ h6 {
 
 .white-vertion.home-slider .mh-black-header .img-color-overlay {
   background-color: rgba(0, 0, 0, 0.6);
+  height: 100vh;
 }
 
 .white-vertion.home-slider .mh-black-header h2,

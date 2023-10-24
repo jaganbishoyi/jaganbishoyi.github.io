@@ -1,0 +1,32 @@
+@import "variables";
+
+.public-wrap {
+    .public-header {
+        position: fixed;
+        width: 100%;
+        height: $header-height;
+        box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        top: 0;
+        background-color: $white;
+    }
+
+    .body-content {
+        margin-top: $header-height;
+        min-height: calc(100vh - (#{$header-height} + #{$footer-height}));
+    }
+
+    .public-footer {
+        background: $black;
+        color: $white;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .public-wrap {
+        .body-content {
+            margin-top: $header-height-responsive-view;
+            min-height: calc(100vh - (#{$header-height-responsive-view} + #{$footer-height}));
+        }
+    }
+}

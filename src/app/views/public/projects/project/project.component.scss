@@ -1,0 +1,51 @@
+@import "variables";
+
+.project {
+    padding: 60px 0;
+    border-bottom: 1px dotted #00000038;
+
+    .image-container {
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            display: block;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+    }
+
+    .project-desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .project-container {
+            text-align: left;
+
+            h4 {
+                font-weight: 700;
+                font-size: 28px !important;
+                margin-bottom: 15px !important;
+            }
+
+            p {
+                font-size: 18px;
+                color: $black;
+                line-height: 1.5;
+                text-align: justify;
+            }
+        }
+
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .project {
+        .project-desc {
+            .project-container {
+                text-align: center;
+            }
+        }
+    }
+}

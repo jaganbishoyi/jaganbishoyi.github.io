@@ -1,0 +1,52 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run build
+cp ./docs/index.html ./docs/404.html
+git add .
+git commit -m "Code built successfully."
+
+# # Define source and destination repository URLs
+# source_repo_url="https://github.com/jaganbishoyi/portfolio"
+# destination_repo_url="https://github.com/jaganbishoyi/jaganbishoyi.github.io"
+
+# # Define the folder you want to push
+# folder_to_push="../docs"
+
+# mkdir temp_folder
+# cd temp_folder
+# git clone $destination_repo_url
+
+# # Function to push the folder
+# push_folder() {
+#     # Clone the source repository
+#     git clone $source_repo_url source_repo_tmp
+
+#     # Enter the source repository directory
+#     cd source_repo_tmp
+
+#     # Checkout a branch to isolate the folder
+#     git checkout -b push_temp_branch
+
+#     # Remove all files except the specified folder
+#     git ls-files | grep -v "^$folder_to_push/" | xargs git rm --cached
+
+#     # Commit the changes
+#     git commit -m "Preparing $folder_to_push for push"
+
+#     # Push the changes to the destination repository
+#     git push $destination_repo_url push_temp_branch:push_temp_branch
+
+#     # Clean up temporary repository
+#     cd ..
+#     rm -rf source_repo_tmp
+# }
+
+# # Call the function to push the folder
+# push_folder
+
+# # Exit with a success status
+# exit 0
+
+
+

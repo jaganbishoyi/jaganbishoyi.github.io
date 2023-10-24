@@ -1,0 +1,124 @@
+@import "variables";
+@import "typography";
+@import "animations";
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+::-moz-selection {
+    color: $white;
+    background: $theme-color;
+}
+
+::selection {
+    color: $white;
+    background: $theme-color;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Roboto, sans-serif !important;
+    color: $black;
+    font-size: 14px;
+}
+
+.bg {
+    background: linear-gradient(to right, rgba(245, 245, 245, .8), rgba(245, 245, 245, .8)), url(assets/images/bg/doodles.webp);
+    background-position: center;
+}
+
+.bg-1 {
+    background: linear-gradient(to right, rgba(245, 245, 245, .8), rgba(245, 245, 245, .8)), url(assets/images/bg/bg-1.png);
+    background-position: center;
+}
+
+.bg-2 {
+    background: linear-gradient(to right, rgba(245, 245, 245, .8), rgba(245, 245, 245, .8)), url(assets/images/bg/web.png);
+    background-position: center;
+}
+
+button.custom-btn {
+    padding: 10px 35px;
+    font-size: 16px;
+    background: $theme-color;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    font-weight: 700;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: translateY(-3px);
+        color: $white;
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.btn-outline-theme {
+    color: $theme-color;
+    border-color: $theme-color;
+    transition: transform 0.3s;
+    padding: 10px 35px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    font-weight: 700;
+    border-radius: 5px;
+
+    &:hover,
+    &:active {
+        color: $white !important;
+        background-color: $theme-color !important;
+        border-color: $theme-color !important;
+        transform: translateY(-3px);
+        box-shadow: 0 0 0 0.2rem $theme-color !important;
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.img-gradient {
+    background: linear-gradient(90deg, #feac5e, #c779d0, #4bc0c8);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    height: fit-content;
+}
+
+.initial-letter {
+    &::first-letter {
+        -webkit-initial-letter: 2 1;
+        initial-letter: 2 1;
+        font-weight: bold;
+        margin-right: 5px;
+    }
+}
+
+.last-project {
+    .project {
+        border-bottom: none !important;
+    }
+}

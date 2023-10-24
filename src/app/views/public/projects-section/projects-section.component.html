@@ -1,0 +1,25 @@
+<div class="row bg-2" id="projects">
+    <div class="col-12">
+        <div class="projects-section">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 text-center">
+                    <h1 class="heading">projects</h1>
+                    <p class="intro">
+                        Here you will find some of the personal and clients projects that I created with each project
+                        containing its own case study
+                    </p>
+                    <button type="button" class="btn btn-outline-primary btn-outline-theme my-5" routerLink="/projects">
+                        See All projects
+                    </button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12" *ngFor="let project of projects; let last = last"
+                    [ngClass]="{'last-project': last}">
+                    <app-project [project]="project"></app-project>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

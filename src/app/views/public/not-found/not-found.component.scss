@@ -1,0 +1,47 @@
+@import "variables";
+@import "animations";
+
+.page_404 {
+    padding: 40px 0;
+    background: $white;
+
+    img {
+        width: 100%;
+    }
+
+    .four_zero_four_bg {
+        background-image: url(../../../../assets/images/404.gif);
+        height: 400px;
+        background-position: center;
+
+        h1 {
+            font-size: 80px !important;
+            font-weight: 900;
+        }
+    }
+
+    .contant_box_404 {
+        margin-top: -50px;
+
+        h3 {
+            font-size: 45px !important;
+            margin-bottom: 15px !important;
+        }
+
+        p {
+            font-size: 20px !important;
+        }
+
+        .link_404 {
+            color: $white !important;
+            padding: 12px 30px;
+            background: #39ad31;
+            margin: 40px 0 30px 0;
+            display: inline-block;
+            font-size: 24px;
+            font-weight: 700;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+    }
+}

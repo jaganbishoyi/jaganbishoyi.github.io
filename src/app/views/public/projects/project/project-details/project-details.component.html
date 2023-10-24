@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="row project-details-section bg">
+        <div class="col-12">
+            <div class="project-details-content">
+                <h1>{{project?.name}}</h1>
+                <p>
+                    This page contains the case study of <b>{{project?.name}}</b> which includes the Project
+                    Overview, Tools Used and Live Links to the product.
+                </p>
+                <button type="button" class="btn custom-btn mx-3 my-2" (click)="navigateToProject()">
+                    project link
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-outline-theme mx-3 my-2"
+                    (click)="navigateBack()">
+                    Go back
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="project-details">
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 col-md-8 text-center image-container">
+                <img [src]="'assets/images/projects/' + project?.image" alt="" srcset="" class="img-fluid">
+            </div>
+            <div class="col-12 col-md-8 mt-5">
+                <h4 class="heading">{{project?.name | titlecase}}</h4>
+                <p *ngFor="let overview of project?.overview" class="overview">{{overview}}</p>
+            </div>
+            <div class="col-12 col-md-8 mt-4">
+                <h4 class="heading">Tools Used</h4>
+                <div class="tools">
+                    <span *ngFor="let tool of project?.techs" class="tool">{{tool}}</span>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 mt-5 mb-5 pb-5">
+                <h4 class="heading">Useful Links</h4>
+                <button type="button" class="btn custom-btn mr-4 mb-4 link" (click)="navigate(link)"
+                    *ngFor="let link of project?.links">
+                    {{link.name | uppercase}}
+                </button>
+                <button type="button" class="btn btn-outline-primary btn-outline-theme mb-4" (click)="navigateBack()">
+                    Go back
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

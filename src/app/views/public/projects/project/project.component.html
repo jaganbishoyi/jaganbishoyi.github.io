@@ -1,0 +1,14 @@
+<div class="row project" [id]="'project_'+project.id">
+    <div class="col-12 col-md-7 image-container">
+        <img [src]="'assets/images/projects/' + project.image" alt="" srcset="" class="img-fluid">
+    </div>
+    <div class="col-12 col-md-5 project-desc">
+        <div class="project-container">
+            <h4>{{project.name | titlecase}}</h4>
+            <p *ngFor="let description of project.description" class="mb-2">{{description}}</p>
+            <button type="button" class="btn custom-btn mt-3" (click)="caseStudy()">
+                case study
+            </button>
+        </div>
+    </div>
+</div>

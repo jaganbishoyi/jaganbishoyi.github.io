@@ -1,0 +1,25 @@
+<div class="toolbar" role="banner">
+    <div class="img-container img-gradient">
+        <img class="logo img-fluid" alt="InterviewMAite Logo" aria-hidden="true" src="assets/images/me.png"
+            (click)="navigateToHome()" />
+    </div>
+    <span class="name" (click)="navigateToHome()" aria-hidden="true">Jagan Mohan Bishoyi</span>
+    <div class="spacer"></div>
+    <ul class="navigation">
+        <li *ngFor="let nav of navigation" class="nav-menu" routerLink="/" [fragment]="nav.route"
+            [ngClass]="{'active': nav.route === active}">
+            {{nav.name | uppercase}}
+        </li>
+        <li class="menu-icon" (click)="toggleMenu()" aria-hidden="true">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </li>
+    </ul>
+    <div class="mobile-nav" [@slideInOut]="animationState">
+        <div aria-hidden="true" *ngFor="let nav of navigation" class="nav" routerLink="/" [fragment]="nav.route"
+            (click)="toggleMenu()" [ngClass]="{'active': nav.route === active}">
+            {{nav.name | uppercase}}
+        </div>
+    </div>
+</div>

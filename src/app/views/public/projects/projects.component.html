@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row projects-section bg">
+        <div class="col-12">
+            <div class="projects-content">
+                <h1>projects</h1>
+                <p>
+                    In my journey, I've had the privilege of spearheading <b>{{projects.length}}</b> projects,
+                    each marked by its unique challenges and accomplishments. The invaluable lessons
+                    I gleaned from this experience have significantly contributed to my ongoing growth and
+                    professional evolution. These projects, rich in experiences, have been pivotal in shaping my
+                    journey, and I look forward to the exciting challenges that the future holds.
+                </p>
+                <button type="button" class="btn btn-outline-primary btn-outline-theme mb-5" (click)="navigateBack()">
+                    go back
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="projects">
+        <div class="row my-5">
+            <div class="col-12" *ngFor="let project of projects; let last = last" [ngClass]="{'last-project': last}">
+                <app-project [project]="project"></app-project>
+            </div>
+        </div>
+    </div>
+</div>

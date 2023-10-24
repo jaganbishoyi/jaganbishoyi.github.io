@@ -1,891 +1,110 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-critters-container>
 
     <head>
-        <!-- Google Tag Manager -->
-        <script>
-            (function(w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({
-                    'gtm.start': new Date().getTime(),
-                    event: 'gtm.js'
-                });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s),
-                    dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.async = true;
-                j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-KST54K9');
-        </script>
-        <!-- End Google Tag Manager -->
-        <title>Once A Student, Always A Student </title>
-        <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Hello, I’m Jagan Mohan, a Development Lead based on Bengaluru, India. I have rich experience in web site design & building
-        and customization." />
-        <meta name="keywords" content="html5, CSS3, SCSS, Ionic 4, Javascript, Jquery, Typescript, Angular 2+, Shell Scripting, Web
-        Hosting, Unit Testing, Git, Wordpress, Bootstrap" />
-        <meta name="developer" content="Jagan Mohan Bishoyi">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- FAV AND ICONS   -->
-        <link rel="shortcut icon" href="assets/images/logo.svg">
-        <link rel="shortcut icon" href="assets/images/logo.svg">
-        <link rel="shortcut icon" sizes="72x72" href="assets/images/logo.svg">
-        <link rel="shortcut icon" sizes="114x114" href="assets/images/logo.svg">
-
-        <!-- Google Font-->
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="preload" defer>
-        <!-- Font Awesome -->
-        <link type="text/css" defer rel="stylesheet" href="assets/icons/font-awesome-4.7.0/css/font-awesome.min.css">
-        <!-- Bootstrap CSS -->
-        <link type="text/css" defer rel="stylesheet" href="assets/plugins/css/bootstrap.min.css">
-        <!-- Animate CSS-->
-        <link type="text/css" defer rel="stylesheet" href="assets/plugins/css/animate.css">
-        <!-- Owl Carousel CSS-->
-        <link type="text/css" defer rel="stylesheet" href="assets/plugins/css/owl.css">
-        <!-- Fancybox-->
-        <link type="text/css" defer rel="stylesheet" href="assets/plugins/css/jquery.fancybox.min.css">
-        <!-- Slider CSS -->
-        <link type="text/css" defer rel="stylesheet" href="assets/plugins/css/mh-slider.css">
-
-        <!-- Custom CSS-->
-        <link type="text/css" defer rel="stylesheet" href="assets/css/styles.css">
-        <link type="text/css" defer rel="stylesheet" href="assets/css/responsive.css">
-
-        <!-- Colors -->
-        <link type="text/css" defer rel="stylesheet" href="assets/css/colors/yellow.css" title="yellow">
+        <title>Jagan Mohan Bishoyi | Angular | Frontend Web Developer</title>
+        <base href="https://jaganb.dev/">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="assets/images/me.png">
         <style>
-            .hyper-tag {
-                font-size: 13px;
+            :root {
+                --blue: #007bff;
+                --indigo: #6610f2;
+                --purple: #6f42c1;
+                --pink: #e83e8c;
+                --red: #dc3545;
+                --orange: #fd7e14;
+                --yellow: #ffc107;
+                --green: #28a745;
+                --teal: #20c997;
+                --cyan: #17a2b8;
+                --white: #fff;
+                --gray: #6c757d;
+                --gray-dark: #343a40;
+                --primary: #007bff;
+                --secondary: #6c757d;
+                --success: #28a745;
+                --info: #17a2b8;
+                --warning: #ffc107;
+                --danger: #dc3545;
+                --light: #f8f9fa;
+                --dark: #343a40;
+                --breakpoint-xs: 0;
+                --breakpoint-sm: 576px;
+                --breakpoint-md: 768px;
+                --breakpoint-lg: 992px;
+                --breakpoint-xl: 1200px;
+                --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+            }
+
+            *,
+            :after,
+            :before {
+                box-sizing: border-box
+            }
+
+            html {
+                font-family: sans-serif;
+                line-height: 1.15;
+                -webkit-text-size-adjust: 100%;
+                -webkit-tap-highlight-color: transparent
+            }
+
+            body {
+                margin: 0;
+                font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #212529;
+                text-align: left;
+                background-color: #fff
+            }
+
+            @media print {
+
+                *,
+                :after,
+                :before {
+                    text-shadow: none !important;
+                    box-shadow: none !important
+                }
+
+                @page {
+                    size: a3
+                }
+
+                body {
+                    min-width: 992px !important
+                }
+            }
+
+            html,
+            body {
+                height: 100%
+            }
+
+            body {
+                margin: 0;
+                font-family: Helvetica Neue, Roboto, sans-serif !important;
+                color: #000;
+                font-size: 14px
             }
 
         </style>
-
+        <link rel="stylesheet" href="styles.b4cf4a960f08afe6.css" media="print" onload="this.media='all'"><noscript>
+            <link rel="stylesheet" href="styles.b4cf4a960f08afe6.css">
+        </noscript>
     </head>
 
-    <body class="white-vertion home-slider black-bg">
-        <!-- Google Tag Manager (noscript) -->
-        <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KST54K9" height="0" width="0"
-                style="display:none;visibility:hidden">
-            </iframe>
-        </noscript>
-        <!-- End Google Tag Manager (noscript) -->
-        <!-- Start Loader -->
-        <div class="section-loader">
-            <div class="loader">
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-        <!-- End Loader -->
-
-        <header class="black-bg mh-header white-header mh-fixed-nav nav-scroll mh-xs-mobile-nav" id="mh-header">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <nav class="navbar navbar-expand-lg mh-nav nav-btn">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav m-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#header-slider">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#mh-about">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#projects">Projects</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#mh-skills">Skills</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#mh-experience">Experiences</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="blog.html">Blog</a>
-                                </li>
-                                <!-- <li class="nav-item">
-                                <a class="nav-link" href="#mh-contact">Contact</a>
-                            </li> -->
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </header>
-
-        <section class="mh-home image-bg mh-black-header header-slider header-slider-preloader" id="header-slider">
-            <div class="animation-slides owl-carousel owl-theme" id="animation-slide">
-                <!--Slide 1-->
-                <div class="item">
-                    <div style="background-image:url(assets/images/slider/1.jpg)"></div>
-                </div>
-
-                <!--Slide 2-->
-                <div class="item">
-                    <div style="background-image:url(assets/images/slider/2.jpg)"></div>
-                </div>
-
-                <!--Slide 3-->
-                <div class="item">
-                    <div style="background-image:url(assets/images/slider/3.jpg)"></div>
-                </div>
-            </div>
-
-            <div class="img-foverlay img-color-overlay">
-                <div class="container">
-                    <div class="row section-separator xs-column-reverse vertical-middle-content home-padding">
-                        <div class="col-sm-7">
-                            <div class="mh-header-info">
-                                <div class="mh-promo wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
-                                    <span>Hello I'm</span>
-                                </div>
-
-                                <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                    Jagan Mohan Bishoyi
-                                </h2>
-                                <h4 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                                    Development Lead
-                                </h4>
-
-                                <ul>
-                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                                        <i class="fa fa-envelope"></i><a
-                                            href="mailto:jaganmohanbishoyi@gmail.com">jaganmohanbishoyi@gmail.com</a>
-                                    </li>
-                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
-                                        <i class="fa fa-map-marker"></i>
-                                        <address>Bengaluru, Karnataka, India</address>
-                                    </li>
-                                </ul>
-
-                                <ul class="social-icon wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                                    <li>
-                                        <a href="https://www.linkedin.com/in/jaganmohanbishoyi/" target="_blank"><i
-                                                class="fa fa-linkedin"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://medium.com/@jaganmohanbishoyi" target="_blank"><i
-                                                class="fa fa-medium"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://github.com/jaganbishoyi" target="_blank"><i
-                                                class="fa fa-github"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-5">
-                            <div class="hero-img wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
-                                <div class="img-border">
-                                    <img src="assets/images/jagan.jpg" alt="" class="img-fluid" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="mh-about" id="mh-about">
-            <div class="container">
-                <div class="row section-separator">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="mh-about-img shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                            <img src="assets/images/ab-img.png" alt="" class="img-fluid" width="460px" height="auto">
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="mh-about-inner">
-                            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
-                                About Me</h2>
-                            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                Hello, I’m Jagan Mohan, a Development Lead by profession having expertise in front-end
-                                development. I have designed and developed web-based and mobile front-ends with modern,
-                                highly interactive UIs using JavaScript along with Angular and Ionic. I’m an
-                                enthusiastic collaborator, and a fast learner with creative problem-solving skills, good
-                                coding, and excellent communication skills. I have rich experience in web site design &
-                                building and customization. I am good at
-                            </p>
-                            <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                                <ul>
-                                    <li><span>html5</span></li>
-                                    <li><span>CSS3</span></li>
-                                    <li><span>SCSS</span></li>
-                                    <li><span>Ionic 4</span></li>
-                                    <li><span>Javascript</span></li>
-                                    <li><span>Jquery</span></li>
-                                    <li><span>Typescript</span></li>
-                                    <li><span>Angular 2+</span></li>
-                                    <li><span>Shell Scripting</span></li>
-                                    <li><span>Web Hosting</span></li>
-                                    <li><span>Bootstrap</span></li>
-                                    <li><span>Unit Testing</span></li>
-                                    <li><span>Git</span></li>
-                                    <li><span>Wordpress</span></li>
-                                </ul>
-                            </div>
-                            <a href="assets/resume/resume.pdf" target="_blank" class="btn btn-fill wow fadeInUp"
-                                data-wow-duration="0.8s" data-wow-delay="0.4s">Download CV
-                                <i class="fa fa-download"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mh-service">
-            <div class="container">
-                <div class="row section-separator">
-                    <div class="col-sm-12 text-center section-title wow fadeInUp" data-wow-duration="0.8s"
-                        data-wow-delay="0.2s">
-                        <h2>What I do</h2>
-                    </div>
-                    <div class="col-sm-12 col-md-4 mb-2">
-                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                            data-wow-delay="0.3s">
-                            <i class="fa fa-code purple-color"></i>
-                            <h3>UI & Integration</h3>
-                            <p class="mb-0">
-                                I have years of experience in Angular 2+, can do front-end
-                                architecture. My responsibility
-                                is to develope UI and integrating that with back-end API's.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-4 mb-2">
-                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                            data-wow-delay="0.5s">
-                            <i class="fa fa-desktop iron-color"></i>
-                            <h3>Web Development</h3>
-                            <p class="mb-0">
-                                I have years of experience of designing fully responsive UI using HTML,
-                                bootstrap. Hands on
-                                experience on develope dynamic Websites using wordpress.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-4 mb-2">
-                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                            data-wow-delay="0.7s">
-                            <i class="fa fa-mobile sky-color"></i>
-                            <h3>App Development</h3>
-                            <p class="mb-0">Highly skilled to design and develope hybrid mobile applications using
-                                Ionic framework.
-                                Developing
-                                UI and integrating UI with back-end API's.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mh-featured-project image-bg featured-img-one" id="projects">
-            <div class="img-color-overlay">
-                <div class="container">
-                    <div class="row section-separator">
-                        <div class="section-title col-sm-12">
-                            <h3>Featured Projects</h3>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="mh-single-project-slide-by-side row">
-                                <!-- Password Generator -->
-                                <div class="col-sm-12 mh-featured-item">
-                                    <div class="row">
-                                        <div class="col-sm-7">
-                                            <div class="mh-featured-project-img shadow-2 wow fadeInUp"
-                                                data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                                <img src="assets/images/projects/password-generator.webp"
-                                                    alt="password generator" class="img-fluid" width="535px">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-5">
-                                            <div class="mh-featured-project-content">
-                                                <h4 class="project-category wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.4s">Google Chrome Extension </h4>
-                                                <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                                                    Password Generator
-                                                </h2>
-                                                <span class="wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.6s">Open Source
-                                                    Contribution</span>
-                                                <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                                                    Password Generator is an application to generate a strong password.
-                                                    While generating a password, the user can choose
-                                                    various combinations, like length, uppercase letters, lowercase
-                                                    letters, numbers, and symbols. Users will get notified
-                                                    about the strength( Strong, Medium & Weak ) of the password.
-                                                </p>
-
-                                                <a href="https://chrome.google.com/webstore/detail/password-generator/jdplacbmmaciodfoibinhcmbahnnibnl"
-                                                    target="_blank" class="btn btn-fill wow fadeInUp"
-                                                    data-wow-duration="0.8s" data-wow-delay="0.7s">Download</a>
-                                                <a href="https://jaganbishoyi.github.io/password-generator/"
-                                                    target="_blank" class="btn btn-fill wow fadeInUp"
-                                                    data-wow-duration="0.8s" data-wow-delay="0.7s">Live
-                                                    Demo</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Password Validator -->
-                                <div class="col-sm-12 mh-featured-item">
-                                    <div class="row">
-                                        <div class="col-sm-7">
-                                            <div class="mh-featured-project-img shadow-2 wow fadeInUp"
-                                                data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                                <img src="assets/images/projects/ng-password-validator.jpg"
-                                                    alt="ng password validator" class="img-fluid" width="535px">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-5">
-                                            <div class="mh-featured-project-content">
-                                                <h4 class="project-category wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.4s">NPM
-                                                    PACKAGE
-                                                </h4>
-                                                <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                                                    Password Validator
-                                                </h2>
-                                                <span class="wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.6s">Open Source
-                                                    Contribution</span>
-                                                <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                                                    The password validator is a pop-up window that
-                                                    appears when you start typing in input box. Here you
-                                                    can configure the password acceptance criteria, once
-                                                    your enter characters fullfil the requirement you
-                                                    will get a success message.Wanted to know more about
-                                                    the
-                                                    project, please do visit to demo website.</p>
-                                                <div class="wow fadeInUp npm" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.7s">
-                                                    <a href="https://www.npmjs.com/package/ng-password-validator"
-                                                        target="_blank">
-                                                        <img alt="npm" class="npm-badge"
-                                                            src="https://img.shields.io/npm/v/ng-password-validator.svg?maxAge=2592000"></a>
-                                                    <img alt="npm" class="npm-badge"
-                                                        src="https://img.shields.io/npm/dt/ng-password-validator">
-                                                </div>
-
-                                                <a href="https://jaganbishoyi.github.io/ngx-password-validator/"
-                                                    target="_blank" class="btn btn-fill wow fadeInUp"
-                                                    data-wow-duration="0.8s" data-wow-delay="0.7s">Live
-                                                    Demo</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- JavaScript Calculator -->
-                                <div class="col-sm-12 mh-featured-item">
-                                    <div class="row">
-                                        <div class="col-sm-7">
-                                            <div class="mh-featured-project-img shadow-2 wow fadeInUp"
-                                                data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                                <img src="assets/images/projects/calculator.png"
-                                                    alt="password generator" class="img-fluid" width="535px">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-5">
-                                            <div class="mh-featured-project-content">
-                                                <h4 class="project-category wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.4s">JavaScript</h4>
-                                                <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                                                    Calculator
-                                                </h2>
-                                                <span class="wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.6s">Open Source
-                                                    Contribution</span>
-                                                <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                                                    This web application built using HTML, CSS, & JavaScript. The site
-                                                    is fully responsive.
-                                                </p>
-                                                <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                                                    The source code is available at GitHub and the demo is hosted at
-                                                    GitHub pages.
-                                                </p>
-
-                                                <a href="https://github.com/jaganbishoyi/calculator" target="_blank"
-                                                    class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.7s">GitHub</a>
-                                                <a href="https://jaganbishoyi.github.io/calculator/" target="_blank"
-                                                    class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.7s">Live
-                                                    Demo</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- JavaScript Analog Clock -->
-                                <div class="col-sm-12 mh-featured-item">
-                                    <div class="row">
-                                        <div class="col-sm-7">
-                                            <div class="mh-featured-project-img shadow-2 wow fadeInUp"
-                                                data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                                <img src="assets/images/projects/analog-clock.png"
-                                                    alt="password generator" class="img-fluid" width="535px">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-5">
-                                            <div class="mh-featured-project-content">
-                                                <h4 class="project-category wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.4s">JavaScript</h4>
-                                                <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                                                    Analog Clock
-                                                </h2>
-                                                <span class="wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.6s">Open Source
-                                                    Contribution</span>
-                                                <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                                                    This web application built using HTML, CSS, & JavaScript. The site
-                                                    is fully responsive.
-                                                </p>
-                                                <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                                                    The source code is available at GitHub and the demo is hosted at
-                                                    GitHub pages.
-                                                </p>
-
-                                                <a href="https://github.com/jaganbishoyi/analog-clock" target="_blank"
-                                                    class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.7s">GitHub</a>
-                                                <a href="https://jaganbishoyi.github.io/analog-clock/" target="_blank"
-                                                    class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.7s">Live
-                                                    Demo</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Stack Exchange -->
-                                <div class="col-sm-12 mh-featured-item">
-                                    <div class="row">
-                                        <div class="col-sm-7">
-                                            <div class="mh-featured-project-img shadow-2 wow fadeInUp"
-                                                data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                                <img src="assets/images/projects/stack-exchange.png" alt=""
-                                                    class="img-fluid" width="535px">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-5">
-                                            <div class="mh-featured-project-content">
-                                                <h4 class="project-category wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.4s">Web
-                                                    Design</h4>
-                                                <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                                                    Stack Exchange
-                                                </h2>
-                                                <span class="wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.6s">Design & Development</span>
-                                                <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                                                    All know what is Stack Exchange and how it is
-                                                    helping the developer
-                                                    community. Here My goal was to explore the Stack
-                                                    Exchange API. And to
-                                                    know how it big site Working. The Site I developed
-                                                    using Angular 8 and I
-                                                    am consuming Stack Exchange APIs. An it is deployed
-                                                    in Firebase.</p>
-                                                <p>I fell in love with the API stricture and
-                                                    <a href="https://api.stackexchange.com/docs/filters" target="_blank"
-                                                        rel="noopener noreferrer">API
-                                                        filter </a> they are generating using
-                                                    the requirement. One of the well strictured API I
-                                                    have ever seen.
-                                                </p>
-                                                <a href="https://stackexchange-97829.web.app/" target="_blank"
-                                                    class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s"
-                                                    data-wow-delay="0.7s">Live
-                                                    Demo</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mh-skills" id="mh-skills">
-            <div class="home-v-img">
-                <div class="container">
-                    <div class="row section-separator">
-                        <div class="section-title text-center col-sm-12">
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div class="mh-skills-inner">
-                                <div class="mh-professional-skill wow fadeInUp" data-wow-duration="0.8s"
-                                    data-wow-delay="0.3s">
-                                    <h3>Technical Skills</h3>
-                                    <div class="each-skills">
-                                        <div class="candidatos">
-                                            <div class="parcial">
-                                                <div class="info">
-                                                    <div class="nome">Javascript</div>
-                                                    <div class="percentagem-num">86%</div>
-                                                </div>
-                                                <div class="progressBar">
-                                                    <div class="percentagem" style="width: 86%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="candidatos">
-                                            <div class="parcial">
-                                                <div class="info">
-                                                    <div class="nome">Angular 2+</div>
-                                                    <div class="percentagem-num">90%</div>
-                                                </div>
-                                                <div class="progressBar">
-                                                    <div class="percentagem" style="width: 90%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="candidatos">
-                                            <div class="parcial">
-                                                <div class="info">
-                                                    <div class="nome">Ionic</div>
-                                                    <div class="percentagem-num">70%</div>
-                                                </div>
-                                                <div class="progressBar">
-                                                    <div class="percentagem" style="width: 70%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="candidatos">
-                                            <div class="parcial">
-                                                <div class="info">
-                                                    <div class="nome">GIT</div>
-                                                    <div class="percentagem-num">80%</div>
-                                                </div>
-                                                <div class="progressBar">
-                                                    <div class="percentagem" style="width: 80%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="candidatos">
-                                            <div class="parcial">
-                                                <div class="info">
-                                                    <div class="nome">Wordpress</div>
-                                                    <div class="percentagem-num">60%</div>
-                                                </div>
-                                                <div class="progressBar">
-                                                    <div class="percentagem" style="width: 60%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="candidatos">
-                                            <div class="parcial">
-                                                <div class="info">
-                                                    <div class="nome">Bootstrap</div>
-                                                    <div class="percentagem-num">70%</div>
-                                                </div>
-                                                <div class="progressBar">
-                                                    <div class="percentagem" style="width: 70%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div class="mh-professional-skills wow fadeInUp" data-wow-duration="0.8s"
-                                data-wow-delay="0.5s">
-                                <h3>Professional Skills</h3>
-                                <ul class="mh-professional-progress">
-                                    <li>
-                                        <div class="mh-progress mh-progress-circle" data-progress="90">
-                                        </div>
-                                        <div class="pr-skill-name">Communication</div>
-                                    </li>
-                                    <li>
-                                        <div class="mh-progress mh-progress-circle" data-progress="95">
-                                        </div>
-                                        <div class="pr-skill-name">Team Work</div>
-                                    </li>
-                                    <li>
-                                        <div class="mh-progress mh-progress-circle" data-progress="85">
-                                        </div>
-                                        <div class="pr-skill-name">Project Management</div>
-                                    </li>
-                                    <li>
-                                        <div class="mh-progress mh-progress-circle" data-progress="70">
-                                        </div>
-                                        <div class="pr-skill-name">Creativity</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mh-experince image-bg featured-img-one" id="mh-experience">
-            <div class="img-color-overlay">
-                <div class="container">
-                    <div class="row section-separator">
-                        <div class="col-sm-12 col-md-6">
-                            <div class="mh-education">
-                                <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                    Education</h3>
-                                <div class="mh-education-deatils">
-                                    <!-- Education Institutes-->
-                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                                        data-wow-delay="0.3s">
-                                        <h4>​B.Tech( CSE ) From <a class="hyper-tag" href="https://bput.ac.in/"
-                                                target="_blank">BPUT</a></h4>
-                                        <div class="mh-eduyear">August 2013 - July 2017</div>
-                                        <p>I completed my Bachelor's Degree in Computer Science in the
-                                            year 2017 from <a href="https://gate.ac.in/" target="_blank">Gandhi
-                                                Institute of Industrial Technology, Berhampur</a> which
-                                            comes under Biju
-                                            Patnaik University of Technology, Rourkela Odisha. </p>
-                                    </div>
-                                    <!-- Education Institutes-->
-                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                                        data-wow-delay="0.5s">
-                                        <h4>Intermediate From <a class="hyper-tag" target="_blank"
-                                                href="https://binayakacharyacollege.in/">Binayak Acharya
-                                                College</a></h4>
-                                        <div class="mh-eduyear">March 2011 - May 2013</div>
-                                        <p>I completed my intermediate in the year 2013 from Binayak
-                                            Acharya College,
-                                            Berhampur with Physics, Biology, Chemistry, Math.</p>
-                                    </div>
-                                    <!-- Education Institutes-->
-                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                                        data-wow-delay="0.6s">
-                                        <h4>Matriculation From <a class="hyper-tag" href="#">RRBP High
-                                                School</a></h4>
-                                        <div class="mh-eduyear">March 2009 - May 2010</div>
-                                        <p>I completed my matriculation in the year 2010 from Rajakabi
-                                            Radhamohan Bidya
-                                            Peetha, Chikiti, Odisha.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div class="mh-work">
-                                <h3>Work Experience</h3>
-                                <div class="mh-experience-deatils">
-                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                                        data-wow-delay="0.4s">
-                                        <h4>Development Lead <a class="hyper-tag" href="https://people10.com/"
-                                                target="_blank">People10
-                                                Technosoft Pvt. Ltd.</a></h4>
-                                        <div class="mh-eduyear">March 2020 - PRESENT</div>
-                                        <span>Responsibility :</span>
-                                        <ul class="work-responsibility">
-                                            <li><i class="fa fa-circle"></i>Front-end Development</li>
-                                            <li><i class="fa fa-circle"></i>Front-end Architectures</li>
-                                        </ul>
-                                    </div>
-                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                                        data-wow-delay="0.4s">
-                                        <h4>Software Engineer <a class="hyper-tag" href="https://sulopa.com/"
-                                                target="_blank">Sulopa
-                                                Technologies Pvt.
-                                                Ltd.</a></h4>
-                                        <div class="mh-eduyear">April 2019 - March 2020</div>
-                                        <span>Responsibility :</span>
-                                        <ul class="work-responsibility">
-                                            <li><i class="fa fa-circle"></i>Web & Mobile Applications
-                                            </li>
-                                            <li><i class="fa fa-circle"></i>Front-end Lead</li>
-                                        </ul>
-                                    </div>
-                                    <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                                        data-wow-delay="0.4s">
-                                        <h4>Software Engineer <a class="hyper-tag" href="https://sulopa.com/"
-                                                target="_blank">Sulopa
-                                                Solutions</a></h4>
-                                        <div class="mh-eduyear">April 2018 - April 2019</div>
-                                        <span>Responsibility :</span>
-                                        <ul class="work-responsibility">
-                                            <li><i class="fa fa-circle"></i>Static Websites, Web Hosting
-                                            </li>
-                                            <li><i class="fa fa-circle"></i>Wordpress, Magento</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mh-quates image-bg home-2-img">
-            <div class="img-color-overlay">
-                <div class="container">
-                    <div class="row section-separator">
-                        <div class="each-quates col-sm-12 col-md-6">
-                            <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                Interested to Work ?
-                            </h3>
-                            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                                Looking for a freelancer or willing to design free website for community
-                                work or wanted to
-                                contribute in my open source projects, feel free to
-                                contact me.
-                            </p>
-                            <!-- <a href="#mh-contact" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s"
-                            data-wow-delay="0.5s">Contact</a> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mh-blog image-bg featured-img-two" id="mh-blog">
-            <div class="img-color-overlay">
-                <div class="container">
-                    <div class="row section-separator">
-                        <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s"
-                            data-wow-delay="0.2s">
-                            <h3>Featured Posts</h3>
-                        </div>
-                        <div class="col-sm-12 col-md-4">
-                            <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                                data-wow-delay="0.5s">
-                                <img src="assets/blog/images/2/ionic_magento.png" alt=""
-                                    class="img-fluid blog-card-img">
-                                <div class="blog-inner">
-                                    <h2><a href="blog/The-NextGen-E-Commerce-Platform-using-Magento-&-Ionic.html">The
-                                            NextGen E-Commerce Platform using Magento &
-                                            Ionic</a></h2>
-                                    <div class="mh-blog-post-info">
-                                        <ul>
-                                            <li><strong>Post On</strong><a href="#">31.03.19</a></li>
-                                            <li><strong>By</strong><a href="#">Jagan Mohan Bishoyi</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <p>By using the power of reusability we can build a cost-effective,
-                                        time-efficient
-                                        platform, which will help the business owner to extend their
-                                        business in
-                                        multiple platforms.</p>
-                                    <a href="blog/The-NextGen-E-Commerce-Platform-using-Magento-&-Ionic.html">Read
-                                        More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4">
-                            <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s"
-                                data-wow-delay="0.3s">
-                                <img src="assets/blog/images/1/cloud_computing.jpeg" alt=""
-                                    class="img-fluid blog-card-img">
-                                <div class="blog-inner">
-                                    <h2><a href="blog/Let’s-get-started-with-the-world-of-Computing.html">Let’s
-                                            get
-                                            started with the world of Cloud
-                                            Computing</a></h2>
-                                    <div class="mh-blog-post-info">
-                                        <ul>
-                                            <li><strong>Post On</strong><a href="#">28.03.19</a></li>
-                                            <li><strong>By</strong><a href="#">Jagan Mohan Bishoyi</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <p>Cloud computing, often referred to as simply “the cloud,” is the
-                                        delivery of
-                                        on-demand computing resources everything from applications to
-                                        data centers over
-                                        the internet on a pay-for-use basis.</p>
-                                    <a href="blog/Let’s-get-started-with-the-world-of-Computing.html">Read
-                                        More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="mh-footer" id="mh-contact">
-            <div class="map-image image-bg">
-                <div class="container">
-                    <div class="row section-separator">
-                        <div class="col-sm-12 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <div class="row">
-                                <div class="col-sm-12 text-center">
-                                    <ul class="social-icon">
-                                        <li>
-                                            <a href="https://www.linkedin.com/in/jaganmohanbishoyi/" target="_blank"><i
-                                                    class="fa fa-linkedin"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="https://medium.com/@jaganmohanbishoyi" target="_blank"><i
-                                                    class="fa fa-medium"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="https://github.com/jaganbishoyi" target="_blank"><i
-                                                    class="fa fa-github"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!--
-    ==============
-    * JS Files *
-    ==============
-    -->
-
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-        <!-- jQuery -->
-        <script src="assets/plugins/js/jquery.min.js"></script>
-        <!-- popper -->
-        <script src="assets/plugins/js/popper.min.js"></script>
-        <!-- bootstrap -->
-        <script src="assets/plugins/js/bootstrap.min.js"></script>
-        <!-- owl carousel -->
-        <script src="assets/plugins/js/owl.carousel.js"></script>
-        <!-- validator -->
-        <script src="assets/plugins/js/validator.min.js"></script>
-        <!-- wow -->
-        <script src="assets/plugins/js/wow.min.js"></script>
-        <!-- mixin js-->
-        <script src="assets/plugins/js/jquery.mixitup.min.js"></script>
-        <!-- circle progress-->
-        <script src="assets/plugins/js/circle-progress.js"></script>
-        <!-- jquery nav -->
-        <script src="assets/plugins/js/jquery.nav.js"></script>
-        <!-- Fancybox js-->
-        <script src="assets/plugins/js/jquery.fancybox.min.js"></script>
-
-        <!-- isotope js-->
-        <script src="assets/plugins/js/isotope.pkgd.js"></script>
-        <script src="assets/plugins/js/packery-mode.pkgd.js"></script>
-        <!-- Custom Scripts-->
-        <script src="assets/js/custom-scripts.js"></script>
-
+    <body>
+        <app-root></app-root>
+        <script src="runtime.2ec9d0d7b8fcbdcc.js" type="module"></script>
+        <script src="polyfills.7d91855d12e54c45.js" type="module"></script>
+        <script src="scripts.a4d5365c37cc1a11.js" defer></script>
+        <script src="main.5868235faa9ee611.js" type="module"></script>
     </body>
 
 </html>

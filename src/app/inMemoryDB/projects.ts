@@ -202,6 +202,11 @@ export const projects: IProject[] = [
             {
                 id: '1',
                 name: 'live',
+                url: 'https://jaganb.dev/ngx-password-validator/',
+            },
+            {
+                id: '2',
+                name: 'npm',
                 url: 'https://www.npmjs.com/package/ng-password-validator',
             },
             {

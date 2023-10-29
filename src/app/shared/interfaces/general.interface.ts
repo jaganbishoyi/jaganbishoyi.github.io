@@ -17,5 +17,5 @@ export interface IProject {
     overview: string[];
     techs: string[];
     links: ILink[];
-    featured: boolean;
+    featured: [boolean, number];
 }

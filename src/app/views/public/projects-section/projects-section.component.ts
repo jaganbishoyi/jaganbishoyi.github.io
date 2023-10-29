@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { projects } from '@inMemoryDB/projects';
 import { IProject } from '@interfaces/general.interface';
+import { UtilsService } from '@services/utils.services';
 
 @Component({
     selector: 'app-projects-section',
@@ -10,9 +11,13 @@ import { IProject } from '@interfaces/general.interface';
 export class ProjectsSectionComponent {
     projects: IProject[] = [];
 
-    constructor() {
-        this.projects = projects.filter(
-            (project: IProject) => project.featured
+    constructor(
+        private utilsService: UtilsService
+    ) {
+        this.projects = this.utilsService.sortProjects(
+            projects.filter(
+                (project: IProject) => project.featured[0]
+            )
         );
     }
 }

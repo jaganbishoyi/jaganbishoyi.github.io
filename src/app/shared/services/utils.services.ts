@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { IProject } from '@interfaces/general.interface';
 
 @Injectable({
     providedIn: 'root',
@@ -14,5 +15,9 @@ export class UtilsService {
                 inline: 'nearest',
             });
         }
+    }
+
+    sortProjects(projects: IProject[]): IProject[] {
+        return projects.sort((a: IProject, b: IProject) => a.featured[1] - b.featured[1]);
     }
 }

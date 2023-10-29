@@ -29,7 +29,7 @@ export const projects: IProject[] = [
             "This portfolio website serves as a powerful tool for presenting the owner's achievements and attracting potential opportunities. It combines the strengths of modern web development technologies with effective hosting and quality control mechanisms to create an impressive and user-friendly display of the individual's professional journey and capabilities.",
         ],
         techs: ['Angular', 'Bootstrap', 'Husky', 'ESLint', 'GitHub'],
-        featured: true,
+        featured: [true, 2],
     },
     {
         name: 'Password Generator',
@@ -63,7 +63,7 @@ export const projects: IProject[] = [
             'This feature empowers users to make informed decisions about their password choices, enhancing their online security.',
         ],
         techs: ['HTML', 'CSS', 'JavaScript'],
-        featured: true,
+        featured: [true, 3],
     },
     {
         name: 'Javascript Calculator',
@@ -91,7 +91,7 @@ export const projects: IProject[] = [
             'JavaScript calculators provide a convenient and accessible way for users to quickly and accurately compute numerical results, making them a valuable utility for a wide range of tasks, from basic calculations to complex mathematical operations.',
         ],
         techs: ['HTML', 'CSS', 'JavaScript'],
-        featured: false,
+        featured: [false, 0],
     },
     {
         name: 'Analog Clock',
@@ -120,7 +120,7 @@ export const projects: IProject[] = [
             'Creating this analog clock provides an opportunity to learn and apply essential web development skills, offering a hands-on experience in working with HTML for structure, CSS for styling, and JavaScript for dynamic functionality. This project underscores the fundamental concepts of front-end development and is a perfect starting point for further exploration into web development and interactive applications.',
         ],
         techs: ['HTML', 'CSS', 'JavaScript'],
-        featured: false,
+        featured: [false, 0],
     },
     {
         name: 'Stack Exchange',
@@ -150,7 +150,7 @@ export const projects: IProject[] = [
             'Key features include real-time data updates, search functionality, interactive user profiles, tagging system, and an appealing interface.',
         ],
         techs: ['Angular', 'Bootstrap', 'Stack Exchange APIs'],
-        featured: true,
+        featured: [true, 4],
     },
     {
         name: 'Story Books',
@@ -188,6 +188,36 @@ export const projects: IProject[] = [
             'Passport.js',
             'Google OAuth',
         ],
-        featured: true,
+        featured: [true, 5],
     },
+    {
+        name: 'ng-password-validator',
+        description: [
+            'The ng-password-validator is an npm package designed to enhance the password security and validation functionality in Angular applications.',
+            'It provides a user-friendly and interactive pop-up window that appears when users start typing in an input box designated for password entry. This pop-up window serves as a real-time password strength indicator and validation tool.',
+        ],
+        image: 'ng-password-validator.png',
+        id: '7',
+        links: [
+            {
+                id: '1',
+                name: 'live',
+                url: 'https://www.npmjs.com/package/ng-password-validator',
+            },
+            {
+                id: '2',
+                name: 'github',
+                url: 'https://github.com/jaganbishoyi/ngx-password-validator',
+            },
+        ],
+        overview: [
+            'The ng-password-validator is an npm package designed to enhance the password security and validation functionality in Angular applications.',
+            'It provides a user-friendly and interactive pop-up window that appears when users start typing in an input box designated for password entry. This pop-up window serves as a real-time password strength indicator and validation tool.',
+            "The primary purpose of the Password Validator is to assist users in creating strong and secure passwords by guiding them through the password acceptance criteria. As users type their password, the pop-up window evaluates the password strength against preconfigured criteria. These criteria typically include requirements such as a minimum length, the presence of uppercase and lowercase letters, numbers, and special characters.",
+            "As users continue to type their password and meet these criteria, they receive instant feedback in the form of a success message. This immediate feedback helps users understand whether their chosen password meets the necessary security standards, which encourages the creation of strong and resilient passwords.",
+            "The Password Validator is a valuable addition to Angular applications, as it promotes better security practices by guiding users in real-time, ultimately leading to improved protection against unauthorized access and data breaches. This package can be easily integrated into Angular projects, making it a convenient and effective tool for enhancing password security and user experience."
+        ],
+        techs: ['Angular', 'GitHub', 'npm'],
+        featured: [true, 1],
+    }
 ];

@@ -3,8 +3,9 @@
 
 npm run build
 cp ./docs/index.html ./docs/404.html
+echo "jaganb.dev" > ./docs/CNAME
 git add .
-git commit -m "Code built successfully."
+git commit -m "Code built successfully." --no-verify
 
 # # Define source and destination repository URLs
 # source_repo_url="https://github.com/jaganbishoyi/portfolio"

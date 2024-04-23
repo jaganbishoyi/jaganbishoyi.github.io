@@ -19,3 +19,10 @@ export interface IProject {
     links: ILink[];
     featured: [boolean, number];
 }
+
+export interface ISEOEssentials {
+    canonicalLink: string;
+    title: string;
+    description: string;
+    image?: string;
+}

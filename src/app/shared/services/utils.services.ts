@@ -1,10 +1,18 @@
-import { Injectable } from '@angular/core';
-import { IProject } from '@interfaces/general.interface';
+import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { IProject, ISEOEssentials } from '@interfaces/general.interface';
 
 @Injectable({
     providedIn: 'root',
 })
 export class UtilsService {
+    constructor(
+        public meta: Meta,
+        private titleService: Title,
+        @Inject(DOCUMENT) private document: Document,
+    ) { }
+
     scrollToView(id: string): void {
         const element: HTMLElement | null = document.getElementById(id);
 
@@ -19,5 +27,50 @@ export class UtilsService {
 
     sortProjects(projects: IProject[]): IProject[] {
         return projects.sort((a: IProject, b: IProject) => a.featured[1] - b.featured[1]);
+    }
+
+    setSEOEssentials(data: ISEOEssentials): void {
+        this.addCanonicalTag(data.canonicalLink);
+        this.updateMetaTag(data);
+    }
+
+    private addCanonicalTag(link: string): void {
+        // As per the standard specification only one canonical can be added
+        // so we need to remove the canonical if exist before adding
+        const head = this.document.getElementsByTagName('head')[0];
+        const linkCanonical = this.document.querySelector("link[rel~='canonical']");
+
+        if (linkCanonical) {
+            head.removeChild(linkCanonical);
+        }
+
+        const canonical = this.document.createElement("link");
+        canonical.rel = "canonical";
+        canonical.href = link;
+        head.appendChild(canonical);
+    }
+
+    private updateMetaTag(data: ISEOEssentials): void {
+        this.titleService.setTitle(data.title);
+
+        // Html MetaTag
+        this.meta.addTag({ property: "og:title", content: data.title });
+        this.meta.addTag({ property: "og:description", content: data.description, });
+        this.meta.addTag({ property: "og:site_name", content: "https://jaganb.dev/ | Jagan Mohan Bishoyi", });
+        this.meta.addTag({ property: "og:type", content: 'website' });
+        this.meta.addTag({ property: "og:url", content: data.canonicalLink });
+        this.meta.addTag({ property: "og:locale", content: 'en_US' });
+
+        // Twitter
+        this.meta.addTag({ name: "twitter:card", content: data.title });
+        this.meta.addTag({ name: "twitter:title", content: data.title });
+        this.meta.addTag({ name: "twitter:description", content: data.description, });
+        this.meta.addTag({ name: "twitter:url", content: data.canonicalLink });
+        this.meta.addTag({ name: "description", content: data.description });
+
+        if (data.image) {
+            this.meta.addTag({ property: "og:image", content: data.image });
+            this.meta.addTag({ name: "twitter:image", content: data.image });
+        }
     }
 }

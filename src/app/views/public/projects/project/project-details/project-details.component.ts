@@ -1,32 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
 import { projects } from '@inMemoryDB/projects';
-import { ILink, IProject } from '@interfaces/general.interface';
+import { ILink, IProject, ISEOEssentials } from '@interfaces/general.interface';
+import { UtilsService } from '@services/utils.services';
 
 @Component({
     selector: 'app-project-details',
     templateUrl: './project-details.component.html',
     styleUrls: ['./project-details.component.scss'],
 })
-export class ProjectDetailsComponent {
-    project: IProject | undefined = {} as IProject;
+export class ProjectDetailsComponent implements OnInit {
+    project: IProject | any = {} as IProject;
 
     constructor(
         private activatedRoute: ActivatedRoute,
         private location: Location,
-        private titleService: Title
+        private utils: UtilsService
     ) {
         this.activatedRoute.params.subscribe((params: Params) => {
             this.project = projects.find(
                 (project: IProject) => project.id == params['projectId']
             );
         });
+    }
 
-        this.titleService.setTitle(
-            `${this.project?.name} : ${this.project?.description[0]}`
-        );
+    ngOnInit(): void {
+        const slug = this.project?.name.replace(' ', '-').toLowerCase();
+
+        const SEOData: ISEOEssentials = {
+            title: `${this.project?.name} : ${this.project?.description[0]}`,
+            description: this.project?.description.slice(0, -1).join(', ') + this.project?.description.slice(-1),
+            canonicalLink: `https://jaganb.dev/projects/${this.project?.id}/${slug}`,
+            image: `https://jaganb.dev/assets/images/projects/${this.project?.image}`
+        };
+        this.utils.setSEOEssentials(SEOData);
     }
 
     navigateToProject(): void {

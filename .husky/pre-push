@@ -3,6 +3,7 @@
 
 npm run build
 cp ./docs/index.html ./docs/404.html
+cp ./sitemap.xml ./docs/sitemap.xml
 echo "jaganb.dev" > ./docs/CNAME
 git add .
 git commit -m "Code built successfully." --no-verify

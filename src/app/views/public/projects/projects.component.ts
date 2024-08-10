@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
 import { projects } from '@inMemoryDB/projects';
-import { IProject, ISEOEssentials } from '@interfaces/general.interface';
+import { IProject, ISeoEssentials } from '@interfaces/general.interface';
 import { UtilsService } from '@services/utils.services';
 
 @Component({
@@ -21,7 +21,7 @@ export class ProjectsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        const SEOData: ISEOEssentials = {
+        const SEOData: ISeoEssentials = {
             title: "Projects - Here you will find some of the personal and clients projects that I created with each project containing its own case study | https://jaganb.dev/ | Jagan Mohan Bishoyi",
             description: `In my journey, I've had the privilege of spearheading ${this.projects.length} projects,
                     each marked by its unique challenges and accomplishments.The invaluable lessons

@@ -20,7 +20,7 @@ export interface IProject {
     featured: [boolean, number];
 }
 
-export interface ISEOEssentials {
+export interface ISeoEssentials {
     canonicalLink: string;
     title: string;
     description: string;

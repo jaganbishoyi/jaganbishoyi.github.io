@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Params } from '@angular/router';
 import { projects } from '@inMemoryDB/projects';
-import { ILink, IProject, ISEOEssentials } from '@interfaces/general.interface';
+import { ILink, IProject, ISeoEssentials } from '@interfaces/general.interface';
 import { UtilsService } from '@services/utils.services';
 
 @Component({
@@ -28,7 +28,7 @@ export class ProjectDetailsComponent implements OnInit {
     ngOnInit(): void {
         const slug = this.project?.name.replace(' ', '-').toLowerCase();
 
-        const SEOData: ISEOEssentials = {
+        const SEOData: ISeoEssentials = {
             title: `${this.project?.name} : ${this.project?.description[0]}`,
             description: this.project?.description.slice(0, -1).join(', ') + this.project?.description.slice(-1),
             canonicalLink: `https://jaganb.dev/projects/${this.project?.id}/${slug}`,

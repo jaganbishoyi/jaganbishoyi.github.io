@@ -1,6 +1,6 @@
 import { Component, Inject, Injector, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { ISEOEssentials } from '@interfaces/general.interface';
+import { ISeoEssentials } from '@interfaces/general.interface';
 import { UtilsService } from '@services/utils.services';
 import { REQUEST_URL } from './request-url';
 import { isPlatformServer } from '@angular/common';
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
         // this.router.events.subscribe((event) => {
         //     if (event instanceof NavigationEnd) {
         //         if (this.router.url === '/') {
-        //             const SEOData: ISEOEssentials = {
+        //             const SEOData: ISeoEssentials = {
         //                 title: "Jagan Mohan Bishoyi | Angular | Frontend Web Developer",
         //                 description: "Hey, i'm Jagan Mohan. I am a dedicated Front-End Developer with more than half a decade of experience delivering high-quality web solutions and having expertise in front-end web development.",
         //                 canonicalLink: 'https://jaganb.dev/',
@@ -75,7 +75,7 @@ export class AppComponent implements OnInit {
                 // }
 
                 case "/": {
-                    const SEOData: ISEOEssentials = {
+                    const SEOData: ISeoEssentials = {
                         title: "Jagan Mohan Bishoyi | Angular | Frontend Web Developer",
                         description: "Hey, i'm Jagan Mohan. I am a dedicated Front-End Developer with more than half a decade of experience delivering high-quality web solutions and having expertise in front-end web development.",
                         canonicalLink: 'https://jaganb.dev/',

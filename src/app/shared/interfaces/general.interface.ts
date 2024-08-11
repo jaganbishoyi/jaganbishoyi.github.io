@@ -26,3 +26,18 @@ export interface ISeoEssentials {
     description: string;
     image?: string;
 }
+
+export interface IBlogContent {
+    title: string;
+    publishDate: string;
+    tags: string[];
+    id: string;
+    featured: boolean;
+    author: IAuthor
+}
+
+export interface IAuthor {
+    name: string;
+    image: string;
+    publishedDate: string;
+}

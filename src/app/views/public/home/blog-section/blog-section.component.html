@@ -1,0 +1,26 @@
+<div class="row bg-1" id="blogs" #scrollSection>
+    <div class="col-12">
+        <div class="projects-section">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 text-center">
+                    <h1 class="heading">Featured Blogs</h1>
+                    <p class="intro">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dolor sunt delectus rem earum,
+                        in facere vero eos esse? Id?
+                    </p>
+                    <button type="button" class="btn btn-outline-primary btn-outline-theme my-5" routerLink="/blogs">
+                        See All Blogs
+                    </button>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3" *ngFor="let blog of blogs">
+                        <app-single-blog [content]="blog"></app-single-blog>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

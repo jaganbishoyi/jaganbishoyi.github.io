@@ -15,7 +15,7 @@ export const navs: INav[] = [
     },
     {
         name: 'blog',
-        route: 'blog',
+        route: 'blogs',
     },
     {
         name: 'contact',

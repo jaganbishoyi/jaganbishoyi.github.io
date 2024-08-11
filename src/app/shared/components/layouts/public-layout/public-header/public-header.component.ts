@@ -25,9 +25,12 @@ export class PublicHeaderComponent
         this.router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {
                 this.active = router.parseUrl(router.url).fragment;
-
-                if (this.router.url === '/projects') {
+                if (this.router.url.includes('projects')) {
                     this.active = 'projects';
+                }
+
+                if (this.router.url.includes('blogs')) {
+                    this.active = 'blogs';
                 }
             }
         });

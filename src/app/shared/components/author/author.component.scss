@@ -1,0 +1,28 @@
+.avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+
+        .name {
+            font-size: 1em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .date {
+            font-size: 0.8em;
+            color: rgb(23, 23, 23);
+            font-weight: lighter;
+        }
+    }
+}

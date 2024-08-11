@@ -13,7 +13,7 @@ const routes: Routes = [
     },
     { path: 'projects', component: ProjectsComponent },
     {
-        path: 'blog',
+        path: 'blogs',
         loadChildren: () =>
             import("./blog/blog.module").then(
                 (m) => m.BlogModule

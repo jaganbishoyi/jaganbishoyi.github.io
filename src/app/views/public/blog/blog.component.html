@@ -1,1 +1,24 @@
-<p>blog works!</p>
+<div class="container-fluid bg-1 blog-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Angular</h1>
+                <p class="mb-3">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid expedita commodi impedit quas
+                    error
+                    sed laboriosam sequi nobis ab? Reiciendis id fuga repellendus laboriosam eius odit suscipit nemo
+                    molestiae quidem modi. Officiis quam a voluptate eius, in dicta quo! Reiciendis!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 my-5">
+            <ng-container *ngFor="let blog of blogs">
+                <app-single-blog [content]="blog"></app-single-blog>
+            </ng-container>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

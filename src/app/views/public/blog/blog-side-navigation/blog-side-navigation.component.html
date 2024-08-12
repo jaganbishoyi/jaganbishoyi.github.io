@@ -1,0 +1,5 @@
+<ul class="side-navs">
+    <li *ngFor="let nav of navs" [ngClass]="{'active': nav.route === active}" (click)="navigate(nav)">
+        {{nav.name}}
+    </li>
+</ul>

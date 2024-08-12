@@ -22,3 +22,30 @@ export const navs: INav[] = [
         route: 'contact',
     }
 ];
+
+export const blogSideNavs: INav[] = [
+    {
+        name: 'All',
+        route: ''
+    },
+    {
+        name: 'Angular',
+        route: 'angular'
+    },
+    {
+        name: 'Javascript',
+        route: 'javascript'
+    },
+    {
+        name: 'HTML',
+        route: 'html'
+    },
+    {
+        name: 'CSS',
+        route: 'css'
+    },
+    {
+        name: 'Version Control',
+        route: 'version-control'
+    },
+];

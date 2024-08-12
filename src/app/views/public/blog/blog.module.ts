@@ -5,12 +5,14 @@ import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './blog.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { BlogSideNavigationComponent } from './blog-side-navigation/blog-side-navigation.component';
 
 
 @NgModule({
     declarations: [
         BlogComponent,
-        BlogDetailsComponent
+        BlogDetailsComponent,
+        BlogSideNavigationComponent
     ],
     imports: [
         CommonModule,

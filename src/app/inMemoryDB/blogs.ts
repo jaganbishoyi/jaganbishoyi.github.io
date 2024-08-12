@@ -16,7 +16,7 @@ export const blogs: IBlogContent[] = [
     {
         title: 'How to Scrape Data From a Page With Infinite Scroll! ♾️',
         publishDate: '2024-08-12',
-        tags: ['javascript', 'angular', 'interview', 'javascript', 'angular', 'interview'],
+        tags: ['javascript', 'angular', 'interview'],
         id: '2',
         featured: false,
         author: {
@@ -28,7 +28,7 @@ export const blogs: IBlogContent[] = [
     {
         title: 'How to Scrape Data From a Page With Infinite Scroll! ♾️',
         publishDate: '2024-06-19',
-        tags: ['javascript', 'angular', 'interview'],
+        tags: ['version-control'],
         id: '3',
         featured: true,
         author: {
@@ -40,7 +40,7 @@ export const blogs: IBlogContent[] = [
     {
         title: 'How to Scrape Data From a Page With Infinite Scroll! ♾️',
         publishDate: '2024-06-29',
-        tags: ['javascript', 'angular', 'interview'],
+        tags: ['javascript', 'html', 'interview'],
         id: '4',
         featured: true,
         author: {
@@ -52,7 +52,7 @@ export const blogs: IBlogContent[] = [
     {
         title: 'How to Scrape Data From a Page With Infinite Scroll! ♾️',
         publishDate: '2023-09-01',
-        tags: ['javascript', 'angular', 'interview', 'javascript', 'angular', 'interview'],
+        tags: ['javascript'],
         id: '5',
         featured: true,
         author: {

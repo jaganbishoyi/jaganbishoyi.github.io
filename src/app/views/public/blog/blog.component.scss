@@ -1,3 +1,12 @@
 .blog-container {
     min-height: 90vh;
+
+    .no-data {
+        background: #fff;
+        margin: 0 0 1rem;
+        position: relative;
+        border-radius: 7px;
+        padding: 1.25rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
 }

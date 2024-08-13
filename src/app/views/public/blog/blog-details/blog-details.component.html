@@ -18,9 +18,9 @@
     </div>
     <div class="blog-content">
         <div class="row my-5">
-            <!-- <div class="col-12" *ngFor="let project of projects; let last = last" [ngClass]="{'last-project': last}">
-                <app-project [project]="project"></app-project>
-            </div> -->
+            <div class="col-12">
+                <app-preview-markdown [path]="'assets/blogs/'+blog.URL"> </app-preview-markdown>
+            </div>
         </div>
     </div>
 </div>

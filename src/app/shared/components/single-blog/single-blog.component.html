@@ -5,6 +5,7 @@
             {{content.title}}
         </a>
     </h2>
+    <p>{{content.description}}</p>
     <div class="tags">
         <span class="tag" *ngFor="let tag of content.tags; let index=index;" [ngClass]="'tag-' + index">
             <span class="hash">#</span>

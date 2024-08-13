@@ -8,13 +8,14 @@
 
     h2 {
         color: rgb(23, 23, 23);
-        line-height: 1.5rem;
+        line-height: 1.8rem;
         font-size: 1.5rem !important;
         overflow-wrap: break-word !important;
         overflow-wrap: anywhere;
         word-break: break-word;
         margin-bottom: 0.25rem !important;
         font-weight: bold;
+        display: inline-block;
 
         a {
             color: inherit;

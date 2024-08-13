@@ -21,7 +21,6 @@ export class BlogDetailsComponent implements OnInit {
         this.activatedRoute.params.subscribe((params: any) => {
             const blogId = params.id;
             const blog = blogs.find((blog: IBlogContent) => blog.id === blogId);
-            console.log(blog);
             if (blog) {
                 this.blog = blog;
             }

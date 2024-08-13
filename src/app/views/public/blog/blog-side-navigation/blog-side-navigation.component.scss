@@ -1,3 +1,5 @@
+@import "../../../../../assets/styles/variables";
+
 ul.side-navs {
     list-style: none;
     padding: 0;
@@ -28,8 +30,8 @@ ul.side-navs {
         }
 
         &.active {
-            background-color: #8b3dff;
-            color: #fff;
+            background-color: $theme-color;
+            color: $white;
         }
     }
 }

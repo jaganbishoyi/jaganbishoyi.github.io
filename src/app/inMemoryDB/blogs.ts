@@ -2,63 +2,18 @@ import { IBlogContent } from '@interfaces/general.interface';
 
 export const blogs: IBlogContent[] = [
     {
-        title: 'How to Scrape Data From a Page With Infinite Scroll! ♾️',
-        publishDate: '2024-08-11',
-        tags: ['javascript', 'angular', 'interview'],
+        title: 'What is async await in JavaScript?',
+        description: 'async and await are modern JavaScript features introduced in ES2017 (ES8) that make it easier to work with asynchronous code. They allow you to write asynchronous code in a more readable, synchronous-like manner.',
+        publishDate: '2024-08-13',
+        tags: ['javascript', 'interview'],
         id: '1',
+        slug: 'async-await-in-javaScript',
         featured: true,
         author: {
             name: 'Jagan Mohan Bishoyi',
             image: 'assets/images/me.png',
-            publishedDate: '2024-08-11'
-        }
-    },
-    {
-        title: 'How to Scrape Data From a Page With Infinite Scroll! ♾️',
-        publishDate: '2024-08-12',
-        tags: ['javascript', 'angular', 'interview'],
-        id: '2',
-        featured: false,
-        author: {
-            name: 'Jagan Mohan Bishoyi',
-            image: 'assets/images/me.png',
-            publishedDate: '2024-08-12'
-        }
-    },
-    {
-        title: 'How to Scrape Data From a Page With Infinite Scroll! ♾️',
-        publishDate: '2024-06-19',
-        tags: ['version-control'],
-        id: '3',
-        featured: true,
-        author: {
-            name: 'Jagan Mohan Bishoyi',
-            image: 'assets/images/me.png',
-            publishedDate: '2024-06-19'
-        }
-    },
-    {
-        title: 'How to Scrape Data From a Page With Infinite Scroll! ♾️',
-        publishDate: '2024-06-29',
-        tags: ['javascript', 'html', 'interview'],
-        id: '4',
-        featured: true,
-        author: {
-            name: 'Jagan Mohan Bishoyi',
-            image: 'assets/images/me.png',
-            publishedDate: '2024-06-29'
-        }
-    },
-    {
-        title: 'How to Scrape Data From a Page With Infinite Scroll! ♾️',
-        publishDate: '2023-09-01',
-        tags: ['javascript'],
-        id: '5',
-        featured: true,
-        author: {
-            name: 'Jagan Mohan Bishoyi',
-            image: 'assets/images/me.png',
-            publishedDate: '2023-09-01'
-        }
+            publishedDate: '2024-08-13'
+        },
+        URL: 'javascript/async-await.md'
     },
 ]

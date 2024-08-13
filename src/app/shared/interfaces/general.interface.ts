@@ -29,11 +29,14 @@ export interface ISeoEssentials {
 
 export interface IBlogContent {
     title: string;
+    description: string;
     publishDate: string;
     tags: string[];
     id: string;
+    slug: string;
     featured: boolean;
-    author: IAuthor
+    author: IAuthor;
+    URL: string;
 }
 
 export interface IAuthor {

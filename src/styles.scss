@@ -138,3 +138,11 @@ button.custom-btn {
 .truncate-at-3 {
     @include truncate(3)
 }
+
+.truncate-at-4 {
+    @include truncate(4)
+}
+
+.truncate-at-5 {
+    @include truncate(5)
+}

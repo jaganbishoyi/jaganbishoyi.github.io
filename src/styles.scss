@@ -123,3 +123,18 @@ button.custom-btn {
         border-bottom: none !important;
     }
 }
+
+@mixin truncate($noOfLines) {
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: $noOfLines;
+    -webkit-box-orient: vertical;
+}
+
+.truncate-at-2 {
+    @include truncate(2)
+}
+
+.truncate-at-3 {
+    @include truncate(3)
+}

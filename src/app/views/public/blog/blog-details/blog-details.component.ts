@@ -19,8 +19,8 @@ export class BlogDetailsComponent implements OnInit {
 
     ngOnInit(): void {
         this.activatedRoute.params.subscribe((params: any) => {
-            const blogId = params.id;
-            const blog = blogs.find((blog: IBlogContent) => blog.id === blogId);
+            const slug = params.slug;
+            const blog = blogs.find((blog: IBlogContent) => blog.slug === slug);
             if (blog) {
                 this.blog = blog;
             }

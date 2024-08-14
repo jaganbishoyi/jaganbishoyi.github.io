@@ -6,11 +6,7 @@
         </a>
     </h2>
     <p class="truncate-at-3">{{content.description}}</p>
-    <div class="tags">
-        <span class="tag" [ngClass]="'tag-' + index" *ngFor="let tag of content.tags; let index=index;"
-            (click)="navigate(tag)">
-            <span class="hash">#</span>
-            {{tag}}
-        </span>
+    <div class="mt-2">
+        <app-tags [tags]="content.tags"></app-tags>
     </div>
 </div>

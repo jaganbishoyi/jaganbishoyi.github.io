@@ -6,11 +6,13 @@ import { RouterModule } from '@angular/router';
 import { PreviewMarkdownComponent } from './components/preview-markdown/preview-markdown.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient } from '@angular/common/http';
+import { TagsComponent } from './components/tags/tags.component';
 @NgModule({
     declarations: [
         AuthorComponent,
         SingleBlogComponent,
-        PreviewMarkdownComponent
+        PreviewMarkdownComponent,
+        TagsComponent
     ],
     imports: [
         CommonModule,
@@ -20,7 +22,8 @@ import { HttpClient } from '@angular/common/http';
     exports: [
         AuthorComponent,
         SingleBlogComponent,
-        PreviewMarkdownComponent
+        PreviewMarkdownComponent,
+        TagsComponent
     ]
 })
 export class SharedModule { }

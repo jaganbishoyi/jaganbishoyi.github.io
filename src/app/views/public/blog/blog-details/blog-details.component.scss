@@ -19,12 +19,14 @@
         text-align: center;
 
         h1 {
-            font-size: 36px !important;
-            text-transform: capitalize;
+            font-size: 3rem !important;
+            // text-transform: capitalize;
             letter-spacing: 3px;
             color: $black;
-            font-weight: 600;
+            ;
+            font-weight: 800;
             margin: 0 !important;
+            line-height: 1.25;
         }
 
         .action-btn {

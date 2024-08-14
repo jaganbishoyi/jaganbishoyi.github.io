@@ -1,0 +1,16 @@
+<div class="single-blog">
+    <app-author [content]="content.author"></app-author>
+    <h2 class="truncate-at-2">
+        <a rel="noopener noreferrer" [routerLink]="'/blogs/'+content.slug">
+            {{content.title}}
+        </a>
+    </h2>
+    <p class="truncate-at-3">{{content.description}}</p>
+    <div class="tags">
+        <span class="tag" [ngClass]="'tag-' + index" *ngFor="let tag of content.tags; let index=index;"
+            (click)="navigate(tag)">
+            <span class="hash">#</span>
+            {{tag}}
+        </span>
+    </div>
+</div>

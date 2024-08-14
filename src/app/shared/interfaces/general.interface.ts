@@ -20,9 +20,27 @@ export interface IProject {
     featured: [boolean, number];
 }
 
-export interface ISEOEssentials {
+export interface ISeoEssentials {
     canonicalLink: string;
     title: string;
     description: string;
     image?: string;
+}
+
+export interface IBlogContent {
+    title: string;
+    description: string;
+    publishDate: string;
+    tags: string[];
+    id: string;
+    slug: string;
+    featured: boolean;
+    author: IAuthor;
+    URL: string;
+}
+
+export interface IAuthor {
+    name: string;
+    image: string;
+    publishedDate: string;
 }

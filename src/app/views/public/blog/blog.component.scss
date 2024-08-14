@@ -1,0 +1,24 @@
+.blog-container {
+    min-height: 90vh;
+
+    .no-data {
+        background: #fff;
+        margin: 0 0 1rem;
+        position: relative;
+        border-radius: 7px;
+        padding: 1.25rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    @media only screen and (max-width: 768px) {
+        .side-nav {
+            margin: 40px 0 20px 0 !important;
+        }
+
+        .blogs {
+            margin: 10px 0 20px 0 !important;
+            border-top: 1px dashed #000;
+            padding-top: 30px;
+        }
+    }
+}

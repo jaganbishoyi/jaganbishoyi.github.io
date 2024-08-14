@@ -20,7 +20,6 @@
         text-align: center;
 
         h1 {
-            font-size: 45px !important;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: $black;
@@ -29,7 +28,6 @@
         }
 
         p {
-            font-size: 20px;
             width: 100%;
             line-height: 1.7;
             margin-top: 30px !important;
@@ -38,16 +36,7 @@
     }
 }
 
-h4.heading {
-    font-weight: 700;
-    font-size: 28px !important;
-    margin-bottom: 20px !important;
-}
-
 p.overview {
-    font-size: 18px !important;
-    line-height: 1.5;
-    color: $black;
     margin-bottom: 15px !important;
     text-align: justify;
 

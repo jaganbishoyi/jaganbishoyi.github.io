@@ -1,6 +1,6 @@
 import { Component, Inject, Injector, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { ISEOEssentials } from '@interfaces/general.interface';
+import { ISeoEssentials } from '@interfaces/general.interface';
 import { UtilsService } from '@services/utils.services';
 import { REQUEST_URL } from './request-url';
 import { isPlatformServer } from '@angular/common';
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
         // this.router.events.subscribe((event) => {
         //     if (event instanceof NavigationEnd) {
         //         if (this.router.url === '/') {
-        //             const SEOData: ISEOEssentials = {
+        //             const SEOData: ISeoEssentials = {
         //                 title: "Jagan Mohan Bishoyi | Angular | Frontend Web Developer",
         //                 description: "Hey, i'm Jagan Mohan. I am a dedicated Front-End Developer with more than half a decade of experience delivering high-quality web solutions and having expertise in front-end web development.",
         //                 canonicalLink: 'https://jaganb.dev/',
@@ -41,14 +41,14 @@ export class AppComponent implements OnInit {
 
             switch (reqUrl) {
                 // case "/testimonials": {
-                //     this.addCanonicalTag("https://olasjobs.org/testimonials");
+                //     this.addCanonicalTag("https://URL/testimonials");
                 //     const SEOData: IMetaInfo = {
-                //         title: "Testimonial | OLAS Jobs",
-                //         site_name: "Find Jobs for K-12 Education | OLAS Jobs",
+                //         title: "Testimonial |Blog",
+                //         site_name: "blog site |Blog",
                 //         description: "Check out what our job seekers and employers think of us.",
-                //         url: "https://www.olasjobs.org/testimonials",
-                //         image: "assets/Images/olas-home-page.jpg",
-                //         twitterTitle: "Testimonial | OLAS",
+                //         url: "https://URL/testimonials",
+                //         image: "assets/Images/home-page.jpg",
+                //         twitterTitle: "Testimonial | blog",
                 //     };
                 //     this.updateMetaTag(SEOData);
                 //     this.addTestimonialsToBody();
@@ -59,14 +59,14 @@ export class AppComponent implements OnInit {
                 //         `${this.constantService.getHostingURL()}/GetTotalDistrictCount?token=${token}`,
                 //         options
                 //     ).subscribe((count: number) => {
-                //         this.addCanonicalTag("https://olasjobs.org/districts");
+                //         this.addCanonicalTag("https://URL/districts");
                 //         const SEOData: IMetaInfo = {
-                //             title: "olasjobs.org offers opportunities in " + count + " districts spanning New York, New Jersey, Connecticut, Massachusetts, Pennsylvania, Vermont, and the neighboring regions. | OLAS Jobs",
-                //             site_name: "Find Jobs for K-12 Education | OLAS Jobs",
-                //             description: "olasjobs.org offers opportunities in " + count + " districts spanning New York, New Jersey, Connecticut, Massachusetts, Pennsylvania, Vermont, and the neighboring regions.",
-                //             url: "https://www.olasjobs.org/districts",
-                //             image: "assets/Images/olas-home-page.jpg",
-                //             twitterTitle: "Find Jobs for K-12 Education | OLAS Jobs",
+                //             title: "url offers opportunities in " + count + " districts spanning New York, New Jersey, Connecticut, Massachusetts, Pennsylvania, Vermont, and the neighboring regions. |Blog",
+                //             site_name: "blog site |Blog",
+                //             description: "url offers opportunities in " + count + " districts spanning New York, New Jersey, Connecticut, Massachusetts, Pennsylvania, Vermont, and the neighboring regions.",
+                //             url: "https://URL/districts",
+                //             image: "assets/Images/home-page.jpg",
+                //             twitterTitle: "blog site |Blog",
                 //         };
 
                 //         this.updateMetaTag(SEOData);
@@ -75,7 +75,7 @@ export class AppComponent implements OnInit {
                 // }
 
                 case "/": {
-                    const SEOData: ISEOEssentials = {
+                    const SEOData: ISeoEssentials = {
                         title: "Jagan Mohan Bishoyi | Angular | Frontend Web Developer",
                         description: "Hey, i'm Jagan Mohan. I am a dedicated Front-End Developer with more than half a decade of experience delivering high-quality web solutions and having expertise in front-end web development.",
                         canonicalLink: 'https://jaganb.dev/',
@@ -94,14 +94,14 @@ export class AppComponent implements OnInit {
                     //         `${this.constantService.getHostingURL()}/GetJobDetails?JobNumber=${jobNumber}&token=${token}`,
                     //         options
                     //     ).subscribe((data: IJobMetaInfo) => {
-                    //         this.addCanonicalTag("https://olasjobs.org/job-details/" + data.JobNumber);
+                    //         this.addCanonicalTag("https://URL/job-details/" + data.JobNumber);
                     //         const SEOData: IMetaInfo = {
                     //             title: data.JobDescription + " opening in " + data.DistrictName,
-                    //             site_name: "Find Jobs for K-12 Education | OLAS Jobs",
+                    //             site_name: "blog site |Blog",
                     //             description: "Apply for " + data.JobDescription + " opening in " + data.DistrictName,
-                    //             url: "https://www.olasjobs.org/jobs",
-                    //             image: "assets/Images/olas-home-page.jpg",
-                    //             twitterTitle: "Find Jobs for K-12 Education | OLAS Jobs",
+                    //             url: "https://URL/jobs",
+                    //             image: "assets/Images/home-page.jpg",
+                    //             twitterTitle: "blog site |Blog",
                     //         };
                     //         this.addJobDetailsToBody(data);
                     //         if (data && !data.IsInstructionalJob) {
@@ -120,14 +120,14 @@ export class AppComponent implements OnInit {
                     //                 `${this.constantService.getHostingURL()}/GetDistrictInformation?districtLabel=${districtLabel}&token=${token}`,
                     //                 options
                     //             ).subscribe((data: IDistrictMetaInfo) => {
-                    //                 this.addCanonicalTag("https://olasjobs.org/" + districtLabel);
+                    //                 this.addCanonicalTag("https://URL/" + districtLabel);
                     //                 const SEOData: IMetaInfo = {
-                    //                     title: data.result.DistrictName + ' | OLAS Jobs',
-                    //                     site_name: "Find Jobs for K-12 Education | OLAS Jobs",
+                    //                     title: data.result.DistrictName + ' |Blog',
+                    //                     site_name: "blog site |Blog",
                     //                     description: `Learn about working at ${data.result.DistrictName} in ${data.result.City}, ${data.result.State}, ${data.result.RegionName}. See jobs, salaries,and more for ${data.result.DistrictName}, ${data.result.City} location.`,
-                    //                     url: "https://olasjobs.org/" + districtLabel,
-                    //                     image: "assets/Images/olas-home-page.jpg",
-                    //                     twitterTitle: data.result.DistrictName + ' | OLAS Jobs',
+                    //                     url: "https://URL/" + districtLabel,
+                    //                     image: "assets/Images/home-page.jpg",
+                    //                     twitterTitle: data.result.DistrictName + ' |Blog',
                     //                 };
 
                     //                 this.addDistrictDetailsToBody(data);

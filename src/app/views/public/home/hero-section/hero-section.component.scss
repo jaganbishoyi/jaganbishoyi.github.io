@@ -1,0 +1,136 @@
+@import "variables";
+
+.hero-section {
+    height: 100vh;
+    min-height: 500px;
+    max-height: 600px;
+    position: relative;
+
+    .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 800px;
+        width: 92%;
+        text-align: center;
+
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: $black;
+            font-weight: 800;
+            margin-bottom: 30px !important;
+        }
+
+        p {
+            font-size: 18px;
+            width: 100%;
+            line-height: 1.7;
+            margin-top: 30px;
+        }
+
+        button {
+            margin-top: 50px;
+        }
+    }
+
+    .socials {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: $white;
+        box-shadow: rgba(100, 100, 111, .2) 0 7px 29px 0;
+        padding: 5px;
+        left: 0;
+
+        .social {
+            width: 50px;
+
+            a {
+                width: 100%;
+                display: block;
+                padding: 10px;
+                transition: background .3s;
+                border-radius: 5px;
+
+                &:hover {
+                    background: $theme-color;
+                    transition: background .5s ease-in
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .mouse-scroll {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 40px;
+
+        @keyframes wheel {
+            to {
+                opacity: 0;
+                top: 27px
+            }
+        }
+
+        @-webkit-keyframes wheel {
+            to {
+                opacity: 0;
+                top: 27px
+            }
+        }
+
+        .mouse {
+            width: 25px;
+            height: 40px;
+            border: 2px solid $black;
+            border-radius: 60px;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                width: 5px;
+                height: 5px;
+                position: absolute;
+                top: 7px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $black;
+                border-radius: 50%;
+                opacity: 1;
+                -webkit-animation: wheel 1.3s infinite;
+                animation: wheel 1.3s infinite;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $responsive-width) {
+    .hero-section {
+        .socials {
+            display: none;
+        }
+
+        .mouse-scroll {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    .hero-section {
+        .hero-content {
+            h1 {
+                font-size: 35px !important;
+            }
+        }
+    }
+}

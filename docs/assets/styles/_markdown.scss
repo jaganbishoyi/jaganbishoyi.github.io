@@ -1,0 +1,137 @@
+@import "../../assets/styles/variables";
+
+markdown {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $header-font !important;
+        font-weight: 600;
+        line-height: 1.25;
+        padding: 0;
+        margin: calc(1.25rem / 2) 0 !important;
+    }
+
+    h1 {
+        font-size: 1.75em !important;
+    }
+
+    h2 {
+        font-size: 1.5em !important;
+    }
+
+    h3 {
+        font-size: 1.25em !important;
+    }
+
+    h4 {
+        font-size: 1em !important;
+    }
+
+    h5 {
+        font-size: 0.875em !important;
+    }
+
+    h6 {
+        font-size: 0.85em !important;
+        color: #717171 !important;
+    }
+
+    /* Paragraphs */
+    p {
+        color: $black;
+        margin: 0 0 0.5rem 0 !important;
+        overflow-wrap: break-word;
+    }
+
+    /* Links */
+    a {
+        color: rgb(59, 73, 223);
+        text-decoration: underline;
+        border-bottom: 1px solid rgb(59, 73, 223);
+        transition: color 0.2s, border-bottom-color 0.2s;
+        overflow-wrap: break-word;
+
+        &:hover,
+        &:focus {
+            color: rgb(47, 58, 178);
+            border-bottom-color: rgb(47, 58, 178);
+        }
+    }
+
+    /* Lists */
+    ul,
+    ol {
+        padding-left: 1.5em;
+        font-size: 18px;
+        color: $black;
+        margin: 0 0 1.25rem 0 !important;
+        overflow-wrap: break-word;
+
+        li {
+            margin: 0;
+        }
+    }
+
+
+    /* Tables */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2em 0;
+        color: #333;
+
+        th,
+        td {
+            padding: 0.5em 0.75em;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-weight: 700;
+        }
+
+        td {
+            background-color: #ffffff;
+        }
+    }
+
+
+    /* Images */
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 1.5em 0;
+        border-radius: 4px;
+    }
+
+    /* Horizontal Rules */
+    hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 2em 0;
+    }
+
+    /* Blockquotes */
+    blockquote {
+        border-left: 4px solid #ddd;
+        padding: 0.5em 1.5em;
+        margin: 1.5em 0;
+        color: #555;
+        font-style: italic;
+        background-color: #f9f9f9;
+
+        * {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    code {
+        font-size: 95%;
+    }
+}

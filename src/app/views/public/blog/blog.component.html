@@ -1,0 +1,19 @@
+<div class="bg-1 blog-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 my-5 side-nav">
+                <app-blog-side-navigation></app-blog-side-navigation>
+            </div>
+            <div class="col-md-9 my-5 blogs" *ngIf="blogs && blogs.length;else other_content">
+                <app-single-blog [content]="blog" *ngFor="let blog of blogs"></app-single-blog>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #other_content>
+    <div class="col-md-9 my-5 d-flex justify-content-center align-items-center flex-column no-data">
+        <h4>No data available for this section.</h4>
+        <p>Please check other sections.</p>
+    </div>
+</ng-template>

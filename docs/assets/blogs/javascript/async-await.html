@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Async Await in JavaScript</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="async-await-in-javascript">Async Await in JavaScript</h1>
+<p><code>async</code> and <code>await</code> are modern JavaScript features introduced in ES2017 (ES8) that make it easier to work with asynchronous code. They allow you to write asynchronous code in a more readable, synchronous-like manner.</p>
+<h3 id="what-is-async">What is <code>async</code>?</h3>
+<p>The <code>async</code> keyword is used to define an asynchronous function. When a function is declared with <code>async</code>, it automatically returns a promise. Even if the function doesn't explicitly return a promise, it will implicitly wrap the return value in a resolved promise.</p>
+<h3 id="what-is-await">What is <code>await</code>?</h3>
+<p>The <code>await</code> keyword is used inside <code>async</code> functions to pause the execution of the function until the promise is resolved. It allows you to wait for the result of an asynchronous operation (like a network request) before moving on to the next line of code.</p>
+<h3 id="basic-example">Basic Example</h3>
+<p>Here’s a simple example to demonstrate how <code>async</code> and <code>await</code> work:</p>
+<pre><code class="language-js"><span class="hljs-comment">// A function that returns a promise, simulating a network request</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">fetchData</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+            <span class="hljs-title function_">resolve</span>(<span class="hljs-string">&quot;Data received&quot;</span>);
+        }, <span class="hljs-number">2000</span>); <span class="hljs-comment">// Simulate a 2-second delay</span>
+    });
+}
+
+<span class="hljs-comment">// An async function that uses await to handle the promise</span>
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getData</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Fetching data...&quot;</span>);
+    <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetchData</span>(); <span class="hljs-comment">// Wait for fetchData() to resolve</span>
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data); <span class="hljs-comment">// This will log &quot;Data received&quot; after 2 seconds</span>
+}
+
+<span class="hljs-title function_">getData</span>(); <span class="hljs-comment">// Call the async function</span>
+</code></pre>
+<h3 id="explanation">Explanation</h3>
+<ol>
+<li>
+<p><strong>fetchData Function</strong>:</p>
+<ul>
+<li>This function returns a promise that resolves with the string <code>&quot;Data received&quot;</code> after a 2-second delay. This simulates an asynchronous operation like fetching data from an API.</li>
+</ul>
+</li>
+<li>
+<p><strong>getData Function</strong>:</p>
+<ul>
+<li>The <code>async</code> keyword before <code>getData()</code> makes it an asynchronous function.</li>
+<li>Inside <code>getData()</code>, the <code>await</code> keyword is used before <code>fetchData()</code>, which pauses the execution of <code>getData()</code> until the promise returned by <code>fetchData()</code> is resolved.</li>
+<li>Once the promise is resolved, the result (<code>&quot;Data received&quot;</code>) is stored in the <code>data</code> variable, and then it's logged to the console.</li>
+</ul>
+</li>
+</ol>
+<h3 id="error-handling-with-asyncawait">Error Handling with <code>async/await</code></h3>
+<p>You can handle errors in an <code>async</code> function using <code>try...catch</code>:</p>
+<pre><code class="language-js"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getData</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Fetching data...&quot;</span>);
+        <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetchData</span>(); <span class="hljs-comment">// Wait for fetchData() to resolve</span>
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data); <span class="hljs-comment">// This will log &quot;Data received&quot;</span>
+    } <span class="hljs-keyword">catch</span> (error) {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;Error fetching data:&quot;</span>, error);
+    }
+}
+
+<span class="hljs-title function_">getData</span>();
+</code></pre>
+<p>If the promise returned by <code>fetchData()</code> is rejected, the control will jump to the <code>catch</code> block, and the error will be handled gracefully.</p>
+<h3 id="parallel-execution-with-await">Parallel Execution with <code>await</code></h3>
+<p>If you need to perform multiple asynchronous operations in parallel, you can use <code>Promise.all()</code> with <code>await</code>:</p>
+<pre><code class="language-js"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">fetchMultipleData</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">const</span> promise1 = <span class="hljs-title function_">fetchData</span>();
+    <span class="hljs-keyword">const</span> promise2 = <span class="hljs-title function_">fetchData</span>();
+
+    <span class="hljs-comment">// Wait for both promises to resolve</span>
+    <span class="hljs-keyword">const</span> [data1, data2] = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">all</span>([promise1, promise2]);
+
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data1); <span class="hljs-comment">// Logs &quot;Data received&quot;</span>
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data2); <span class="hljs-comment">// Logs &quot;Data received&quot;</span>
+}
+
+<span class="hljs-title function_">fetchMultipleData</span>();
+</code></pre>
+<h3 id="key-points">Key Points</h3>
+<ul>
+<li><strong>Synchronous-like Flow</strong>: <code>async/await</code> allows you to write asynchronous code that reads like synchronous code, making it easier to understand and maintain.</li>
+<li><strong>Error Handling</strong>: Errors in asynchronous operations can be caught using <code>try...catch</code> blocks within <code>async</code> functions.</li>
+<li><strong>Promise-based</strong>: Despite the syntax, <code>async/await</code> is just syntactic sugar over promises, making it easier to work with them.</li>
+</ul>
+<blockquote>
+<p>These features greatly simplify working with asynchronous code in JavaScript, especially when dealing with complex sequences of asynchronous operations.</p>
+</blockquote>
+
+            
+            
+        </body>
+        </html>

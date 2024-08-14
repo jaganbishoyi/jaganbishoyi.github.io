@@ -1,12 +1,6 @@
-import {
-    AfterContentChecked,
-    AfterContentInit,
-    ChangeDetectorRef,
-    Component,
-    HostListener,
-} from '@angular/core';
+import { AfterContentChecked, AfterContentInit, ChangeDetectorRef, Component, HostListener } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { navs } from '@inMemoryDB/data';
+import { navs } from '@inMemoryDB/store';
 import { INav } from '@interfaces/general.interface';
 import { SlideInOutAnimation } from './animation';
 
@@ -17,8 +11,7 @@ import { SlideInOutAnimation } from './animation';
     animations: [SlideInOutAnimation],
 })
 export class PublicHeaderComponent
-    implements AfterContentInit, AfterContentChecked
-{
+    implements AfterContentInit, AfterContentChecked {
     mobileMenu = false;
     navigation: INav[] = navs;
     screenWidth = 0;
@@ -32,9 +25,12 @@ export class PublicHeaderComponent
         this.router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {
                 this.active = router.parseUrl(router.url).fragment;
-
-                if (this.router.url === '/projects') {
+                if (this.router.url.includes('projects')) {
                     this.active = 'projects';
+                }
+
+                if (this.router.url.includes('blogs')) {
+                    this.active = 'blogs';
                 }
             }
         });

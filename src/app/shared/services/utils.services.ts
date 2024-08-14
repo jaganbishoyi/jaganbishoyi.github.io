@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { IProject, ISEOEssentials } from '@interfaces/general.interface';
+import { IProject, ISeoEssentials } from '@interfaces/general.interface';
 
 @Injectable({
     providedIn: 'root',
@@ -29,7 +29,7 @@ export class UtilsService {
         return projects.sort((a: IProject, b: IProject) => a.featured[1] - b.featured[1]);
     }
 
-    setSEOEssentials(data: ISEOEssentials): void {
+    setSEOEssentials(data: ISeoEssentials): void {
         this.addCanonicalTag(data.canonicalLink);
         this.updateMetaTag(data);
     }
@@ -50,7 +50,7 @@ export class UtilsService {
         head.appendChild(canonical);
     }
 
-    private updateMetaTag(data: ISEOEssentials): void {
+    private updateMetaTag(data: ISeoEssentials): void {
         this.titleService.setTitle(data.title);
 
         // Html MetaTag

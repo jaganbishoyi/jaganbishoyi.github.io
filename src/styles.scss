@@ -1,6 +1,8 @@
 @import "variables";
 @import "typography";
 @import "animations";
+@import "markdown";
+@import "font";
 
 ::-webkit-scrollbar {
     width: 5px;
@@ -32,9 +34,9 @@ body {
 
 body {
     margin: 0;
-    font-family: 'Helvetica Neue', Roboto, sans-serif !important;
+    font-family: $body-font !important;
     color: $black;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .bg {
@@ -54,7 +56,7 @@ body {
 
 button.custom-btn {
     padding: 10px 35px;
-    font-size: 16px;
+    font-size: 13px;
     background: $theme-color;
     color: $white;
     text-transform: uppercase;
@@ -80,7 +82,7 @@ button.custom-btn {
     border-color: $theme-color;
     transition: transform 0.3s;
     padding: 10px 35px;
-    font-size: 16px;
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: inline-block;
@@ -121,4 +123,27 @@ button.custom-btn {
     .project {
         border-bottom: none !important;
     }
+}
+
+@mixin truncate($noOfLines) {
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: $noOfLines;
+    -webkit-box-orient: vertical;
+}
+
+.truncate-at-2 {
+    @include truncate(2)
+}
+
+.truncate-at-3 {
+    @include truncate(3)
+}
+
+.truncate-at-4 {
+    @include truncate(4)
+}
+
+.truncate-at-5 {
+    @include truncate(5)
 }

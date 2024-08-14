@@ -12,6 +12,13 @@ const routes: Routes = [
         component: ProjectDetailsComponent,
     },
     { path: 'projects', component: ProjectsComponent },
+    {
+        path: 'blogs',
+        loadChildren: () =>
+            import("./blog/blog.module").then(
+                (m) => m.BlogModule
+            ),
+    },
     { path: 'page-not-found', component: NotFoundComponent },
 ];
 
@@ -19,4 +26,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
-export class PublicRoutingModule {}
+export class PublicRoutingModule { }

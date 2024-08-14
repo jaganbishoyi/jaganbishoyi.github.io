@@ -4,7 +4,7 @@
     </div>
     <div class="col-12 col-md-5 project-desc">
         <div class="project-container">
-            <h4>{{project.name | titlecase}}</h4>
+            <h3 class="mb-4">{{project.name | titlecase}}</h3>
             <p *ngFor="let description of project.description" class="mb-2">{{description}}</p>
             <button type="button" class="btn custom-btn mt-3" (click)="caseStudy()">
                 case study

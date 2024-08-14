@@ -12,7 +12,7 @@ HTML5 introduced several new features and enhancements, making it a significant 
 
 **Example:**
 
-![Semantic Elements](https://raw.githubusercontent.com/jaganbishoyi/jaganbishoyi.github.io/3ac4ba5eec1f830775089a300a4126dfb01e1d64/src/assets/images/blog/semantic-html.png "Semantic Elements")
+![Semantic Elements](../assets/images/blog/semantic-html.png "Semantic Elements")
 
 ```html
 <!DOCTYPE html>

@@ -1,3 +1,5 @@
+@import "../../../../assets/styles/variables";
+
 .single-blog {
     background: #fff;
     margin: 0 0 1rem;
@@ -24,8 +26,12 @@
         }
 
         &:hover {
-            color: rgb(47, 58, 178);
+            color: $theme-color;
         }
+    }
+
+    p {
+        font-size: 16px !important;
     }
 
     .tags {

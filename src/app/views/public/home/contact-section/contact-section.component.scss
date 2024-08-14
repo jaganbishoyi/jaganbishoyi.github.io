@@ -6,7 +6,6 @@
     margin: 0 40px;
 
     .heading {
-        font-size: 40px !important;
         text-transform: uppercase;
         letter-spacing: 1px !important;
         text-align: center;
@@ -30,11 +29,7 @@
 
     .intro {
         text-align: center;
-        color: $black;
-        font-size: 20px;
-        font-weight: 500;
         max-width: 100%;
-        line-height: 1.6;
         margin-bottom: 70px !important;
     }
 
@@ -61,7 +56,6 @@
 
         .email {
             font-weight: 600;
-            font-size: 30px !important;
             color: $black;
             margin: 35px 0px 35px 0px !important;
             word-wrap: break-word;

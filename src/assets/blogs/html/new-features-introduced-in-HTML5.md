@@ -1,8 +1,6 @@
-# HTML5 introduced several new features to improve web development, including
-
 HTML5 introduced several new features and enhancements, making it a significant update over its predecessor, HTML4. Here are some of the key features:
 
-## 1. New Semantic Elements
+### 1. New Semantic Elements
 
 - **\<header>**: Defines a header for a document or section.
 - **\<footer>**: Defines a footer for a document or section.
@@ -57,7 +55,7 @@ HTML5 introduced several new features and enhancements, making it a significant 
 
 ```
 
-## 2. New Form Controls
+### 2. New Form Controls
 
 - **\<input>** types like `email`, `date`, `tel`, `number`, `range`, `color`, `url`, etc., provide more specific input fields.
 - **\<datalist>**: Provides an autocomplete feature for input elements.
@@ -106,7 +104,7 @@ HTML5 introduced several new features and enhancements, making it a significant 
 </html>
 ```
 
-## 3. Multimedia Support
+### 3. Multimedia Support
 
 - **\<video>**: Embeds video content directly in the web page without requiring plugins.
 - **\<audio>**: Embeds audio content.
@@ -138,7 +136,7 @@ HTML5 introduced several new features and enhancements, making it a significant 
 </html>
 ```
 
-## 4. Canvas Element
+### 4. Canvas Element
 
 - **\<canvas>**: Provides a resolution-dependent bitmap canvas for rendering graphics, which can be used for drawing graphs, game graphics, or other visual images on the fly.
 
@@ -166,7 +164,7 @@ HTML5 introduced several new features and enhancements, making it a significant 
 </html>
 ```
 
-## 5. Scalable Vector Graphics (SVG)
+### 5. Scalable Vector Graphics (SVG)
 
 - HTML5 allows the use of SVG directly in the HTML document, enabling the embedding of vector graphics.
 
@@ -189,7 +187,7 @@ HTML5 introduced several new features and enhancements, making it a significant 
 </html>
 ```
 
-## 6. Geolocation API*
+### 6. Geolocation API*
 
 - Enables web applications to access the geographical location of a user, provided the user grants permission.
 
@@ -226,7 +224,7 @@ HTML5 introduced several new features and enhancements, making it a significant 
 </html>
 ```
 
-## 7. Local Storage
+### 7. Local Storage
 
 - **localStorage** and **sessionStorage**: New storage options that allow storing data on the client-side, which persists even when the page is refreshed or the browser is closed.
 
@@ -318,7 +316,7 @@ function timedCount() {
 timedCount();
 ```
 
-## 9. Offline Web Applications
+### 9. Offline Web Applications
 
 - **Application Cache**: Allows web applications to be accessible even when offline by caching the application resources.
 
@@ -357,7 +355,7 @@ FALLBACK:
 / /offline.html
 ```
 
-## 10. New Doctype Declaration
+### 10. New Doctype Declaration
 
 - Simplified the doctype declaration to `<!DOCTYPE html>`, which is the same for all browsers and indicates that the document is an HTML5 document.
 
@@ -378,7 +376,7 @@ FALLBACK:
 </html>
 ```
 
-## 11. Enhanced Accessibility
+### 11. Enhanced Accessibility
 
 - HTML5 provides better accessibility features through ARIA (Accessible Rich Internet Applications) attributes, making web content more accessible to people with disabilities.
 
@@ -399,7 +397,7 @@ FALLBACK:
 </html>
 ```
 
-## 12. Drag and Drop
+### 12. Drag and Drop
 
 - HTML5 introduces native support for drag-and-drop functionality, making it easier to implement draggable elements in web pages.
 

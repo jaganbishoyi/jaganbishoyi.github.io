@@ -9,8 +9,7 @@ markdown {
     h5,
     h6 {
         font-family: $header-font !important;
-        font-weight: 700;
-        color: $black;
+        font-weight: 600;
         line-height: 1.25;
         padding: 0;
         margin: calc(1.25rem / 2) 0 !important;
@@ -43,9 +42,8 @@ markdown {
 
     /* Paragraphs */
     p {
-        font-size: 1.15rem;
         color: $black;
-        margin: 0 0 1rem 0 !important;
+        margin: 0 0 0.5rem 0 !important;
         overflow-wrap: break-word;
     }
 
@@ -55,7 +53,6 @@ markdown {
         text-decoration: underline;
         border-bottom: 1px solid rgb(59, 73, 223);
         transition: color 0.2s, border-bottom-color 0.2s;
-        font-size: 1.15rem;
         overflow-wrap: break-word;
 
         &:hover,
@@ -69,7 +66,7 @@ markdown {
     ul,
     ol {
         padding-left: 1.5em;
-        font-size: 1.15rem;
+        font-size: 18px;
         color: $black;
         margin: 0 0 1.25rem 0 !important;
         overflow-wrap: break-word;
@@ -85,12 +82,11 @@ markdown {
         width: 100%;
         border-collapse: collapse;
         margin: 2em 0;
-        font-size: 1.125em;
         color: #333;
 
         th,
         td {
-            padding: 0.75em 1em;
+            padding: 0.5em 0.75em;
             border: 1px solid #ddd;
             text-align: left;
         }

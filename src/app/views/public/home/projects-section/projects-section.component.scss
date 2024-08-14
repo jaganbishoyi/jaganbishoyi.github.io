@@ -5,7 +5,6 @@
     margin: 0 40px;
 
     .heading {
-        font-size: 40px !important;
         text-transform: uppercase;
         letter-spacing: 1px !important;
         text-align: center;
@@ -29,11 +28,7 @@
 
     .intro {
         text-align: center;
-        color: $black;
-        font-size: 20px;
-        font-weight: 500;
         max-width: 100%;
-        line-height: 1.6;
     }
 }
 

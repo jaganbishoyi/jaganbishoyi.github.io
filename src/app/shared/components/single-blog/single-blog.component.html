@@ -1,7 +1,7 @@
 <div class="single-blog">
     <app-author [content]="content.author"></app-author>
     <h2 class="truncate-at-2">
-        <a rel="noopener noreferrer" [routerLink]="'/blogs/'+content.slug">
+        <a rel="noopener noreferrer" [routerLink]="'/blogs/'+content.slug" [title]="content.title">
             {{content.title}}
         </a>
     </h2>

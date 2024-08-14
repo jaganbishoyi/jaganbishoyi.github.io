@@ -1,0 +1,6 @@
+<div class="tags">
+    <span class="tag" [ngClass]="'tag-' + tagId" *ngFor="let tag of tags; let index=index;" (click)="navigate(tag)">
+        <span class="hash">#</span>
+        {{tag}}
+    </span>
+</div>

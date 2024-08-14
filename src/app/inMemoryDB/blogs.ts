@@ -61,4 +61,19 @@ export const blogs: IBlogContent[] = [
         },
         URL: 'css/css-box-model.md'
     },
+    {
+        title: 'What are semantic HTML elements, and why are they important?',
+        description: 'Semantic HTML elements have meaningful names that describe their purpose and content. They help with accessibility, SEO, and code readability.',
+        publishDate: '2024-08-14',
+        tags: ['html'],
+        id: '5',
+        slug: 'semantic-html-elements',
+        featured: true,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-14'
+        },
+        URL: 'html/semantic-html-elements.md'
+    },
 ]

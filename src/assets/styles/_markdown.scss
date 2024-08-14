@@ -51,14 +51,11 @@ markdown {
     a {
         color: rgb(59, 73, 223);
         text-decoration: underline;
-        border-bottom: 1px solid rgb(59, 73, 223);
-        transition: color 0.2s, border-bottom-color 0.2s;
         overflow-wrap: break-word;
 
         &:hover,
         &:focus {
-            color: rgb(47, 58, 178);
-            border-bottom-color: rgb(47, 58, 178);
+            color: $theme-color;
         }
     }
 

@@ -20,11 +20,10 @@
 
         h1 {
             font-size: 3rem !important;
-            // text-transform: capitalize;
             letter-spacing: 3px;
             color: $black;
-            ;
             font-weight: 800;
+            font-family: $header-font;
             margin: 0 !important;
             line-height: 1.25;
         }

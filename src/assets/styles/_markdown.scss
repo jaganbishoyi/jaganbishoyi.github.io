@@ -8,7 +8,7 @@ markdown {
     h4,
     h5,
     h6 {
-        font-family: "Helvetica Neue", Roboto, sans-serif !important;
+        font-family: $header-font !important;
         font-weight: 700;
         color: $black;
         line-height: 1.25;
@@ -44,7 +44,7 @@ markdown {
     /* Paragraphs */
     p {
         font-size: 1.15rem;
-        color: rgb(23, 23, 23);
+        color: $black;
         margin: 0 0 1rem 0 !important;
         overflow-wrap: break-word;
     }
@@ -70,7 +70,7 @@ markdown {
     ol {
         padding-left: 1.5em;
         font-size: 1.15rem;
-        color: rgb(23, 23, 23);
+        color: $black;
         margin: 0 0 1.25rem 0 !important;
         overflow-wrap: break-word;
 

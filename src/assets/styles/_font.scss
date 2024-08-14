@@ -1,3 +1,104 @@
-// -----------------------------------------------------------------------------
-// This file contains all @font-face declarations, if any.
-// -----------------------------------------------------------------------------
+@mixin fontFamily($font, $weight, $style) {
+    font-family: $font;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+// Roboto Font classes
+.roboto-thin {
+    @include fontFamily('"Roboto", sans-serif', 100, normal);
+}
+
+.roboto-light {
+    @include fontFamily('"Roboto", sans-serif', 300, normal);
+}
+
+.roboto-regular {
+    @include fontFamily('"Roboto", sans-serif', 400, normal);
+}
+
+.roboto-medium {
+    @include fontFamily('"Roboto", sans-serif', 500, normal);
+}
+
+.roboto-bold {
+    @include fontFamily('"Roboto", sans-serif', 700, normal);
+}
+
+.roboto-bolder {
+    @include fontFamily('"Roboto", sans-serif', 900, normal);
+}
+
+.roboto-thin-italic {
+    @include fontFamily('"Roboto", sans-serif', 100, italic);
+}
+
+.roboto-light-italic {
+    @include fontFamily('"Roboto", sans-serif', 300, italic);
+}
+
+.roboto-regular-italic {
+    @include fontFamily('"Roboto", sans-serif', 400, italic);
+}
+
+.roboto-medium-italic {
+    @include fontFamily('"Roboto", sans-serif', 500, italic);
+}
+
+.roboto-bold-italic {
+    @include fontFamily('"Roboto", sans-serif', 700, italic);
+}
+
+.roboto-bolder-italic {
+    @include fontFamily('"Roboto", sans-serif', 900, italic);
+}
+
+// Open Sans Classes
+
+.open-sans-thin {
+    @include fontFamily('"Open Sans", sans-serif', 100, normal);
+}
+
+.open-sans-light {
+    @include fontFamily('"Open Sans", sans-serif', 300, normal);
+}
+
+.open-sans-regular {
+    @include fontFamily('"Open Sans", sans-serif', 400, normal);
+}
+
+.open-sans-medium {
+    @include fontFamily('"Open Sans", sans-serif', 500, normal);
+}
+
+.open-sans-bold {
+    @include fontFamily('"Open Sans", sans-serif', 700, normal);
+}
+
+.open-sans-bolder {
+    @include fontFamily('"Open Sans", sans-serif', 900, normal);
+}
+
+.open-sans-thin-italic {
+    @include fontFamily('"Open Sans", sans-serif', 100, italic);
+}
+
+.open-sans-light-italic {
+    @include fontFamily('"Open Sans", sans-serif', 300, italic);
+}
+
+.open-sans-regular-italic {
+    @include fontFamily('"Open Sans", sans-serif', 400, italic);
+}
+
+.open-sans-medium-italic {
+    @include fontFamily('"Open Sans", sans-serif', 500, italic);
+}
+
+.open-sans-bold-italic {
+    @include fontFamily('"Open Sans", sans-serif', 700, italic);
+}
+
+.open-sans-bolder-italic {
+    @include fontFamily('"Open Sans", sans-serif', 900, italic);
+}

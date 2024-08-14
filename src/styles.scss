@@ -34,7 +34,7 @@ body {
 
 body {
     margin: 0;
-    font-family: 'Helvetica Neue', Roboto, sans-serif !important;
+    font-family: $body-font !important;
     color: $black;
     font-size: 14px;
 }

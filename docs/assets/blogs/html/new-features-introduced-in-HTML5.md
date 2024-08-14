@@ -12,8 +12,6 @@ HTML5 introduced several new features and enhancements, making it a significant 
 
 **Example:**
 
-![Semantic Elements](../assets/images/blog/semantic-html.png "Semantic Elements")
-
 ```html
 <!DOCTYPE html>
 <html lang="en">

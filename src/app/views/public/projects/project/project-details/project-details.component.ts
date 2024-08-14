@@ -12,6 +12,7 @@ import { UtilsService } from '@services/utils.services';
 })
 export class ProjectDetailsComponent implements OnInit {
     project: IProject | any = {} as IProject;
+    projectNotAvailable = false;
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -22,6 +23,8 @@ export class ProjectDetailsComponent implements OnInit {
             this.project = projects.find(
                 (project: IProject) => project.id == params['projectId']
             );
+
+            this.projectNotAvailable = this.project ? false : true;
         });
     }
 

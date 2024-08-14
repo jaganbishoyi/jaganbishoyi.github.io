@@ -11,6 +11,7 @@ import { blogs } from '@inMemoryDB/blogs';
 })
 export class BlogDetailsComponent implements OnInit {
     blog: IBlogContent = {} as IBlogContent;
+    inValidBlogSlug = false;
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -22,7 +23,10 @@ export class BlogDetailsComponent implements OnInit {
             const slug = params.slug;
             const blog = blogs.find((blog: IBlogContent) => blog.slug === slug);
             if (blog) {
+                this.inValidBlogSlug = false;
                 this.blog = blog;
+            } else {
+                this.inValidBlogSlug = true;
             }
         })
     }

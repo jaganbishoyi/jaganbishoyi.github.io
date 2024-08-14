@@ -4,7 +4,7 @@ export const blogs: IBlogContent[] = [
     {
         title: 'What is async await in JavaScript?',
         description: 'async and await are modern JavaScript features introduced in ES2017 (ES8) that make it easier to work with asynchronous code. They allow you to write asynchronous code in a more readable, synchronous-like manner.',
-        publishDate: '2024-08-13',
+        publishDate: '2024-08-12',
         tags: ['javascript'],
         id: '1',
         slug: 'async-await-in-javaScript',
@@ -12,7 +12,7 @@ export const blogs: IBlogContent[] = [
         author: {
             name: 'Jagan Mohan Bishoyi',
             image: 'assets/images/me.png',
-            publishedDate: '2024-08-13'
+            publishedDate: '2024-08-12'
         },
         URL: 'javascript/async-await.md'
     },
@@ -23,7 +23,7 @@ export const blogs: IBlogContent[] = [
         tags: ['angular'],
         id: '2',
         slug: 'difference-between-angular-and-angularjs',
-        featured: true,
+        featured: false,
         author: {
             name: 'Jagan Mohan Bishoyi',
             image: 'assets/images/me.png',
@@ -34,7 +34,7 @@ export const blogs: IBlogContent[] = [
     {
         title: 'What are the new features introduced in HTML5?',
         description: 'HTML5 introduced several new features to improve web development, including: Semantic elements, Multimedia support, Canvas API, Local storage and Geolocation API.',
-        publishDate: '2024-08-13',
+        publishDate: '2024-08-14',
         tags: ['html'],
         id: '3',
         slug: 'new-features-introduced-in-HTML5',
@@ -42,8 +42,23 @@ export const blogs: IBlogContent[] = [
         author: {
             name: 'Jagan Mohan Bishoyi',
             image: 'assets/images/me.png',
-            publishedDate: '2024-08-13'
+            publishedDate: '2024-08-14'
         },
         URL: 'html/new-features-introduced-in-HTML5.md'
+    },
+    {
+        title: 'What is the CSS Box Model? Explain its components?',
+        description: 'The CSS Box Model describes the rectangular boxes that are generated for elements in the document tree and consists of Content, padding, border, margin.',
+        publishDate: '2024-08-14',
+        tags: ['css'],
+        id: '4',
+        slug: 'css-box-model',
+        featured: true,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-14'
+        },
+        URL: 'css/css-box-model.md'
     },
 ]

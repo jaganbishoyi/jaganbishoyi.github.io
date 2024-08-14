@@ -7,7 +7,7 @@ The CSS Box Model describes the rectangular boxes that are generated for element
 
 **Example:**
 
-![CSS Box Model](\assets\images\blog\css-box-model.png "CSS Box Model")
+![CSS Box Model](https://raw.githubusercontent.com/jaganbishoyi/jaganbishoyi.github.io/3ac4ba5eec1f830775089a300a4126dfb01e1d64/src/assets/images/blog/css-box-model.png "CSS Box Model")
 
 ```css
 .box {

@@ -9,6 +9,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutsModule } from './shared/components/layouts/layouts.module';
+import { getRequestUrl, REQUEST_URL } from './request-url.service';
 
 @NgModule({
     declarations: [
@@ -29,7 +30,9 @@ import { LayoutsModule } from './shared/components/layouts/layouts.module';
             autoDismiss: false,
         }),
     ],
-    providers: [],
+    providers: [
+        { provide: REQUEST_URL, useFactory: getRequestUrl },
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

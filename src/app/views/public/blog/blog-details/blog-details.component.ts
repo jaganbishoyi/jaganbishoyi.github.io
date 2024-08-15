@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { IBlogContent } from '@interfaces/general.interface';
@@ -19,8 +19,8 @@ export class BlogDetailsComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.activatedRoute.params.subscribe((params: any) => {
-            const slug = params.slug;
+        this.activatedRoute.params.subscribe((params: Params) => {
+            const slug = params['slug'];
             const blog = blogs.find((blog: IBlogContent) => blog.slug === slug);
             if (blog) {
                 this.inValidBlogSlug = false;

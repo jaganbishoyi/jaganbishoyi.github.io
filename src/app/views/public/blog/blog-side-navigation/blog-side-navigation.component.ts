@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { blogSideNavs } from '@inMemoryDB/store';
 import { INav } from '@interfaces/general.interface';
 
@@ -18,9 +18,9 @@ export class BlogSideNavigationComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.activatedRoute.queryParams.subscribe((queryParams: any) => {
-            if (queryParams && queryParams.tag) {
-                this.active = queryParams.tag;
+        this.activatedRoute.queryParams.subscribe((queryParams: Params) => {
+            if (queryParams && queryParams['tag']) {
+                this.active = queryParams['tag'];
             } else {
                 this.active = ''
             }

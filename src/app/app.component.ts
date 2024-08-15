@@ -1,5 +1,4 @@
 import { Component, Inject, Injector, OnInit, PLATFORM_ID } from '@angular/core';
-import { Router } from '@angular/router';
 import { ISeoEssentials } from '@interfaces/general.interface';
 import { UtilsService } from '@services/utils.services';
 import { REQUEST_URL } from './request-url.service';
@@ -14,7 +13,6 @@ export class AppComponent implements OnInit {
     title = 'portfolio';
 
     constructor(
-        private router: Router,
         private utils: UtilsService,
         private injector: Injector,
         // eslint-disable-next-line @typescript-eslint/ban-types
@@ -22,7 +20,7 @@ export class AppComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        if (isPlatformServer(this.platformId)) {
+        if (isPlatformBrowser(this.platformId)) {
             const reqUrl = this.injector.get(REQUEST_URL);
 
             switch (reqUrl) {

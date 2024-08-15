@@ -91,4 +91,19 @@ export const blogs: IBlogContent[] = [
         },
         URL: 'version-control/must-used-git-commands.md'
     },
+    {
+        title: 'What are the different types of data binding in Angular?',
+        description: 'Data binding is a core concept in Angular and allows to define communication between a component and the DOM. There are four forms of data binding(divided as 3 categories) which differ in the way the data is flowing.',
+        publishDate: '2024-08-15',
+        tags: ['angular'],
+        id: '6',
+        slug: 'angular-data-binding',
+        featured: false,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-15'
+        },
+        URL: 'angular/angular-data-binding.md'
+    },
 ]

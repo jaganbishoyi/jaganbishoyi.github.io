@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { blogs } from '@inMemoryDB/blogs';
 import { IBlogContent } from '@interfaces/general.interface';
 
@@ -9,15 +9,16 @@ import { IBlogContent } from '@interfaces/general.interface';
     styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-    blogs: IBlogContent[] = blogs;
+    blogs: IBlogContent[] = blogs
+        .sort((a, b) => +new Date(b.publishDate) - +new Date(a.publishDate));
 
     constructor(
         private activatedRoute: ActivatedRoute
     ) { }
 
     ngOnInit(): void {
-        this.activatedRoute.queryParams.subscribe((queryParams: any) => {
-            const tag = queryParams.tag;
+        this.activatedRoute.queryParams.subscribe((queryParams: Params) => {
+            const tag = queryParams['tag'];
             if (tag) {
                 this.blogs = blogs.filter((blog: IBlogContent) => blog.tags.includes(tag));
             } else {

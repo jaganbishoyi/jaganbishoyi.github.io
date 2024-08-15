@@ -19,20 +19,20 @@ export class AppComponent implements OnInit {
         // eslint-disable-next-line @typescript-eslint/ban-types
         @Inject(PLATFORM_ID) private platformId: Object
     ) {
-        // this.router.events.subscribe((event) => {
-        //     if (event instanceof NavigationEnd) {
-        //         if (this.router.url === '/') {
-        //             const SEOData: ISeoEssentials = {
-        //                 title: "Jagan Mohan Bishoyi | Angular | Frontend Web Developer",
-        //                 description: "Hey, i'm Jagan Mohan. I am a dedicated Front-End Developer with more than half a decade of experience delivering high-quality web solutions and having expertise in front-end web development.",
-        //                 canonicalLink: 'https://jaganb.dev/',
-        //                 image: 'https://jaganb.dev/assets/images/me.png'
-        //             };
+        this.router.events.subscribe((event) => {
+            if (event instanceof NavigationEnd) {
+                if (this.router.url === '/') {
+                    const SEOData: ISeoEssentials = {
+                        title: "Jagan Mohan Bishoyi | Angular | Frontend Web Developer",
+                        description: "Hey, i'm Jagan Mohan. I am a dedicated Front-End Developer with more than half a decade of experience delivering high-quality web solutions and having expertise in front-end web development.",
+                        canonicalLink: 'https://jaganb.dev/',
+                        image: 'https://jaganb.dev/assets/images/me.png'
+                    };
 
-        //             this.utils.setSEOEssentials(SEOData);
-        //         }
-        //     }
-        // });
+                    this.utils.setSEOEssentials(SEOData);
+                }
+            }
+        });
     }
 
     ngOnInit(): void {

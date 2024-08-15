@@ -76,4 +76,19 @@ export const blogs: IBlogContent[] = [
         },
         URL: 'html/semantic-html-elements.md'
     },
+    {
+        title: 'Must Used Git Commands / Git cheat sheet',
+        description: 'The basic Git commands to help you learn Git, and more advanced concepts around Git branches, remote repositories, undoing changes, and more.',
+        publishDate: '2024-08-15',
+        tags: ['version-control'],
+        id: '6',
+        slug: 'must-used-git-commands',
+        featured: true,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-15'
+        },
+        URL: 'version-control/must-used-git-commands.md'
+    },
 ]

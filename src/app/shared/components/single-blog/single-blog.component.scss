@@ -8,16 +8,13 @@
     padding: 1.25rem;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 
-    h2 {
-        color: rgb(23, 23, 23);
-        line-height: 1.8rem;
-        font-size: 1.5rem !important;
+    .blog-title {
+        color: $black;
         overflow-wrap: break-word !important;
         overflow-wrap: anywhere;
         word-break: break-word;
         margin-bottom: 0.25rem !important;
-        font-weight: bold;
-        display: inline-block;
+        display: inline-block !important;
 
         a {
             color: inherit;
@@ -28,10 +25,6 @@
         &:hover {
             color: $theme-color;
         }
-    }
-
-    p {
-        font-size: 16px !important;
     }
 
     .tags {

@@ -1,11 +1,11 @@
 <div class="single-blog">
     <app-author [content]="content.author"></app-author>
-    <h2 class="truncate-at-2">
+    <h5 class="truncate-at-2 blog-title">
         <a rel="noopener noreferrer" [routerLink]="'/blogs/'+content.slug" [title]="content.title">
             {{content.title}}
         </a>
-    </h2>
-    <p class="truncate-at-3">{{content.description}}</p>
+    </h5>
+    <p class="truncate-at-3" [title]="content.description">{{content.description}}</p>
     <div class="mt-2">
         <app-tags [tags]="content.tags"></app-tags>
     </div>

@@ -106,4 +106,19 @@ export const blogs: IBlogContent[] = [
         },
         URL: 'angular/angular-data-binding.md'
     },
+    {
+        title: 'What are isPlatformBrowser and isPlatformServer in Angular?',
+        description: '`isPlatformBrowser` and `isPlatformServer` are utility functions provided by Angular to help determine whether your code is running in a browser environment or a server environment. These functions are useful when developing applications that use Angular Universal for server-side rendering (SSR) or when dealing with platform-specific logic.',
+        publishDate: '2024-08-16',
+        tags: ['angular'],
+        id: '7',
+        slug: 'what-is-is-platform-browser-and-is-platform-server-in-angular',
+        featured: false,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-16'
+        },
+        URL: 'angular/is-platform-browser-and-is-platform-server.md'
+    },
 ]

@@ -12,7 +12,7 @@ export class BlogSectionComponent implements OnInit {
 
     ngOnInit(): void {
         this.blogs = blogs
-            .filter((blog: IBlogContent) => blog.featured)
+            // .filter((blog: IBlogContent) => blog.featured)
             .sort((a, b) => +new Date(b.publishDate) - +new Date(a.publishDate))
             .slice(0, 3);
     }

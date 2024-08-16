@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>isPlatformBrowser Vs isPlatformServer</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="isplatformbrowser-vs-isplatformserver">isPlatformBrowser Vs isPlatformServer</h1>
+<p><code>isPlatformBrowser</code> and <code>isPlatformServer</code> are utility functions provided by Angular to help determine whether your code is running in a browser environment or a server environment. These functions are useful when developing applications that use Angular Universal for server-side rendering (SSR) or when dealing with platform-specific logic.</p>
+<h3 id="isplatformbrowser">isPlatformBrowser()</h3>
+<p><code>isPlatformBrowser</code> is a function used to check if the code is running in a browser environment (e.g., when the application is rendered by the browser after client-side bootstrapping).</p>
+<h4 id="usage">Usage:</h4>
+<ul>
+<li>It helps in determining if certain code should run only in the browser. For example, DOM manipulations should only be done in the browser.</li>
+<li>It prevents server-side code from trying to access browser-specific objects like <code>window</code> or <code>document</code>, which don't exist on the server.</li>
+</ul>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { isPlatformBrowser } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/common&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-variable constant_">PLATFORM_ID</span>, <span class="hljs-title class_">Inject</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+
+<span class="hljs-title function_">constructor</span>(<span class="hljs-params">@Inject(PLATFORM_ID) private platformId: <span class="hljs-built_in">Object</span></span>) {
+  <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isPlatformBrowser</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">platformId</span>)) {
+    <span class="hljs-comment">// This code will only run in the browser</span>
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Running in the browser&#x27;</span>);
+  }
+}
+</code></pre>
+<h3 id="isplatformserver">isPlatformServer()</h3>
+<p><code>isPlatformServer</code> is a function used to check if the code is running on a server environment (e.g., when the application is rendered on the server via Angular Universal).</p>
+<h4 id="usage-1">Usage:</h4>
+<ul>
+<li>It helps in determining if certain code should run only on the server. For instance, you might want to handle some SEO-related tasks or manage server-specific logic like fetching initial data or rendering content differently for the server.</li>
+<li>It ensures that code meant for server execution, like SSR pre-rendering, doesn’t run in the browser.</li>
+</ul>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { isPlatformServer } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/common&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-variable constant_">PLATFORM_ID</span>, <span class="hljs-title class_">Inject</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+
+<span class="hljs-title function_">constructor</span>(<span class="hljs-params">@Inject(PLATFORM_ID) private platformId: <span class="hljs-built_in">Object</span></span>) {
+  <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isPlatformServer</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">platformId</span>)) {
+    <span class="hljs-comment">// This code will only run on the server</span>
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Running on the server&#x27;</span>);
+  }
+}
+</code></pre>
+<h3 id="example-use-cases">Example Use Cases</h3>
+<ol>
+<li>
+<p><strong>Avoiding Browser-Specific Code on the Server:</strong>
+If you're using Angular Universal and trying to access browser-specific APIs like <code>localStorage</code> or <code>window</code>, wrapping that code inside <code>isPlatformBrowser</code> checks will prevent runtime errors on the server.</p>
+</li>
+<li>
+<p><strong>Handling Server-Specific Operations:</strong>
+For certain server-only tasks like generating meta tags for SEO or logging data on the server, you can use <code>isPlatformServer</code> to ensure that the code only runs during server-side rendering.</p>
+</li>
+</ol>
+<h3 id="how-it-works">How It Works</h3>
+<ul>
+<li><strong><code>PLATFORM_ID</code>:</strong> This is a special token provided by Angular that represents the platform (browser or server) the application is running on.</li>
+<li><strong><code>isPlatformBrowser</code> and <code>isPlatformServer</code>:</strong> These functions accept the <code>PLATFORM_ID</code> as a parameter and return <code>true</code> if the code is executing in the respective environment.</li>
+</ul>
+<h3 id="example-with-angular-universal">Example with Angular Universal</h3>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { isPlatformBrowser, isPlatformServer } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/common&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-variable constant_">PLATFORM_ID</span>, <span class="hljs-title class_">Inject</span>, <span class="hljs-title class_">Component</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+
+@<span class="hljs-title class_">Component</span>({
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;app-root&#x27;</span>,
+  <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;./app.component.html&#x27;</span>,
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AppComponent</span> {
+
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">@Inject(PLATFORM_ID) private platformId: <span class="hljs-built_in">Object</span></span>) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isPlatformBrowser</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">platformId</span>)) {
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;This is running in the browser&#x27;</span>);
+    }
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isPlatformServer</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">platformId</span>)) {
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;This is running on the server&#x27;</span>);
+    }
+  }
+}
+</code></pre>
+<h3 id="conclusion">Conclusion</h3>
+<ul>
+<li><strong><code>isPlatformBrowser</code>:</strong> Used to detect browser-side execution.</li>
+<li><strong><code>isPlatformServer</code>:</strong> Used to detect server-side execution.</li>
+</ul>
+<p>These checks are crucial in applications using Angular Universal to differentiate between client and server environments.</p>
+
+            
+            
+        </body>
+        </html>

@@ -56,7 +56,7 @@ export class UtilsService {
         // Html MetaTag
         this.meta.addTag({ property: "og:title", content: data.title });
         this.meta.addTag({ property: "og:description", content: data.description, });
-        this.meta.addTag({ property: "og:site_name", content: "https://jaganb.dev/ | Jagan Mohan Bishoyi", });
+        this.meta.addTag({ property: "og:site_name", content: "https://jaganb.dev/", });
         this.meta.addTag({ property: "og:type", content: 'website' });
         this.meta.addTag({ property: "og:url", content: data.canonicalLink });
         this.meta.addTag({ property: "og:locale", content: 'en_US' });

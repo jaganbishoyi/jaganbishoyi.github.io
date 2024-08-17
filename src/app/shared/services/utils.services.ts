@@ -56,7 +56,7 @@ export class UtilsService {
         // Html MetaTag
         this.meta.addTag({ property: "og:title", content: data.title });
         this.meta.addTag({ property: "og:description", content: data.description, });
-        this.meta.addTag({ property: "og:site_name", content: "https://jaganb.dev/ | Jagan Mohan Bishoyi", });
+        this.meta.addTag({ property: "og:site_name", content: "https://jaganb.dev/", });
         this.meta.addTag({ property: "og:type", content: 'website' });
         this.meta.addTag({ property: "og:url", content: data.canonicalLink });
         this.meta.addTag({ property: "og:locale", content: 'en_US' });
@@ -72,5 +72,14 @@ export class UtilsService {
             this.meta.addTag({ property: "og:image", content: data.image });
             this.meta.addTag({ name: "twitter:image", content: data.image });
         }
+    }
+
+    generateSlug(title: string): string {
+        return title
+            .toLowerCase()                      // Convert to lowercase
+            .trim()                             // Remove whitespace from both ends
+            .replace(/[^a-z0-9\s-]/g, '')       // Remove all non-alphanumeric characters except spaces and hyphens
+            .replace(/\s+/g, '-')               // Replace spaces with hyphens
+            .replace(/-+/g, '-');               // Replace multiple hyphens with a single hyphen
     }
 }

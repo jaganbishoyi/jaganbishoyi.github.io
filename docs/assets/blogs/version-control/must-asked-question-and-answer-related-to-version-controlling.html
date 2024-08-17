@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Version Controlling &sol; GIT</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="version-controlling--git">Version Controlling / GIT</h1>
+<p>Version control is an essential tool in modern software development, allowing teams to track changes, collaborate efficiently, and maintain code history.</p>
+<p>During technical interviews, version control concepts and practices are often tested. Key questions may cover topics like Git <code>branching strategies</code>, <code>conflict resolution</code>, <code>pull requests</code>, and common commands such as <code>git merge</code>, <code>git rebase</code>, and <code>git stash</code>. Knowing these answers will help you demonstrate your understanding of version control systems and their importance in managing code effectively.</p>
+<hr>
+<h4 id="1-what-is-git-and-how-does-it-differ-from-other-version-control-systems">1. <strong>What is Git, and how does it differ from other version control systems?</strong></h4>
+<p>Git is a distributed version control system (DVCS) that allows developers to work on a complete copy of the repository locally. Unlike centralized systems like SVN, Git does not rely on a central server for every operation.</p>
+<p><strong>Example</strong>: With Git, you can commit changes locally without an internet connection and later push them to the remote repository.</p>
+<h4 id="2-explain-the-difference-between-git-merge-and-git-rebase-when-would-you-use-each">2. <strong>Explain the difference between <code>git merge</code> and <code>git rebase</code>. When would you use each?</strong></h4>
+<p><code>git merge</code> combines two branches, preserving the history of both branches, while <code>git rebase</code> rewrites the commit history by applying changes from one branch onto another in a linear fashion.</p>
+<p><strong>Example</strong>: Use <code>git merge</code> when you want to preserve the branch's history, such as when merging a feature branch into the <code>main</code> branch. Use <code>git rebase</code> when you want to avoid merge commits and create a clean, linear history.</p>
+<h4 id="3-what-are-git-hooks-and-how-are-they-used-in-a-project">3. <strong>What are Git hooks, and how are they used in a project?</strong></h4>
+<p>Git hooks are scripts that run automatically when certain Git events occur, such as before a commit or after a merge.</p>
+<p><strong>Example</strong>: A pre-commit hook can be used to automatically run linting checks before committing code. If the code fails linting, the commit will be aborted.</p>
+<h4 id="4-how-would-you-handle-a-merge-conflict-in-git">4. <strong>How would you handle a merge conflict in Git?</strong></h4>
+<p>When a merge conflict occurs, Git marks the conflicting sections in the file. You need to manually edit the file, resolve the conflict, and then mark the file as resolved using <code>git add</code>.</p>
+<p><strong>Example</strong>: During a <code>git merge</code>, Git might raise a conflict like this:</p>
+<pre><code class="language-bash">&lt;&lt;&lt;&lt;&lt;&lt;&lt; <span class="hljs-string">HEAD
+// Changes from your branch
+=======
+// Changes from the branch you are merging
+&gt;&gt;&gt;&gt;&gt;&gt; feature-branch
+</span></code></pre>
+<p>Edit the file to remove the markers and resolve the differences, then run:</p>
+<pre><code class="language-bash">git add &lt;conflicted-file&gt;
+git commit
+</code></pre>
+<h4 id="5-how-do-you-stash-changes-in-git">5. <strong>How do you stash changes in Git?</strong></h4>
+<p>Use <code>git stash</code> to temporarily save changes in your working directory that are not ready to be committed. You can apply them later using <code>git stash pop</code> or <code>git stash apply</code>.</p>
+<h4 id="6-can-you-explain-the-difference-between-git-stash-pop-and-git-stash-apply">6. <strong>Can you explain the difference between <code>git stash pop</code> and <code>git stash apply</code>?</strong></h4>
+<p><code>git stash apply</code> applies the stashed changes without deleting the stash, while <code>git stash pop</code> applies the changes and removes the stash from the stash list.</p>
+<p><strong>Example</strong>: Use <code>git stash apply</code> if you want to apply the changes but keep them saved for later:</p>
+<pre><code class="language-bash">git stash apply
+</code></pre>
+<p>Use <code>git stash pop</code> if you're done with the stash:</p>
+<pre><code class="language-bash">git stash pop
+</code></pre>
+<h4 id="7-what-is-the-purpose-of-git-reflog-and-how-would-you-use-it">7. <strong>What is the purpose of <code>git reflog</code>, and how would you use it?</strong></h4>
+<p><code>git reflog</code> tracks changes to the tip of branches and can be used to recover lost commits.</p>
+<p><strong>Example</strong>: If you accidentally reset the branch, use <code>git reflog</code> to find the commit hash and reset the branch back to it:</p>
+<pre><code class="language-bash">git reflog
+git reset --hard &lt;commit-hash&gt;
+</code></pre>
+<h4 id="8-how-do-you-undo-the-last-commit-without-losing-the-changes">8. <strong>How do you undo the last commit without losing the changes?</strong></h4>
+<p>Use <code>git reset --soft HEAD~1</code> to undo the last commit while keeping the changes in the staging area.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-bash">git reset --soft HEAD~1
+</code></pre>
+<p>This undoes the commit but leaves the changes in the working directory so you can recommit.</p>
+<h4 id="9-explain-how-to-squash-multiple-commits-into-one">9. <strong>Explain how to squash multiple commits into one.</strong></h4>
+<p>Use <code>git rebase -i HEAD~N</code> to start an interactive rebase, where <code>N</code> is the number of commits you want to squash.</p>
+<p><strong>Example</strong>: To squash the last 3 commits into one:</p>
+<pre><code class="language-bash">git rebase -i HEAD~3
+</code></pre>
+<p>In the editor, change <code>pick</code> to <code>squash</code> for the commits you want to combine.</p>
+<h4 id="10-how-would-you-revert-a-specific-commit-in-git">10. <strong>How would you revert a specific commit in Git?</strong></h4>
+<p>Use <code>git revert &lt;commit-hash&gt;</code> to create a new commit that undoes the changes from the specified commit.</p>
+<p><strong>Example</strong>: If commit <code>abc123</code> introduced a bug, you can revert it with:</p>
+<pre><code class="language-bash">git revert abc123
+</code></pre>
+<h4 id="11-what-is-the-difference-between-git-reset-git-checkout-and-git-revert">11. <strong>What is the difference between <code>git reset</code>, <code>git checkout</code>, and <code>git revert</code>?</strong></h4>
+<p>-<code>git reset</code> moves the HEAD and branch pointer to a specific commit.
+-<code>git checkout</code> switches branches or restores working tree files.
+-<code>git revert</code> creates a new commit that undoes a specific commit.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-bash">git reset --soft HEAD~1   <span class="hljs-comment"># Undo last commit, keep changes</span>
+git checkout develop      <span class="hljs-comment"># Switch to &#x27;develop&#x27; branch</span>
+git revert abc123         <span class="hljs-comment"># Revert commit &#x27;abc123&#x27;</span>
+</code></pre>
+<h4 id="12-what-strategies-do-you-use-for-managing-large-teams-with-git">12. <strong>What strategies do you use for managing large teams with Git?</strong></h4>
+<p>A common strategy is Gitflow, which separates work into branches such as <code>feature</code>, <code>develop</code>, and <code>main</code>, along with automated code reviews and CI/CD pipelines.</p>
+<p><strong>Example</strong>: In Gitflow, feature branches are merged into <code>develop</code>, and after testing, <code>develop</code> is merged into <code>main</code>.</p>
+<h4 id="13-how-do-you-handle-large-binary-files-in-git">13. <strong>How do you handle large binary files in Git?</strong></h4>
+<p>Use Git Large File Storage (LFS) to track large binary files, replacing them with pointers while storing the actual files in a separate storage.</p>
+<p><strong>Example</strong>: Track large files with Git LFS:</p>
+<pre><code class="language-bash">git lfs track <span class="hljs-string">&quot;*.psd&quot;</span>
+</code></pre>
+<h4 id="14-how-does-git-handle-branching-internally">14. <strong>How does Git handle branching internally?</strong></h4>
+<p>Git branches are simply pointers to specific commits. Creating a new branch is a lightweight operation that just points to the current commit.</p>
+<p><strong>Example</strong>: When you run <code>git branch feature-branch</code>, Git creates a new pointer that points to the same commit as <code>HEAD</code>.</p>
+<h4 id="15-whats-the-purpose-of-git-bisect-and-how-would-you-use-it-to-debug-a-problem">15. <strong>What’s the purpose of <code>git bisect</code>, and how would you use it to debug a problem?</strong></h4>
+<p><code>git bisect</code> performs a binary search to find the commit that introduced a bug.</p>
+<p><strong>Example</strong>: Start bisecting with:</p>
+<pre><code class="language-bash">git bisect start
+git bisect bad   <span class="hljs-comment"># Current commit is bad</span>
+git bisect good  <span class="hljs-comment"># Known good commit</span>
+</code></pre>
+<p>Git will guide you through checking out different commits to find the faulty one.</p>
+<h4 id="16-what-is-a-detached-head-state-in-git-and-how-do-you-resolve-it">16. <strong>What is a detached HEAD state in Git, and how do you resolve it?</strong></h4>
+<p>A detached HEAD state occurs when the HEAD points to a specific commit rather than a branch. This happens when you checkout a specific commit instead of a branch.</p>
+<p><strong>Example</strong>: To resolve it, create a new branch from the current state:</p>
+<pre><code class="language-bash">git checkout -b new-branch
+</code></pre>
+<h4 id="17-how-do-you-safely-delete-a-branch-in-git">17. <strong>How do you safely delete a branch in Git?</strong></h4>
+<p>Use <code>git branch -d &lt;branch-name&gt;</code> to delete a local or merged branch.</p>
+<p>Use <code>git branch -D &lt;branch-name&gt;</code> to force delete an unmerged branch.</p>
+<p>To delete a remote branch, use <code>git push origin --delete &lt;branch-name&gt;</code>.</p>
+<h4 id="18-what-are-submodules-in-git-and-when-would-you-use-them">18. <strong>What are submodules in Git, and when would you use them?</strong></h4>
+<p>Submodules allow you to include one repository inside another. They are useful for managing dependencies between projects.</p>
+<p><strong>Example</strong>: Add a submodule to your repository:</p>
+<pre><code class="language-bash">git submodule add https://github.com/owner/repo.git
+</code></pre>
+<h4 id="19-explain-the-significance-of-gitignore-and-how-its-used">19. <strong>Explain the significance of <code>.gitignore</code> and how it’s used.</strong></h4>
+<p><code>.gitignore</code> is used to specify files and directories that Git should ignore.</p>
+<p><strong>Example</strong>: To ignore all <code>.log</code> files, add the following to <code>.gitignore</code>:</p>
+<pre><code class="language-bash">*.<span class="hljs-built_in">log</span>
+</code></pre>
+<h4 id="20-how-do-you-create-and-apply-patches-in-git">20. <strong>How do you create and apply patches in Git?</strong></h4>
+<p>Use <code>git format-patch</code> to create a patch file and <code>git apply</code> to apply it.</p>
+<p><strong>Example</strong>: Create a patch for the last commit:</p>
+<pre><code class="language-bash">git format-patch HEAD~1
+</code></pre>
+<p>Apply the patch:</p>
+<pre><code class="language-bash">git apply patch-file.patch
+</code></pre>
+<h4 id="21-what-are-orphan-branches-and-how-do-you-create-one">21. <strong>What are orphan branches, and how do you create one?</strong></h4>
+<p>An orphan branch is a branch that starts without any history. Use <code>git checkout --orphan &lt;branch-name&gt;</code> to create one.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-bash">git checkout --orphan gh-pages
+</code></pre>
+<h4 id="22-what-is-the-difference-between-git-log-and-git-reflog">22. <strong>What is the difference between <code>git log</code> and <code>git reflog</code>?</strong></h4>
+<p><code>git log</code> shows the commit history, while <code>git reflog</code> tracks updates to the reference of the <code>HEAD</code>.</p>
+<p><strong>Example</strong>: Use <code>git reflog</code> to recover a commit that has been lost due to a reset or rebase.</p>
+<h4 id="23-how-would-you-rename-a-branch-in-git">23. <strong>How would you rename a branch in Git?</strong></h4>
+<p>Use <code>git branch -m &lt;new-branch-name&gt;</code> to rename the current branch, or <code>git branch -m &lt;old-branch-name&gt; &lt;new-branch-name&gt;</code> to rename another branch.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-bash">git branch -m new-feature-name
+</code></pre>
+<h4 id="24-how-do-you-track-and-sync-a-forked-repository">24. <strong>How do you track and sync a forked repository?</strong></h4>
+<p>Add the original repository as a remote (often named <code>upstream</code>), and sync it with <code>git fetch</code> and <code>git merge</code>.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-bash">git remote add upstream https://github.com/original-owner/repo.git
+git fetch upstream
+git merge upstream/main
+</code></pre>
+<h4 id="25-what-is-the-purpose-of-git-cherry-pick--how-do-you-perform-a-cherry-pick-in-git">25. <strong>What is the purpose of `git cherry-pick ? How do you perform a cherry-pick in Git?</strong></h4>
+<p><code>git cherry-pick</code> applies the changes introduced by an existing commit to the current branch, useful for applying specific changes without merging entire branches. <code>git cherry-pick &lt;commit-hash&gt;</code> applies a specific commit from one branch to another.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-bash">git cherry-pick abc123
+</code></pre>
+<h4 id="26-explain-the-difference-between-git-clone-and-git-fork">26. <strong>Explain the difference between <code>git clone</code> and <code>git fork</code>.</strong></h4>
+<p><code>git clone</code> creates a local copy of a repository, while <code>fork</code> duplicates a repository on a remote server (e.g., GitHub).</p>
+<p><strong>Example</strong>: You fork a repository on GitHub to work independently, then <code>clone</code> your fork to your local machine.</p>
+<h4 id="27-how-do-you-deal-with-git-subtrees">27. <strong>How do you deal with Git subtrees?</strong></h4>
+<p>Subtrees are an alternative to submodules for including external repositories. They embed the external project directly into the main repository.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-bash">git subtree add --prefix=subdir https://github.com/user/repo.git main
+</code></pre>
+<h4 id="28-what-is-the-significance-of-the-head-in-git">28. <strong>What is the significance of the <code>HEAD</code> in Git?</strong></h4>
+<p><code>HEAD</code> points to the current commit or branch you are working on.</p>
+<p><strong>Example</strong>: To reset your working directory to the last commit:</p>
+<pre><code class="language-bash">git reset --hard HEAD
+</code></pre>
+<h4 id="29-how-do-you-recover-a-deleted-branch-in-git">29. <strong>How do you recover a deleted branch in Git?</strong></h4>
+<p>Use <code>git reflog</code> to find the last commit, then create a new branch at that commit.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-bash">git reflog
+git checkout -b recovered-branch &lt;commit-hash&gt;
+</code></pre>
+<h4 id="30-what-is-the-difference-between-a-fast-forward-and-a-three-way-merge-in-git">30. <strong>What is the difference between a fast-forward and a three-way merge in Git?</strong></h4>
+<p>A fast-forward merge moves the pointer forward to the new commit if no changes have been made since the branch diverged. A three-way merge combines changes from two diverging branches.</p>
+<p><strong>Example</strong>: A fast-forward merge occurs when you merge a branch that hasn’t been modified:</p>
+<pre><code class="language-bash">git merge --ff-only feature-branch
+</code></pre>
+<h4 id="31-how-do-you-check-the-status-of-your-repository-in-git">31. <strong>How do you check the status of your repository in Git?</strong></h4>
+<p>Use the <code>git status</code> command to check the current status of your working directory and staging area, showing which files have been modified, added, or deleted.</p>
+<h4 id="32-explain-the-difference-between-git-clone-git-pull-and-git-fetch">32. <strong>Explain the difference between <code>git clone</code>, <code>git pull</code>, and <code>git fetch</code>.</strong></h4>
+<ul>
+<li><strong><code>git clone</code>:</strong> Creates a copy of a remote repository on your local machine.</li>
+<li><strong><code>git pull</code>:</strong> Fetches changes from a remote repository and merges them into your current branch.</li>
+<li><strong><code>git fetch</code>:</strong> Fetches changes from a remote repository but does not merge them; it simply updates the remote-tracking branches.</li>
+</ul>
+<h4 id="33-what-is-the-difference-between-git-commit-and-git-push">33. <strong>What is the difference between <code>git commit</code> and <code>git push</code>?</strong></h4>
+<ul>
+<li><strong><code>git commit</code>:</strong> Records changes to the local repository.</li>
+<li><strong><code>git push</code>:</strong> Sends committed changes from the local repository to a remote repository.</li>
+</ul>
+<h4 id="34-how-do-you-create-a-new-branch-in-git">34. <strong>How do you create a new branch in Git?</strong></h4>
+<p>Use the <code>git branch &lt;branch-name&gt;</code> command to create a new branch. You can switch to it using <code>git checkout &lt;branch-name&gt;</code> or create and switch using <code>git checkout -b &lt;branch-name&gt;</code>.</p>
+<h4 id="35-explain-the-difference-between-git-diff-and-git-log">35. <strong>Explain the difference between <code>git diff</code> and <code>git log</code>.</strong></h4>
+<ul>
+<li><strong><code>git diff</code>:</strong> Shows the differences between files in your working directory, staging area, and repository.</li>
+<li><strong><code>git log</code>:</strong> Displays a history of commits in the repository.</li>
+</ul>
+<h4 id="36-what-is-the-purpose-of-git-tag">36. <strong>What is the purpose of <code>git tag</code>?</strong></h4>
+<p><code>git tag</code> is used to create a snapshot or reference to a specific commit, often used to mark release points in the repository history.</p>
+<h4 id="37-how-do-you-list-all-branches-in-a-git-repository">37. <strong>How do you list all branches in a Git repository?</strong></h4>
+<p>Use <code>git branch</code> to list local branches and <code>git branch -r</code> to list remote branches. Use <code>git branch -a</code> to list all branches, both local and remote.</p>
+<h4 id="38--how-do-you-check-out-a-specific-commit-in-git">38.  <strong>How do you check out a specific commit in Git?</strong></h4>
+<p>Use <code>git checkout &lt;commit-hash&gt;</code> to switch to a specific commit. This puts you in a detached <code>HEAD</code> state.</p>
+<h4 id="39--what-is-the-difference-between-git-remote-and-git-remote--v">39.  <strong>What is the difference between <code>git remote</code> and <code>git remote -v</code>?</strong></h4>
+<ul>
+<li><strong><code>git remote</code>:</strong> Lists the names of all remote repositories.</li>
+<li><strong><code>git remote -v</code>:</strong> Lists the names and URLs of all remote repositories.</li>
+</ul>
+<h4 id="40--how-do-you-create-a-git-repository">40.  <strong>How do you create a Git repository?</strong></h4>
+<p>Use <code>git init</code> to create a new local repository in the current directory or <code>git clone &lt;repository-url&gt;</code> to clone an existing remote repository.</p>
+<h4 id="41--what-is-the-purpose-of-git-config">41.  <strong>What is the purpose of <code>git config</code>?</strong></h4>
+<p><code>git config</code> is used to set Git configuration options, such as user name, email, and other settings like line endings and merge tools.</p>
+
+            
+            
+        </body>
+        </html>

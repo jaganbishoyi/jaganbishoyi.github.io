@@ -70,6 +70,7 @@ button.custom-btn {
     &:hover {
         transform: translateY(-3px);
         color: $white;
+        background: $theme-color;
     }
 
     &:focus {

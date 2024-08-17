@@ -124,7 +124,7 @@ export const blogs: IBlogContent[] = [
     {
         title: 'Must asked question and answer related to version controlling.',
         description: 'Version control is an essential tool in modern software development, allowing teams to track changes, collaborate efficiently, and maintain code history. During technical interviews, version control concepts and practices are often tested.',
-        publishDate: '2024-08-16',
+        publishDate: '2024-08-17',
         tags: ['version-control'],
         id: '8',
         slug: 'must-asked-question-and-answer-related-to-version-controlling',
@@ -132,7 +132,7 @@ export const blogs: IBlogContent[] = [
         author: {
             name: 'Jagan Mohan Bishoyi',
             image: 'assets/images/me.png',
-            publishedDate: '2024-08-16'
+            publishedDate: '2024-08-17'
         },
         URL: 'version-control/must-asked-question-and-answer-related-to-version-controlling.md'
     }

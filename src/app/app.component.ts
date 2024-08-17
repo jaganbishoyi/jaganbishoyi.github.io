@@ -31,6 +31,9 @@ export class AppComponent implements OnInit {
                 this.addMetaInfo(event.url);
             }
         });
+
+        // const slug = this.utils.generateSlug("");
+        // console.log(slug);
     }
 
     addMetaInfo(url: string): void {

@@ -12,6 +12,7 @@ import { blogs } from '@inMemoryDB/blogs';
 export class BlogDetailsComponent implements OnInit {
     blog: IBlogContent = {} as IBlogContent;
     inValidBlogSlug = false;
+    relatedBlogs: IBlogContent[] = [];
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -25,6 +26,12 @@ export class BlogDetailsComponent implements OnInit {
             if (blog) {
                 this.inValidBlogSlug = false;
                 this.blog = blog;
+                if (blog && blog.related && blog.related.length) {
+                    const related = blog.related;
+                    this.relatedBlogs = blogs.filter((blog: IBlogContent) => slug !== blog.slug && related.includes(blog.slug));
+                } else {
+                    this.relatedBlogs = [];
+                }
             } else {
                 this.inValidBlogSlug = true;
             }

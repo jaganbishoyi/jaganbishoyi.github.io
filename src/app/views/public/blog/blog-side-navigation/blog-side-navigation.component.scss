@@ -8,7 +8,7 @@ ul.side-navs {
     li {
         margin: 10px 0;
         padding: 10px 15px;
-        background-color: #fff;
+        background-color: $white;
         font-size: 14px;
         font-weight: 700;
         cursor: pointer;
@@ -25,12 +25,12 @@ ul.side-navs {
         &:hover,
         &:focus,
         &:active {
-            box-shadow: 0px 3px 10px -7px rgba(0, 0, 24, 0.5);
+            box-shadow: 0px 3px 10px -7px $black;
             transform: scale(1.03);
         }
 
         &.active {
-            background-color: $theme-color;
+            background-color: $violet;
             color: $white;
         }
     }

@@ -2,3 +2,5 @@
     <ng-http-loader [debounceDelay]="100" [extraDuration]="200" [minDuration]="300" [opacity]="'.7'">
     </ng-http-loader>
 </router-outlet>
+
+<button type="button" class="btn btn-outline-light scroll-to-top" *ngIf="isShow" (click)="gotoTop()">👆</button>

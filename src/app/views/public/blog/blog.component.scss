@@ -1,13 +1,15 @@
+@import "variables";
+
 .blog-container {
     min-height: 90vh;
 
     .no-data {
-        background: #fff;
+        background: $white;
         margin: 0 0 1rem;
         position: relative;
         border-radius: 7px;
         padding: 1.25rem;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 3px 10px $black-shadow;
     }
 
     @media only screen and (max-width: 768px) {
@@ -17,7 +19,7 @@
 
         .blogs {
             margin: 10px 0 20px 0 !important;
-            border-top: 1px dashed #000;
+            border-top: 1px dashed $black;
             padding-top: 30px;
         }
     }

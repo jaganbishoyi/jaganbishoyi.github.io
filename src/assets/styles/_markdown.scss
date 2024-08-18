@@ -37,7 +37,7 @@ markdown {
 
     h6 {
         font-size: 0.85em !important;
-        color: #717171 !important;
+        color: $gray !important;
     }
 
     /* Paragraphs */
@@ -49,13 +49,13 @@ markdown {
 
     /* Links */
     a {
-        color: rgb(59, 73, 223);
+        color: $blue;
         text-decoration: underline;
         overflow-wrap: break-word;
 
         &:hover,
         &:focus {
-            color: $theme-color;
+            color: $violet;
         }
     }
 
@@ -79,22 +79,22 @@ markdown {
         width: 100%;
         border-collapse: collapse;
         margin: 2em 0;
-        color: #333;
+        color: $black;
 
         th,
         td {
             padding: 0.5em 0.75em;
-            border: 1px solid #ddd;
+            border: 1px solid $platinum;
             text-align: left;
         }
 
         th {
-            background-color: #f4f4f4;
+            background-color: $smoke-white;
             font-weight: 700;
         }
 
         td {
-            background-color: #ffffff;
+            background-color: $white;
         }
     }
 
@@ -110,18 +110,18 @@ markdown {
     /* Horizontal Rules */
     hr {
         border: none;
-        border-top: 1px solid #ddd;
+        border-top: 1px solid $platinum;
         margin: 2em 0;
     }
 
     /* Blockquotes */
     blockquote {
-        border-left: 4px solid #ddd;
+        border-left: 4px solid $platinum;
         padding: 0.5em 1.5em;
         margin: 1.5em 0;
-        color: #555;
+        color: $gray;
         font-style: italic;
-        background-color: #f9f9f9;
+        background-color: $smoke-white;
 
         * {
             margin-bottom: 0 !important;
@@ -130,5 +130,36 @@ markdown {
 
     code {
         font-size: 95%;
+    }
+
+    .markdown-clipboard-toolbar {
+        z-index: unset !important;
+
+        .markdown-clipboard-button {
+            background-color: $black;
+            border: none;
+            border-radius: 4px;
+            color: $white;
+            cursor: pointer;
+            font-size: 11px;
+            padding: 4px 0;
+            width: 50px;
+            transition: all 250ms ease-out;
+            line-height: 20px;
+            font-weight: 900;
+
+            &:hover {
+                background-color: $dim-gray;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+
+            &.copied {
+                background-color: $light-green;
+                color: $green;
+            }
+        }
     }
 }

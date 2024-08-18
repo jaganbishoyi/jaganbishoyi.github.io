@@ -1,0 +1,13 @@
+@import "variables";
+
+button.scroll-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid $black;
+    background: $white-transparent;
+}

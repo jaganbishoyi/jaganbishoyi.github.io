@@ -89,7 +89,8 @@ export const blogs: IBlogContent[] = [
             image: 'assets/images/me.png',
             publishedDate: '2024-08-15'
         },
-        URL: 'version-control/must-used-git-commands.md'
+        URL: 'version-control/must-used-git-commands.md',
+        related: ['must-asked-question-and-answer-related-to-version-controlling'],
     },
     {
         title: 'What are the different types of data binding in Angular?',
@@ -134,6 +135,39 @@ export const blogs: IBlogContent[] = [
             image: 'assets/images/me.png',
             publishedDate: '2024-08-17'
         },
-        URL: 'version-control/must-asked-question-and-answer-related-to-version-controlling.md'
+        URL: 'version-control/must-asked-question-and-answer-related-to-version-controlling.md',
+        related: ['must-used-git-commands'],
+    },
+    {
+        title: 'What are Angular Directives? Name some built-in directives?',
+        description: 'Directives are a way to extend HTML by attaching custom behaviors to DOM elements or creating new HTML elements. They are a crucial part of Angular’s declarative approach to building user interfaces. With directives, you can manipulate the DOM, apply CSS styles, handle user input, and much more.',
+        publishDate: '2024-08-18',
+        tags: ['angular'],
+        id: '9',
+        slug: 'angular-directives',
+        featured: false,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-18'
+        },
+        URL: 'angular/angular-directives.md',
+        related: ['angular-custom-directives']
+    },
+    {
+        title: 'How do you create a custom directive in Angular?',
+        description: 'Creating a custom directive in Angular involves defining a directive class and applying it to elements in your template. Directives in Angular can be used to add behavior to existing DOM elements, create custom reusable components, or manipulate the DOM.',
+        publishDate: '2024-08-18',
+        tags: ['angular'],
+        id: '10',
+        slug: 'angular-custom-directives',
+        featured: false,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-18'
+        },
+        URL: 'angular/angular-custom-directives.md',
+        related: ['angular-directives']
     }
 ]

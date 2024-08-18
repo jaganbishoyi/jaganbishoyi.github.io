@@ -37,6 +37,7 @@ export interface IBlogContent {
     featured: boolean;
     author: IAuthor;
     URL: string;
+    related?: string[] // slug
 }
 
 export interface IAuthor {

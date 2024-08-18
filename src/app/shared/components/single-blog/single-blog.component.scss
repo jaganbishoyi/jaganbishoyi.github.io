@@ -1,7 +1,7 @@
 @import "variables";
 
 .single-blog {
-    background: #fff;
+    background: $white;
     margin: 0 0 1rem;
     position: relative;
     border-radius: 7px;
@@ -23,104 +23,7 @@
         }
 
         &:hover {
-            color: $theme-color;
+            color: $violet;
         }
     }
-
-    .tags {
-        margin-top: 10px;
-
-        .tag {
-            margin: 0 10px 0 0;
-            cursor: pointer;
-            background: transparent;
-            color: rgb(64, 64, 64);
-            border-radius: 0.4rem;
-            display: inline-flex;
-            align-items: center;
-            white-space: nowrap;
-            flex-wrap: nowrap;
-            transition: all cubic-bezier(0.17, 0.67, 0.5, 0.71) 100ms;
-            padding: clamp(0.25rem, 0.25em, 0.5em) 0.5em;
-            border: 1px solid transparent;
-
-            &:first-child {
-                margin-left: 0;
-            }
-
-            &.tag-0 {
-                .hash {
-                    color: #ED1556;
-                }
-
-                &:hover {
-                    background: rgba(237, 21, 86, 0.10);
-                    color: rgb(23, 23, 23);
-                    box-shadow: inset 0 0 0 1px rgba(237, 21, 86, 0.10), inset 0 0 0 1px rgba(237, 21, 86, 0.10), inset 0 0 0 1px rgba(237, 21, 86, 0.10);
-                }
-            }
-
-            &.tag-1 {
-                .hash {
-                    color: #3b49df;
-                }
-
-                &:hover {
-                    background: rgba(59, 73, 223, 0.10);
-                    color: rgb(23, 23, 23);
-                    box-shadow: inset 0 0 0 1px rgba(59, 73, 223, 0.10), inset 0 0 0 1px rgba(59, 73, 223, 0.10), inset 0 0 0 1px rgba(59, 73, 223, 0.10);
-                }
-            }
-
-            &.tag-2 {
-                .hash {
-                    color: #562765;
-                }
-
-                &:hover {
-                    background: rgba(86, 39, 101, 0.10);
-                    color: rgb(23, 23, 23);
-                    box-shadow: inset 0 0 0 1px rgba(86, 39, 101, 0.10), inset 0 0 0 1px rgba(86, 39, 101, 0.10), inset 0 0 0 1px rgba(86, 39, 101, 0.10);
-                }
-            }
-
-            &.tag-3 {
-                .hash {
-                    color: #890606;
-                }
-
-                &:hover {
-                    background: rgba(137, 6, 6, 0.10);
-                    color: rgb(23, 23, 23);
-                    box-shadow: inset 0 0 0 1px rgba(137, 6, 6, 0.10), inset 0 0 0 1px rgba(137, 6, 6, 0.10), inset 0 0 0 1px rgba(137, 6, 6, 0.10);
-                }
-            }
-
-            &.tag-4 {
-                .hash {
-                    color: #f7df1e;
-                }
-
-                &:hover {
-                    background: rgba(247, 223, 30, 0.10);
-                    color: rgb(23, 23, 23);
-                    box-shadow: inset 0 0 0 1px rgba(247, 223, 30, 0.10), inset 0 0 0 1px rgba(247, 223, 30, 0.10), inset 0 0 0 1px rgba(247, 223, 30, 0.10);
-                }
-            }
-
-            &.tag-5 {
-                .hash {
-                    color: #000000;
-                }
-
-                &:hover {
-                    background: rgba(0, 0, 0, 0.10);
-                    color: rgb(23, 23, 23);
-                    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.10), inset 0 0 0 1px rgba(0, 0, 0, 0.10), inset 0 0 0 1px rgba(0, 0, 0, 0.10);
-                }
-            }
-
-        }
-    }
-
 }

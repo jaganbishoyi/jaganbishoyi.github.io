@@ -9,22 +9,22 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: $dim-gray;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: $gray;
 }
 
 ::-moz-selection {
     color: $white;
-    background: $theme-color;
+    background: $violet;
 }
 
 ::selection {
     color: $white;
-    background: $theme-color;
+    background: $violet;
 }
 
 html,
@@ -40,37 +40,37 @@ body {
 }
 
 .bg {
-    background: linear-gradient(to right, rgba(245, 245, 245, .8), rgba(245, 245, 245, .8)), url(assets/images/bg/doodles.webp);
+    background: linear-gradient(to right, $lite-while, $lite-while), url(assets/images/bg/doodles.webp);
     background-position: center;
 }
 
 .bg-1 {
-    background: linear-gradient(to right, rgba(245, 245, 245, .8), rgba(245, 245, 245, .8)), url(assets/images/bg/bg-1.png);
+    background: linear-gradient(to right, $lite-while, $lite-while), url(assets/images/bg/bg-1.png);
     background-position: center;
 }
 
 .bg-2 {
-    background: linear-gradient(to right, rgba(245, 245, 245, .8), rgba(245, 245, 245, .8)), url(assets/images/bg/web.png);
+    background: linear-gradient(to right, $lite-while, $lite-while), url(assets/images/bg/web.png);
     background-position: center;
 }
 
 button.custom-btn {
     padding: 10px 35px;
     font-size: 13px;
-    background: $theme-color;
+    background: $violet;
     color: $white;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: inline-block;
     font-weight: 700;
     border-radius: 5px;
-    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 15px 0 $black-shadow;
     transition: transform 0.3s;
 
     &:hover {
         transform: translateY(-3px);
         color: $white;
-        background: $theme-color;
+        background: $violet;
     }
 
     &:focus {
@@ -79,8 +79,8 @@ button.custom-btn {
 }
 
 .btn-outline-theme {
-    color: $theme-color;
-    border-color: $theme-color;
+    color: $violet;
+    border-color: $violet;
     transition: transform 0.3s;
     padding: 10px 35px;
     font-size: 13px;
@@ -93,10 +93,10 @@ button.custom-btn {
     &:hover,
     &:active {
         color: $white !important;
-        background-color: $theme-color !important;
-        border-color: $theme-color !important;
+        background-color: $violet !important;
+        border-color: $violet !important;
         transform: translateY(-3px);
-        box-shadow: 0 0 0 0.2rem $theme-color !important;
+        box-shadow: 0 0 0 0.2rem $violet !important;
     }
 
     &:focus {

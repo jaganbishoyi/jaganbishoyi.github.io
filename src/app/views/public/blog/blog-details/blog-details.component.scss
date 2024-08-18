@@ -2,6 +2,18 @@
 
 .blog-content {
     margin: 0 40px;
+
+    .related-blogs {
+        ol {
+            padding-left: 1rem;
+
+            li {
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
 }
 
 .blog-details {

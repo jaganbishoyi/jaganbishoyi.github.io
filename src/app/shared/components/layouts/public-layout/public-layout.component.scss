@@ -5,7 +5,7 @@
         position: fixed;
         width: 100%;
         height: $header-height;
-        box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px 1px $black-shadow;
         z-index: 1;
         top: 0;
         background-color: $white;

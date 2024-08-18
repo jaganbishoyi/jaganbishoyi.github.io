@@ -1,3 +1,5 @@
+@import "variables";
+
 .avatar {
     display: flex;
     align-items: center;
@@ -16,13 +18,13 @@
 
         .name {
             font-size: 1em;
-            color: #333;
+            color: $black;
             font-weight: bold;
         }
 
         .date {
             font-size: 0.8em;
-            color: rgb(23, 23, 23);
+            color: $jet-black;
         }
     }
 }

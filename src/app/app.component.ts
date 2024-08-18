@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { IProject, ISeoEssentials } from '@interfaces/general.interface';
 import { UtilsService } from '@services/utils.services';
 // import { REQUEST_URL } from './request-url.service';
@@ -14,6 +14,19 @@ import { NavigationEnd, Router } from '@angular/router';
 export class AppComponent implements OnInit {
     title = 'portfolio';
     projects: IProject[] = projects;
+    isShow = false;
+    topPosToStartShowing = 100;
+
+    @HostListener('window:scroll')
+    checkScroll() {
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+        if (scrollPosition >= this.topPosToStartShowing) {
+            this.isShow = true;
+        } else {
+            this.isShow = false;
+        }
+    }
 
     constructor(
         private utils: UtilsService,
@@ -21,9 +34,7 @@ export class AppComponent implements OnInit {
         private router: Router,
         // eslint-disable-next-line @typescript-eslint/ban-types
         @Inject(PLATFORM_ID) private platformId: Object
-    ) {
-
-    }
+    ) { }
 
     ngOnInit(): void {
         this.router.events.subscribe((event) => {
@@ -34,6 +45,14 @@ export class AppComponent implements OnInit {
 
         // const slug = this.utils.generateSlug("");
         // console.log(slug);
+    }
+
+    gotoTop() {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
     }
 
     addMetaInfo(url: string): void {

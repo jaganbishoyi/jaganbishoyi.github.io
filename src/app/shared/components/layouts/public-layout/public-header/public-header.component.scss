@@ -20,7 +20,7 @@
         border-radius: 50px;
         overflow: hidden;
         margin-right: 1.5rem;
-        border: 3px solid $theme-color;
+        border: 3px solid $violet;
 
         img.logo {
             width: 100%;
@@ -42,7 +42,7 @@
         cursor: pointer;
 
         &:hover {
-            color: $theme-color;
+            color: $violet;
         }
     }
 
@@ -65,7 +65,7 @@
             cursor: pointer;
 
             &:hover {
-                color: $theme-color;
+                color: $violet;
             }
 
             &.menu-icon {
@@ -81,7 +81,7 @@
             }
 
             &.active {
-                color: $theme-color;
+                color: $violet;
             }
         }
     }
@@ -92,7 +92,7 @@
         top: $header-height;
         right: 0;
         background: $white;
-        box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px 1px $black-shadow;
 
         .nav {
             padding: 10px 40px;
@@ -104,7 +104,7 @@
             cursor: pointer;
 
             &.active {
-                color: $theme-color;
+                color: $violet;
             }
         }
     }

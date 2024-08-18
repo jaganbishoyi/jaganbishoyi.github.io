@@ -89,7 +89,8 @@ export const blogs: IBlogContent[] = [
             image: 'assets/images/me.png',
             publishedDate: '2024-08-15'
         },
-        URL: 'version-control/must-used-git-commands.md'
+        URL: 'version-control/must-used-git-commands.md',
+        related: ['must-asked-question-and-answer-related-to-version-controlling'],
     },
     {
         title: 'What are the different types of data binding in Angular?',
@@ -134,7 +135,8 @@ export const blogs: IBlogContent[] = [
             image: 'assets/images/me.png',
             publishedDate: '2024-08-17'
         },
-        URL: 'version-control/must-asked-question-and-answer-related-to-version-controlling.md'
+        URL: 'version-control/must-asked-question-and-answer-related-to-version-controlling.md',
+        related: ['must-used-git-commands'],
     },
     {
         title: 'What are Angular Directives? Name some built-in directives?',
@@ -149,7 +151,8 @@ export const blogs: IBlogContent[] = [
             image: 'assets/images/me.png',
             publishedDate: '2024-08-18'
         },
-        URL: 'angular/angular-directives.md'
+        URL: 'angular/angular-directives.md',
+        related: ['angular-custom-directives']
     },
     {
         title: 'How do you create a custom directive in Angular?',
@@ -164,6 +167,7 @@ export const blogs: IBlogContent[] = [
             image: 'assets/images/me.png',
             publishedDate: '2024-08-18'
         },
-        URL: 'angular/angular-custom-directives.md'
+        URL: 'angular/angular-custom-directives.md',
+        related: ['angular-directives']
     }
 ]

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Steps to Create a Custom Directive</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p>Creating a custom directive in Angular involves defining a directive class and applying it to elements in your template. Directives in Angular can be used to add behavior to existing DOM elements, create custom reusable components, or manipulate the DOM.</p>
+<h3 id="steps-to-create-a-custom-directive">Steps to Create a Custom Directive</h3>
+<ol>
+<li><strong>Generate a Directive</strong>: Use Angular CLI to generate a directive.</li>
+<li><strong>Define the Directive Class</strong>: Implement the behavior you want to add to the element.</li>
+<li><strong>Apply the Directive</strong>: Use the directive in your templates.</li>
+</ol>
+<h3 id="example-creating-a-custom-highlight-directive">Example: Creating a Custom Highlight Directive</h3>
+<p>Let's create a custom directive that highlights the background color of an element.</p>
+<h4 id="step-1-generate-the-directive">Step 1: Generate the Directive</h4>
+<p>Use the Angular CLI to generate a directive. Open your terminal and run:</p>
+<pre><code class="language-sh">ng generate directive highlight
+</code></pre>
+<p>This command generates two files: <code>highlight.directive.ts</code> and <code>highlight.directive.spec.ts</code> (for testing), and updates the <code>app.module.ts</code> to include the new directive.</p>
+<h4 id="step-2-define-the-directive-class">Step 2: Define the Directive Class</h4>
+<p>Open the <code>highlight.directive.ts</code> file and define the directive logic:</p>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Directive</span>, <span class="hljs-title class_">ElementRef</span>, <span class="hljs-title class_">Renderer2</span>, <span class="hljs-title class_">HostListener</span>, <span class="hljs-title class_">Input</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+
+@<span class="hljs-title class_">Directive</span>({
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;[appHighlight]&#x27;</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HighlightDirective</span> {
+  @<span class="hljs-title class_">Input</span>(<span class="hljs-string">&#x27;appHighlight&#x27;</span>) <span class="hljs-attr">highlightColor</span>: string;
+
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">private el: ElementRef, private renderer: Renderer2</span>) {}
+
+  @<span class="hljs-title class_">HostListener</span>(<span class="hljs-string">&#x27;mouseenter&#x27;</span>) <span class="hljs-title function_">onMouseEnter</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">highlight</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">highlightColor</span> || <span class="hljs-string">&#x27;yellow&#x27;</span>);
+  }
+
+  @<span class="hljs-title class_">HostListener</span>(<span class="hljs-string">&#x27;mouseleave&#x27;</span>) <span class="hljs-title function_">onMouseLeave</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">highlight</span>(<span class="hljs-literal">null</span>);
+  }
+
+  private <span class="hljs-title function_">highlight</span>(<span class="hljs-params">color: string</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">renderer</span>.<span class="hljs-title function_">setStyle</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">el</span>.<span class="hljs-property">nativeElement</span>, <span class="hljs-string">&#x27;backgroundColor&#x27;</span>, color);
+  }
+}
+</code></pre>
+<h4 id="explanation">Explanation</h4>
+<ul>
+<li><strong>Imports</strong>: Import necessary Angular core modules.</li>
+<li><strong>@Directive Decorator</strong>: Defines metadata for the directive, including its selector (<code>appHighlight</code>).</li>
+<li><strong>ElementRef and Renderer2</strong>: Used to manipulate the DOM elements safely.</li>
+<li><strong>@Input</strong>: Allows the directive to accept an input value for customization.</li>
+<li><strong>@HostListener</strong>: Listens to events on the host element and triggers the specified methods (<code>onMouseEnter</code> and <code>onMouseLeave</code>).</li>
+<li><strong>highlight Method</strong>: Uses the Renderer2 service to set the background color of the host element.</li>
+</ul>
+<h4 id="step-3-apply-the-directive">Step 3: Apply the Directive</h4>
+<p>Use the custom directive in your component template. For example, in <code>app.component.html</code>:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">appHighlight</span>=<span class="hljs-string">&quot;lightblue&quot;</span>&gt;</span>Hover over this text to see the highlight effect.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">appHighlight</span>&gt;</span>Hover over this text to see the default highlight effect.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<h3 id="summary">Summary</h3>
+<ol>
+<li><strong>Generate a Directive</strong>: Use Angular CLI to scaffold the directive.</li>
+<li><strong>Define Directive Logic</strong>: Implement the desired behavior and use Angular's API to manipulate the DOM.</li>
+<li><strong>Use the Directive</strong>: Apply the directive to elements in your templates using its selector.</li>
+</ol>
+<p>By following these steps, you can create powerful custom directives to extend the functionality of your Angular applications.</p>
+
+            
+            
+        </body>
+        </html>

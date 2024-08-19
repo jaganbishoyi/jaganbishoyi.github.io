@@ -150,7 +150,7 @@ export const projects: IProject[] = [
             'Key features include real-time data updates, search functionality, interactive user profiles, tagging system, and an appealing interface.',
         ],
         techs: ['Angular', 'Bootstrap', 'Stack Exchange APIs'],
-        featured: [true, 4],
+        featured: [false, 0],
     },
     {
         name: 'Story Books',
@@ -188,7 +188,7 @@ export const projects: IProject[] = [
             'Passport.js',
             'Google OAuth',
         ],
-        featured: [true, 5],
+        featured: [false, 0],
     },
     {
         name: 'ng-password-validator',

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Pure Pipes</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p>In Angular, pipes are used to transform data in templates. There are two types of pipes: <code>pure</code> pipes and <code>impure</code> pipes. Understanding the difference between them is crucial for optimizing performance and ensuring that your application behaves as expected.</p>
+<h3 id="pure-pipes">Pure Pipes</h3>
+<p>Pure pipes are stateless and produce the same output for the same input. They do not rely on any external state or data that might change during the lifecycle of the application.</p>
+<p><strong>Change Detection:</strong> Pure pipes are executed only when the inputs to the pipe change. Angular calls the transform method of the pure pipe only when it detects a change in the value or reference of the input.</p>
+<p><strong>Performance:</strong> Pure pipes are more performant because Angular can skip their execution if the input hasn't changed.</p>
+<p><strong>Use Cases:</strong> Use pure pipes when you need to transform data that is static or changes infrequently.</p>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Pipe</span>, <span class="hljs-title class_">PipeTransform</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+
+@<span class="hljs-title class_">Pipe</span>({
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;pureExample&#x27;</span>,
+  <span class="hljs-attr">pure</span>: <span class="hljs-literal">true</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PureExamplePipe</span> implements <span class="hljs-title class_">PipeTransform</span> {
+  <span class="hljs-title function_">transform</span>(<span class="hljs-attr">value</span>: any): any {
+    <span class="hljs-comment">// transformation logic</span>
+    <span class="hljs-keyword">return</span> value.<span class="hljs-title function_">toUpperCase</span>();
+  }
+}
+</code></pre>
+<h3 id="impure-pipes">Impure Pipes</h3>
+<p>Impure pipes can produce different outputs for the same input. They might depend on external factors or data that can change independently of the input parameters.</p>
+<p><strong>Change Detection:</strong> Impure pipes are executed on every change detection cycle, regardless of whether the input values have changed or not. This can lead to performance issues if not used carefully.</p>
+<p><strong>Performance:</strong> Impure pipes can be less performant because they are called frequently, even when the input hasn't changed.</p>
+<p><strong>Use Cases:</strong> Use impure pipes when you need to transform data that changes frequently or relies on external factors, such as objects, arrays, or data from services that might change outside of the Angular change detection mechanism.</p>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Pipe</span>, <span class="hljs-title class_">PipeTransform</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+
+@<span class="hljs-title class_">Pipe</span>({
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;impureExample&#x27;</span>,
+  <span class="hljs-attr">pure</span>: <span class="hljs-literal">false</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ImpureExamplePipe</span> implements <span class="hljs-title class_">PipeTransform</span> {
+  <span class="hljs-title function_">transform</span>(<span class="hljs-attr">value</span>: any): any {
+    <span class="hljs-comment">// transformation logic</span>
+    <span class="hljs-keyword">return</span> value.<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;, &#x27;</span>);
+  }
+}
+</code></pre>
+<h3 id="when-to-use-which">When to Use Which?</h3>
+<ul>
+<li>
+<p><strong>Use Pure Pipes:</strong></p>
+<ul>
+<li>When the transformation logic is simple and the input data changes infrequently.</li>
+<li>When you want to leverage Angular's performance optimization by avoiding unnecessary re-computation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Use Impure Pipes:</strong></p>
+<ul>
+<li>When dealing with complex data structures like arrays or objects that might change frequently.</li>
+<li>When the transformation logic depends on external factors or state that changes independently of the component's inputs.</li>
+</ul>
+</li>
+</ul>
+
+            
+            
+        </body>
+        </html>

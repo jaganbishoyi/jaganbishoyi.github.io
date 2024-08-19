@@ -169,5 +169,20 @@ export const blogs: IBlogContent[] = [
         },
         URL: 'angular/angular-custom-directives.md',
         related: ['angular-directives']
+    },
+    {
+        title: 'What is the difference between pure pipes and impure pipes?',
+        description: 'In Angular, pipes are used to transform data in templates. There are two types of pipes: `pure` pipes and `impure` pipes. Understanding the difference between them is crucial for optimizing performance and ensuring that your application behaves as expected.',
+        publishDate: '2024-08-19',
+        tags: ['angular'],
+        id: '11',
+        slug: 'pure-pipes-and-impure-pipes',
+        featured: false,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-19'
+        },
+        URL: 'angular/pure-pipes-and-impure-pipes.md'
     }
 ]

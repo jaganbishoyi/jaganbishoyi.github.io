@@ -184,5 +184,20 @@ export const blogs: IBlogContent[] = [
             publishedDate: '2024-08-19'
         },
         URL: 'angular/pure-pipes-and-impure-pipes.md'
+    },
+    {
+        title: 'Implementing Light, Dark, System/Auto Mode in Angular.',
+        description: "Light / Dark mode toggle is a very common feature in today's web applications. This feature may look very simple to the end users, but it takes some additional effort to correctly implement in a web application.",
+        publishDate: '2024-08-21',
+        tags: ['angular'],
+        id: '11',
+        slug: 'implement-light-dark-mode-in-angular',
+        featured: true,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-21'
+        },
+        URL: 'angular/implement-light-dark-mode-in-angular.md'
     }
 ]

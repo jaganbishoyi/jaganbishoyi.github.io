@@ -23,7 +23,7 @@
                 <img [src]="'assets/images/projects/' + project?.image" alt="" srcset="" class="img-fluid">
             </div>
             <div class="col-12 col-md-8 mt-5">
-                <h3 class="mb-4">{{project?.name | titlecase}}</h3>
+                <h3 class="mb-4">{{project?.name}}</h3>
                 <p *ngFor="let overview of project?.overview" class="overview">{{overview}}</p>
             </div>
             <div class="col-12 col-md-8 mt-4">

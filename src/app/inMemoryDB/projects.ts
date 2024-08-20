@@ -29,7 +29,7 @@ export const projects: IProject[] = [
             "This portfolio website serves as a powerful tool for presenting the owner's achievements and attracting potential opportunities. It combines the strengths of modern web development technologies with effective hosting and quality control mechanisms to create an impressive and user-friendly display of the individual's professional journey and capabilities.",
         ],
         techs: ['Angular', 'Bootstrap', 'Husky', 'ESLint', 'GitHub'],
-        featured: [true, 2],
+        featured: [true, 3],
     },
     {
         name: 'Password Generator',
@@ -63,7 +63,7 @@ export const projects: IProject[] = [
             'This feature empowers users to make informed decisions about their password choices, enhancing their online security.',
         ],
         techs: ['HTML', 'CSS', 'JavaScript'],
-        featured: [true, 3],
+        featured: [true, 4],
     },
     {
         name: 'Javascript Calculator',
@@ -210,7 +210,7 @@ export const projects: IProject[] = [
                 url: 'https://www.npmjs.com/package/ng-password-validator',
             },
             {
-                id: '2',
+                id: '3',
                 name: 'github',
                 url: 'https://github.com/jaganbishoyi/ngx-password-validator',
             },
@@ -221,6 +221,43 @@ export const projects: IProject[] = [
             "The primary purpose of the Password Validator is to assist users in creating strong and secure passwords by guiding them through the password acceptance criteria. As users type their password, the pop-up window evaluates the password strength against preconfigured criteria. These criteria typically include requirements such as a minimum length, the presence of uppercase and lowercase letters, numbers, and special characters.",
             "As users continue to type their password and meet these criteria, they receive instant feedback in the form of a success message. This immediate feedback helps users understand whether their chosen password meets the necessary security standards, which encourages the creation of strong and resilient passwords.",
             "The Password Validator is a valuable addition to Angular applications, as it promotes better security practices by guiding users in real-time, ultimately leading to improved protection against unauthorized access and data breaches. This package can be easily integrated into Angular projects, making it a convenient and effective tool for enhancing password security and user experience."
+        ],
+        techs: ['Angular', 'GitHub', 'npm'],
+        featured: [true, 2],
+    },
+    {
+        name: 'ng-mode-switcher',
+        description: [
+            'ng-mode-switcher is a versatile Angular library that allows developers to effortlessly integrate dark mode, light mode, and auto (system default) mode switching into their applications.',
+            'With a simple configuration, you can provide users with a seamless experience, adapting to their preferred display settings.',
+            'This library offers full customization.'
+        ],
+        image: 'ng-mode-switcher.png',
+        id: '8',
+        links: [
+            {
+                id: '1',
+                name: 'live',
+                url: 'https://jaganb.dev/angular-mode-switcher-demo/',
+            },
+            {
+                id: '2',
+                name: 'npm',
+                url: 'https://www.npmjs.com/package/ng-mode-switcher',
+            },
+            {
+                id: '3',
+                name: 'github',
+                url: 'https://github.com/jaganbishoyi/angular-mode-switcher',
+            },
+        ],
+        overview: [
+            "Enhancing User Experience with `ng-mode-switcher` in an Angular Application.",
+            "In today's digital landscape, providing users with the ability to switch between dark, light, and system modes is not just a luxury—it’s an expectation. When working on a feature-rich Angular application, the development team wanted to integrate this functionality without over-complicating the codebase or spending excessive time building a custom solution. That’s where ng-mode-switcher came in, offering a straightforward yet powerful solution for mode switching in Angular applications.",
+            "Upon integrating ng-mode-switcher, the team immediately appreciated the simplicity it brought to the table. With minimal setup, the application gained the ability to toggle between light, dark, and auto modes. The core functionality of the library allowed users to switch modes seamlessly, and the auto mode smartly adjusted to the user’s system preference—whether they were using dark mode at night or light mode during the day. This automation removed the need for manual adjustments, enhancing the user experience by aligning the application with the user’s environment effortlessly.",
+            "Beyond its core functionality, ng-mode-switcher provided significant flexibility in its implementation. The library offered configuration options that enabled the team to customize how the mode switching appeared in the user interface. For instance, the ability to show or hide the legend meant the developers could decide whether to display mode options to users or keep the interface minimalistic, adapting it to the design needs of the project. Additionally, the developers were able to rename the modes, tailoring the experience to match the specific terminology and branding of the application.",
+            "The adaptability and ease of use made ng-mode-switcher a valuable asset to the development process. Rather than building custom mode-switching logic from scratch, the team leveraged the library’s well-documented features to implement a fully functional solution that fit seamlessly into their Angular project. The ability to quickly switch between modes, along with the customization options, gave the developers control over both the technical and visual aspects of the application.",
+            "In summary, ng-mode-switcher delivered both functionality and flexibility, allowing the development team to offer a polished mode-switching feature that enhanced the user experience. By integrating this library, the team saved development time while gaining the ability to customize the mode-switching interface to align perfectly with their application’s design and user expectations."
         ],
         techs: ['Angular', 'GitHub', 'npm'],
         featured: [true, 1],

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>How Dependency Injection Works in Angular</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p>Dependency Injection (DI) is a design pattern used to implement <code>Inversion of Control (IoC)</code> for resolving dependencies and managing the lifecycle of objects. In Angular, DI is a core concept that allows you to inject dependencies (like services) into your components, directives, pipes, and other services, promoting reusability and maintainability.</p>
+<h3 id="how-dependency-injection-works-in-angular">How Dependency Injection Works in Angular</h3>
+<ol>
+<li><strong>Providers</strong>: Define how to create instances of dependencies.</li>
+<li><strong>Injectors</strong>: Maintain a container of dependencies and are responsible for instantiating them.</li>
+<li><strong>Tokens</strong>: Identifiers used to look up dependencies in the injector.</li>
+</ol>
+<h3 id="steps-to-use-dependency-injection-in-angular">Steps to Use Dependency Injection in Angular</h3>
+<h4 id="1-define-a-service">1. Define a Service</h4>
+<p>First, create a service that you want to inject. Use the Angular CLI to generate a service:</p>
+<pre><code class="language-bash">ng generate service logger
+</code></pre>
+<p>This creates a service in <code>logger.service.ts</code>:</p>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Injectable</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+
+@<span class="hljs-title class_">Injectable</span>({
+  <span class="hljs-attr">providedIn</span>: <span class="hljs-string">&#x27;root&#x27;</span>  <span class="hljs-comment">// This makes the service a singleton at the root level</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LoggerService</span> {
+  <span class="hljs-title function_">log</span>(<span class="hljs-attr">message</span>: string): <span class="hljs-keyword">void</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(message);
+  }
+}
+</code></pre>
+<h4 id="2-register-the-service-with-an-injector">2. Register the Service with an Injector</h4>
+<p>Angular automatically registers the service with the root injector because of the <code>providedIn: 'root'</code> metadata in the <code>@Injectable</code> decorator. This means the service will be available throughout the application as a <code>singleton</code>.</p>
+<h4 id="3-inject-the-service-into-a-component">3. Inject the Service into a Component</h4>
+<p>Now you can inject the service into a component's constructor. For example, in <code>app.component.ts</code>:</p>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Component</span>, <span class="hljs-title class_">OnInit</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">LoggerService</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./logger.service&#x27;</span>;
+
+@<span class="hljs-title class_">Component</span>({
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;app-root&#x27;</span>,
+  <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;./app.component.html&#x27;</span>,
+  <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">&#x27;./app.component.css&#x27;</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AppComponent</span> implements <span class="hljs-title class_">OnInit</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">private logger: LoggerService</span>) {}
+
+  <span class="hljs-title function_">ngOnInit</span>(): <span class="hljs-keyword">void</span> {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">logger</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;AppComponent initialized&#x27;</span>);
+  }
+}
+</code></pre>
+<h4 id="explanation">Explanation</h4>
+<ul>
+<li><strong>Constructor Injection</strong>: The <code>LoggerService</code> is injected into the <code>AppComponent</code> constructor.</li>
+<li><strong>Using the Service</strong>: The <code>log</code> method of the <code>LoggerService</code> is called within the <code>ngOnInit</code> lifecycle hook.</li>
+</ul>
+<h3 id="custom-providers">Custom Providers</h3>
+<p>Sometimes you might want to configure how the dependency is provided. You can do this by creating a custom provider.</p>
+<h4 id="example-configuring-a-custom-provider">Example: Configuring a Custom Provider</h4>
+<p>Let's say you have an interface and multiple implementations:</p>
+<pre><code class="language-js"><span class="hljs-keyword">export</span> interface <span class="hljs-title class_">DataService</span> {
+  <span class="hljs-title function_">getData</span>(): string[];
+}
+
+@<span class="hljs-title class_">Injectable</span>({
+  <span class="hljs-attr">providedIn</span>: <span class="hljs-string">&#x27;root&#x27;</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LocalDataService</span> implements <span class="hljs-title class_">DataService</span> {
+  <span class="hljs-title function_">getData</span>(): string[] {
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">&#x27;Local data item 1&#x27;</span>, <span class="hljs-string">&#x27;Local data item 2&#x27;</span>];
+  }
+}
+
+@<span class="hljs-title class_">Injectable</span>({
+  <span class="hljs-attr">providedIn</span>: <span class="hljs-string">&#x27;root&#x27;</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RemoteDataService</span> implements <span class="hljs-title class_">DataService</span> {
+  <span class="hljs-title function_">getData</span>(): string[] {
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">&#x27;Remote data item 1&#x27;</span>, <span class="hljs-string">&#x27;Remote data item 2&#x27;</span>];
+  }
+}
+</code></pre>
+<p>You can provide one of these services in a module or component:</p>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">NgModule</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">BrowserModule</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/platform-browser&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">AppComponent</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./app.component&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">LocalDataService</span>, <span class="hljs-title class_">RemoteDataService</span>, <span class="hljs-title class_">DataService</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./data.service&#x27;</span>;
+
+@<span class="hljs-title class_">NgModule</span>({
+  <span class="hljs-attr">declarations</span>: [<span class="hljs-title class_">AppComponent</span>],
+  <span class="hljs-attr">imports</span>: [<span class="hljs-title class_">BrowserModule</span>],
+  <span class="hljs-attr">providers</span>: [
+    {
+        <span class="hljs-attr">provide</span>: <span class="hljs-title class_">DataService</span>,
+        <span class="hljs-attr">useClass</span>: <span class="hljs-title class_">LocalDataService</span>
+    } <span class="hljs-comment">// Use LocalDataService as the implementation for DataService</span>
+  ],
+  <span class="hljs-attr">bootstrap</span>: [<span class="hljs-title class_">AppComponent</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AppModule</span> {}
+</code></pre>
+<p>This tells Angular to use <code>LocalDataService</code> whenever <code>DataService</code> is injected.</p>
+<h3 id="injectors-and-hierarchical-dependency-injection">Injectors and Hierarchical Dependency Injection</h3>
+<p>Angular's DI system is hierarchical, meaning child injectors inherit providers from their parent injectors. This allows for different instances of a service in different parts of the application.</p>
+<h4 id="example-scoped-services">Example: Scoped Services</h4>
+<pre><code class="language-js">@<span class="hljs-title class_">Component</span>({
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;app-child&#x27;</span>,
+  <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;./child.component.html&#x27;</span>,
+  <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">&#x27;./child.component.css&#x27;</span>],
+  <span class="hljs-attr">providers</span>: [<span class="hljs-title class_">LocalDataService</span>]
+  <span class="hljs-comment">// This will provide a new instance of LocalDataService for this component and its children</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ChildComponent</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">private dataService: LocalDataService</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">dataService</span>.<span class="hljs-title function_">getData</span>());
+  }
+}
+</code></pre>
+<p>In this example, <code>ChildComponent</code> and its children will use a new instance of <code>LocalDataService</code>, separate from the instance used by the rest of the application.</p>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><strong>Providers</strong>: Define how dependencies are created.</li>
+<li><strong>Injectors</strong>: Manage the lifecycle and provide instances of dependencies.</li>
+<li><strong>Tokens</strong>: Identifiers used to retrieve dependencies.</li>
+</ul>
+<p><strong>Steps to Use DI in Angular</strong>:</p>
+<ol>
+<li><strong>Create a Service</strong>: Define the service class and annotate it with <code>@Injectable</code>.</li>
+<li><strong>Register the Service</strong>: Use <code>providedIn: 'root'</code> for application-wide services or register it in the module or component providers.</li>
+<li><strong>Inject the Service</strong>: Use constructor injection to inject the service into components, directives, pipes, or other services.</li>
+</ol>
+<p>By leveraging Angular's DI system, you can create modular, reusable, and testable services and components.</p>
+
+            
+            
+        </body>
+        </html>

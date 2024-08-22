@@ -38,7 +38,7 @@ export const blogs: IBlogContent[] = [
         tags: ['html'],
         id: '3',
         slug: 'new-features-introduced-in-HTML5',
-        featured: true,
+        featured: false,
         author: {
             name: 'Jagan Mohan Bishoyi',
             image: 'assets/images/me.png',
@@ -68,7 +68,7 @@ export const blogs: IBlogContent[] = [
         tags: ['html'],
         id: '5',
         slug: 'semantic-html-elements',
-        featured: true,
+        featured: false,
         author: {
             name: 'Jagan Mohan Bishoyi',
             image: 'assets/images/me.png',
@@ -201,7 +201,7 @@ export const blogs: IBlogContent[] = [
         URL: 'angular/implement-light-dark-mode-in-angular.md'
     },
     {
-        title: 'What is Dependency Injection? Explain how it works in Angular?',
+        title: 'What is Dependency Injection? Explain how it works in Angular.',
         description: "Dependency Injection (DI) is a design pattern used to implement `Inversion of Control (IoC)` for resolving dependencies and managing the lifecycle of objects. In Angular, DI is a core concept that allows you to inject dependencies (like services) into your components, directives, pipes, and other services, promoting reusability and maintainability.",
         publishDate: '2024-08-22',
         tags: ['angular'],
@@ -214,5 +214,20 @@ export const blogs: IBlogContent[] = [
             publishedDate: '2024-08-22'
         },
         URL: 'angular/dependency-injection-in-angular.md'
+    },
+    {
+        title: 'Write a JavaScript function to check if a given string is a palindrome.',
+        description: "The interviewer is looking for the candidate’s familiarity with loop constructs, JavaScript string methods, and other basic JavaScript syntax. They will evaluate the candidate’s skills based on the approach used to solve the palindrome problem. ",
+        publishDate: '2024-08-22',
+        tags: ['coding-challenges'],
+        id: '14',
+        slug: 'palindrome',
+        featured: false,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-22'
+        },
+        URL: 'coding-challenges/palindrome.md'
     }
 ]

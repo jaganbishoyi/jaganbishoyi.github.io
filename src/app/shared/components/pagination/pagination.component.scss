@@ -1,0 +1,28 @@
+@import "variables";
+
+ul.pagination {
+    li {
+        cursor: pointer;
+
+        .page-link {
+            color: $black;
+        }
+
+        &.active {
+            .page-link {
+                background-color: $violet;
+                border-color: $violet;
+                color: $white;
+                z-index: 0;
+            }
+        }
+
+        &.disabled {
+            cursor: not-allowed;
+
+            .page-link {
+                color: $outer-space;
+            }
+        }
+    }
+}

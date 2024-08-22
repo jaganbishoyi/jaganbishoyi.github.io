@@ -7,23 +7,23 @@ import { PreviewMarkdownComponent } from './components/preview-markdown/preview-
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient } from '@angular/common/http';
 import { TagsComponent } from './components/tags/tags.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+
+const components = [
+    AuthorComponent,
+    SingleBlogComponent,
+    PreviewMarkdownComponent,
+    TagsComponent,
+    PaginationComponent
+];
+
 @NgModule({
-    declarations: [
-        AuthorComponent,
-        SingleBlogComponent,
-        PreviewMarkdownComponent,
-        TagsComponent
-    ],
+    declarations: components,
     imports: [
         CommonModule,
         RouterModule,
         MarkdownModule.forRoot({ loader: HttpClient })
     ],
-    exports: [
-        AuthorComponent,
-        SingleBlogComponent,
-        PreviewMarkdownComponent,
-        TagsComponent
-    ]
+    exports: components
 })
 export class SharedModule { }

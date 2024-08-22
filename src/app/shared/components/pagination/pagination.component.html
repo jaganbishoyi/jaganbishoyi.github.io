@@ -1,0 +1,14 @@
+<nav aria-label="Pagination" class="d-flex justify-content-center">
+    <ul class="mb-0 pagination pagination-md no-select">
+        <li class="page-item" [ngClass]="{'disabled': activePage === 1}" (click)="previous()">
+            <span class="page-link">Previous</span>
+        </li>
+        <li class="page-item" *ngFor="let page of pages" [ngClass]="{'active': activePage === +page}"
+            (click)="selectPage(page)">
+            <span class="page-link">{{page}}</span>
+        </li>
+        <li class="page-item" (click)="next()" [ngClass]="{'disabled': activePage === pages.length }">
+            <span class="page-link">Next</span>
+        </li>
+    </ul>
+</nav>

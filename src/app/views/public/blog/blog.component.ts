@@ -12,9 +12,12 @@ export class BlogComponent implements OnInit {
     blogs: IBlogContent[] = blogs
         .sort((a, b) => +new Date(b.publishDate) - +new Date(a.publishDate));
 
-    constructor(
-        private activatedRoute: ActivatedRoute
-    ) { }
+    filteredBlogs: IBlogContent[] = [];
+
+    pageSize = 5;
+    pageNumber = 1;
+
+    constructor(private activatedRoute: ActivatedRoute) { }
 
     ngOnInit(): void {
         this.activatedRoute.queryParams.subscribe((queryParams: Params) => {
@@ -24,6 +27,14 @@ export class BlogComponent implements OnInit {
             } else {
                 this.blogs = blogs;
             }
+            this.getFilteredBlog(this.pageNumber);
         });
+    }
+
+    getFilteredBlog(page: number): void {
+        this.pageNumber = page;
+        const start = (this.pageNumber - 1) * this.pageSize;
+        const end = start + this.pageSize;
+        this.filteredBlogs = this.blogs.slice(start, end);
     }
 }

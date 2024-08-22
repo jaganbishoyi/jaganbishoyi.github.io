@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>1&period; Two-Pointer Technique</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h4 id="1-two-pointer-technique">1. Two-Pointer Technique</h4>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">isPalindromeTwoPointer</span> = (<span class="hljs-params">str</span>) =&gt; {
+  <span class="hljs-keyword">const</span> cleanedStr = str.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[^a-zA-Z0-9]/g</span>, <span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">toLowerCase</span>();
+  <span class="hljs-keyword">let</span> left = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">let</span> right = cleanedStr.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>;
+
+  <span class="hljs-keyword">while</span> (left &lt; right) {
+    <span class="hljs-keyword">if</span> (cleanedStr[left] !== cleanedStr[right]) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    left++;
+    right--;
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+};
+</code></pre>
+<h4 id="2-string-reversal">2. String Reversal</h4>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">isPalindromeReverse</span> = (<span class="hljs-params">str</span>) =&gt; {
+  <span class="hljs-keyword">const</span> cleanedStr = str.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[^a-zA-Z0-9]/g</span>, <span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">toLowerCase</span>();
+  <span class="hljs-keyword">const</span> reversedStr = cleanedStr.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">reverse</span>().<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;&#x27;</span>);
+  <span class="hljs-keyword">return</span> cleanedStr === reversedStr;
+};
+</code></pre>
+<h4 id="3-array-join-and-every">3. Array Join and Every</h4>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">isPalindromeArrayJoin</span> = (<span class="hljs-params">str</span>) =&gt; {
+  <span class="hljs-keyword">const</span> cleanedStr = str.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[^a-zA-Z0-9]/g</span>, <span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">toLowerCase</span>();
+  <span class="hljs-keyword">return</span> cleanedStr.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">every</span>(<span class="hljs-function">(<span class="hljs-params">char, index</span>) =&gt;</span> char === cleanedStr[cleanedStr.<span class="hljs-property">length</span> - <span class="hljs-number">1</span> - index]);
+};
+</code></pre>
+<h4 id="4-iterative-approach-with-substring">4. Iterative Approach with Substring</h4>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">isPalindromeIterative</span> = (<span class="hljs-params">str</span>) =&gt; {
+  <span class="hljs-keyword">const</span> cleanedStr = str.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[^a-zA-Z0-9]/g</span>, <span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">toLowerCase</span>();
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; cleanedStr.<span class="hljs-property">length</span> / <span class="hljs-number">2</span>; i++) {
+    <span class="hljs-keyword">if</span> (cleanedStr[i] !== cleanedStr[cleanedStr.<span class="hljs-property">length</span> - <span class="hljs-number">1</span> - i]) {
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+  }
+
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+};
+</code></pre>
+
+            
+            
+        </body>
+        </html>

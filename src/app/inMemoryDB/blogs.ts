@@ -97,7 +97,7 @@ export const blogs: IBlogContent[] = [
         description: 'Data binding is a core concept in Angular and allows to define communication between a component and the DOM. There are four forms of data binding(divided as 3 categories) which differ in the way the data is flowing.',
         publishDate: '2024-08-15',
         tags: ['angular'],
-        id: '6',
+        id: '7',
         slug: 'angular-data-binding',
         featured: false,
         author: {
@@ -112,7 +112,7 @@ export const blogs: IBlogContent[] = [
         description: '`isPlatformBrowser` and `isPlatformServer` are utility functions provided by Angular to help determine whether your code is running in a browser environment or a server environment. These functions are useful when developing applications that use Angular Universal for server-side rendering (SSR) or when dealing with platform-specific logic.',
         publishDate: '2024-08-16',
         tags: ['angular'],
-        id: '7',
+        id: '8',
         slug: 'what-is-is-platform-browser-and-is-platform-server-in-angular',
         featured: false,
         author: {
@@ -127,7 +127,7 @@ export const blogs: IBlogContent[] = [
         description: 'Version control is an essential tool in modern software development, allowing teams to track changes, collaborate efficiently, and maintain code history. During technical interviews, version control concepts and practices are often tested.',
         publishDate: '2024-08-17',
         tags: ['version-control'],
-        id: '8',
+        id: '9',
         slug: 'must-asked-question-and-answer-related-to-version-controlling',
         featured: false,
         author: {
@@ -143,7 +143,7 @@ export const blogs: IBlogContent[] = [
         description: 'Directives are a way to extend HTML by attaching custom behaviors to DOM elements or creating new HTML elements. They are a crucial part of Angular’s declarative approach to building user interfaces. With directives, you can manipulate the DOM, apply CSS styles, handle user input, and much more.',
         publishDate: '2024-08-18',
         tags: ['angular'],
-        id: '9',
+        id: '10',
         slug: 'angular-directives',
         featured: false,
         author: {
@@ -159,7 +159,7 @@ export const blogs: IBlogContent[] = [
         description: 'Creating a custom directive in Angular involves defining a directive class and applying it to elements in your template. Directives in Angular can be used to add behavior to existing DOM elements, create custom reusable components, or manipulate the DOM.',
         publishDate: '2024-08-18',
         tags: ['angular'],
-        id: '10',
+        id: '11',
         slug: 'angular-custom-directives',
         featured: false,
         author: {
@@ -175,7 +175,7 @@ export const blogs: IBlogContent[] = [
         description: 'In Angular, pipes are used to transform data in templates. There are two types of pipes: `pure` pipes and `impure` pipes. Understanding the difference between them is crucial for optimizing performance and ensuring that your application behaves as expected.',
         publishDate: '2024-08-19',
         tags: ['angular'],
-        id: '11',
+        id: '12',
         slug: 'pure-pipes-and-impure-pipes',
         featured: false,
         author: {
@@ -190,7 +190,7 @@ export const blogs: IBlogContent[] = [
         description: "Light / Dark mode toggle is a very common feature in today's web applications. This feature may look very simple to the end users, but it takes some additional effort to correctly implement in a web application.",
         publishDate: '2024-08-21',
         tags: ['angular'],
-        id: '11',
+        id: '13',
         slug: 'implement-light-dark-mode-in-angular',
         featured: true,
         author: {
@@ -199,5 +199,20 @@ export const blogs: IBlogContent[] = [
             publishedDate: '2024-08-21'
         },
         URL: 'angular/implement-light-dark-mode-in-angular.md'
+    },
+    {
+        title: 'What is Dependency Injection? Explain how it works in Angular?',
+        description: "Dependency Injection (DI) is a design pattern used to implement `Inversion of Control (IoC)` for resolving dependencies and managing the lifecycle of objects. In Angular, DI is a core concept that allows you to inject dependencies (like services) into your components, directives, pipes, and other services, promoting reusability and maintainability.",
+        publishDate: '2024-08-22',
+        tags: ['angular'],
+        id: '14',
+        slug: 'dependency-injection-in-angular',
+        featured: true,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-22'
+        },
+        URL: 'angular/dependency-injection-in-angular.md'
     }
 ]

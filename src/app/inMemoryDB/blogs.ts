@@ -38,7 +38,7 @@ export const blogs: IBlogContent[] = [
         tags: ['html'],
         id: '3',
         slug: 'new-features-introduced-in-HTML5',
-        featured: true,
+        featured: false,
         author: {
             name: 'Jagan Mohan Bishoyi',
             image: 'assets/images/me.png',
@@ -68,7 +68,7 @@ export const blogs: IBlogContent[] = [
         tags: ['html'],
         id: '5',
         slug: 'semantic-html-elements',
-        featured: true,
+        featured: false,
         author: {
             name: 'Jagan Mohan Bishoyi',
             image: 'assets/images/me.png',
@@ -222,7 +222,7 @@ export const blogs: IBlogContent[] = [
         tags: ['coding-challenges'],
         id: '14',
         slug: 'palindrome',
-        featured: true,
+        featured: false,
         author: {
             name: 'Jagan Mohan Bishoyi',
             image: 'assets/images/me.png',

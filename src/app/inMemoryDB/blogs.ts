@@ -201,7 +201,7 @@ export const blogs: IBlogContent[] = [
         URL: 'angular/implement-light-dark-mode-in-angular.md'
     },
     {
-        title: 'What is Dependency Injection? Explain how it works in Angular?',
+        title: 'What is Dependency Injection? Explain how it works in Angular.',
         description: "Dependency Injection (DI) is a design pattern used to implement `Inversion of Control (IoC)` for resolving dependencies and managing the lifecycle of objects. In Angular, DI is a core concept that allows you to inject dependencies (like services) into your components, directives, pipes, and other services, promoting reusability and maintainability.",
         publishDate: '2024-08-22',
         tags: ['angular'],

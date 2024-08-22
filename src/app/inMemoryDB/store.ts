@@ -48,4 +48,8 @@ export const blogSideNavs: INav[] = [
         name: 'Version Control',
         route: 'version-control'
     },
+    {
+        name: 'Coding Challenges',
+        route: 'coding-challenges'
+    },
 ];

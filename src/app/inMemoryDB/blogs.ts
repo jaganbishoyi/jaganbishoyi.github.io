@@ -214,5 +214,20 @@ export const blogs: IBlogContent[] = [
             publishedDate: '2024-08-22'
         },
         URL: 'angular/dependency-injection-in-angular.md'
+    },
+    {
+        title: 'Write a JavaScript function to check if a given string is a palindrome.',
+        description: "The interviewer is looking for the candidate’s familiarity with loop constructs, JavaScript string methods, and other basic JavaScript syntax. They will evaluate the candidate’s skills based on the approach used to solve the palindrome problem. ",
+        publishDate: '2024-08-22',
+        tags: ['coding-challenges'],
+        id: '14',
+        slug: 'palindrome',
+        featured: true,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-22'
+        },
+        URL: 'coding-challenges/palindrome.md'
     }
 ]

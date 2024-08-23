@@ -15,8 +15,8 @@ export class TagsComponent {
         this.tagId = this.getCode();
     }
 
-    navigate(cato: string): void {
-        this.router.navigate(['/blogs'], { queryParams: { tag: cato } })
+    navigate(tag: string): void {
+        this.router.navigate(['/blogs'], { queryParams: { tag } })
     }
 
     getCode(): string {

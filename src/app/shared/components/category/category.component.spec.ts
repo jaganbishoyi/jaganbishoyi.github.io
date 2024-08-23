@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingleBlogComponent } from './single-blog.component';
+import { CategoryComponent } from './category.component';
 
-describe('SingleBlogComponent', () => {
-    let component: SingleBlogComponent;
-    let fixture: ComponentFixture<SingleBlogComponent>;
+describe('CategoryComponent', () => {
+    let component: CategoryComponent;
+    let fixture: ComponentFixture<CategoryComponent>;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [SingleBlogComponent]
+            declarations: [CategoryComponent]
         });
-        fixture = TestBed.createComponent(SingleBlogComponent);
+        fixture = TestBed.createComponent(CategoryComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

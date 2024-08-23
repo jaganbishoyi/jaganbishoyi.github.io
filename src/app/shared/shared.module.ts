@@ -8,22 +8,27 @@ import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient } from '@angular/common/http';
 import { TagsComponent } from './components/tags/tags.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { CategoryComponent } from './components/category/category.component';
+import { TitleCasePipe } from './pipes/title-case.pipe';
+
+const pipes = [TitleCasePipe];
 
 const components = [
     AuthorComponent,
     SingleBlogComponent,
     PreviewMarkdownComponent,
     TagsComponent,
-    PaginationComponent
+    PaginationComponent,
+    CategoryComponent
 ];
 
 @NgModule({
-    declarations: components,
+    declarations: [...components, ...pipes],
     imports: [
         CommonModule,
         RouterModule,
         MarkdownModule.forRoot({ loader: HttpClient })
     ],
-    exports: components
+    exports: [...components, ...pipes]
 })
 export class SharedModule { }

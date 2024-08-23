@@ -4,13 +4,18 @@
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    color: $grape;
+    font-weight: normal;
+    transition: transform 0.3s ease;
 
     &:hover {
         color: $violet;
+        transform: scale(1.05);
     }
 
     span {
         margin: 0 5px;
         font-size: 15px;
+        line-height: 2.2;
     }
 }

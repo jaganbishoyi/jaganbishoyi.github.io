@@ -11,7 +11,8 @@
                     Go back
                 </button>
             </div>
-            <div class="tag">
+            <div class="tag d-flex align-items-center">
+                <app-category [category]="blog.category"></app-category>
                 <app-tags [tags]="blog.tags"></app-tags>
             </div>
             <div class="author">

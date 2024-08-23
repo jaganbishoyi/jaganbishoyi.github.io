@@ -6,7 +6,8 @@
         </a>
     </h5>
     <p class="truncate-at-3" [title]="content.description">{{content.description}}</p>
-    <div class="mt-2">
+    <div class="mt-2 d-flex align-items-center">
+        <app-category [category]="content.category"></app-category>
         <app-tags [tags]="content.tags"></app-tags>
     </div>
 </div>

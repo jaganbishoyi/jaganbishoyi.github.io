@@ -21,12 +21,42 @@ export class BlogComponent implements OnInit {
 
     ngOnInit(): void {
         this.activatedRoute.queryParams.subscribe((queryParams: Params) => {
+            const category = queryParams['category'];
             const tag = queryParams['tag'];
-            if (tag) {
-                this.blogs = blogs.filter((blog: IBlogContent) => blog.tags.includes(tag));
+
+            let queryParam = {} as { filter: string; value: string };
+
+            if (category) {
+                queryParam = {
+                    filter: 'category',
+                    value: category
+                };
+            } else if (tag) {
+                queryParam = {
+                    filter: 'tag',
+                    value: tag
+                };
             } else {
-                this.blogs = blogs;
+                queryParam = {
+                    filter: '',
+                    value: ''
+                };
             }
+
+            switch (queryParam.filter) {
+                case 'category':
+                    this.blogs = blogs.filter((blog: IBlogContent) => blog.category === category);
+                    break;
+
+                case 'tag':
+                    this.blogs = blogs.filter((blog: IBlogContent) => blog.tags.includes(tag));
+                    break;
+
+                default:
+                    this.blogs = blogs;
+                    break;
+            }
+
             this.getFilteredBlog(this.pageNumber);
         });
     }

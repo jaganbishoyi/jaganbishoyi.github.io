@@ -19,8 +19,8 @@ export class BlogSideNavigationComponent implements OnInit {
 
     ngOnInit(): void {
         this.activatedRoute.queryParams.subscribe((queryParams: Params) => {
-            if (queryParams && queryParams['tag']) {
-                this.active = queryParams['tag'];
+            if (queryParams && queryParams['category']) {
+                this.active = queryParams['category'];
             } else {
                 this.active = ''
             }
@@ -30,7 +30,7 @@ export class BlogSideNavigationComponent implements OnInit {
     navigate(nav: INav): void {
         if (nav && nav.route) {
             this.router.navigate(['/blogs'],
-                { queryParams: { tag: nav.route } }
+                { queryParams: { category: nav.route } }
             )
         } else {
             this.router.navigate(['/blogs'])

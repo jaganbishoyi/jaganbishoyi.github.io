@@ -13,6 +13,8 @@
 }
 
 .tags {
+    display: inline-block;
+
     .tag {
         margin: 0 10px 0 0;
         cursor: pointer;
@@ -26,6 +28,7 @@
         transition: all cubic-bezier(0.17, 0.67, 0.5, 0.71) 100ms;
         padding: clamp(0.25rem, 0.25em, 0.5em) 0.5em;
         border: 1px solid transparent;
+        font-size: 16px;
 
         &:first-child {
             margin-left: 0;

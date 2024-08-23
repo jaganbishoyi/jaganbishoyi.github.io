@@ -1,4 +1,5 @@
-import { INav } from '@interfaces/general.interface';
+import { ICategory, INav } from '@interfaces/general.interface';
+const category = ICategory;
 
 export const navs: INav[] = [
     {
@@ -30,23 +31,27 @@ export const blogSideNavs: INav[] = [
     },
     {
         name: 'Angular',
-        route: 'angular'
+        route: category.ANGULAR
     },
     {
         name: 'Javascript',
-        route: 'javascript'
+        route: category.JAVASCRIPT
     },
     {
         name: 'HTML',
-        route: 'html'
+        route: category.HTML
     },
     {
         name: 'CSS',
-        route: 'css'
+        route: category.CSS
     },
     {
         name: 'Version Control',
-        route: 'version-control'
+        route: category.VERSION_CONTROL
+    },
+    {
+        name: 'Coding Challenges',
+        route: category.CODING_CHALLENGES
     },
     {
         name: 'Coding Challenges',

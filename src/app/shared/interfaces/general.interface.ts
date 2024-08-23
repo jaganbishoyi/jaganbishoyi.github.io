@@ -31,7 +31,8 @@ export interface IBlogContent {
     title: string;
     description: string;
     publishDate: string;
-    tags: string[];
+    tags: ITags[];
+    category: ICategory;
     id: string;
     slug: string;
     featured: boolean;
@@ -44,4 +45,18 @@ export interface IAuthor {
     name: string;
     image: string;
     publishedDate: string;
+}
+
+export enum ICategory {
+    ANGULAR = 'angular',
+    JAVASCRIPT = 'javascript',
+    HTML = 'html',
+    CSS = 'css',
+    VERSION_CONTROL = 'version-control',
+    CODING_CHALLENGES = 'coding-challenge'
+}
+
+export enum ITags {
+    INTERVIEW = 'interview',
+    JAVASCRIPT = 'javascript',
 }

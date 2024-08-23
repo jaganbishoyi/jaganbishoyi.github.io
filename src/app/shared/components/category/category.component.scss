@@ -1,0 +1,16 @@
+@import "variables";
+
+.category {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+
+    &:hover {
+        color: $violet;
+    }
+
+    span {
+        margin: 0 5px;
+        font-size: 15px;
+    }
+}

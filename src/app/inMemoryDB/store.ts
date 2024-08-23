@@ -53,4 +53,8 @@ export const blogSideNavs: INav[] = [
         name: 'Coding Challenges',
         route: category.CODING_CHALLENGES
     },
+    {
+        name: 'Coding Challenges',
+        route: 'coding-challenges'
+    },
 ];

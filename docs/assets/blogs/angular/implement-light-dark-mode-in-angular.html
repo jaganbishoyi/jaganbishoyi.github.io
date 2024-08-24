@@ -140,22 +140,22 @@
         </head>
         <body class="vscode-body vscode-light">
             <p>In today's web development landscape, providing users with the option to toggle between light and dark modes has become a standard practice. This feature not only enhances the user experience but also caters to accessibility preferences and system-level settings. This feature may look very simple to the end users, but it takes some additional effort to correctly implement in a web application.</p>
-<p>In this blog, we’ll walk through how to implement light, dark, and auto modes in an Angular application using the powerful and flexible <code>ng-mode-switcher</code> library. Whether you’re looking for a quick integration or full customization, this guide has you covered.</p>
+<p>In this blog, we’ll walk through how to implement light, dark, and auto modes in an Angular application using the powerful and flexible <code>ngx-mode-switcher</code> library. Whether you’re looking for a quick integration or full customization, this guide has you covered.</p>
 <h3 id="lets-get-started">Let's get started..!</h3>
-<p><a href="https://www.npmjs.com/package/ng-mode-switcher">ng-mode-switcher</a> is an Angular library that offers a simpler, cleaner, and more efficient approach to implementing the mode-switching feature.</p>
+<p><a href="https://www.npmjs.com/package/ngx-mode-switcher">ngx-mode-switcher</a> is an Angular library that offers a simpler, cleaner, and more efficient approach to implementing the mode-switching feature.</p>
 <p>Demo available @ <a href="https://jaganb.dev/angular-mode-switcher-demo/">https://jaganb.dev/angular-mode-switcher-demo/</a></p>
 <p>Code available @ Github <a href="https://github.com/jaganbishoyi/angular-mode-switcher-demo">https://github.com/jaganbishoyi/angular-mode-switcher-demo</a></p>
 <h3 id="installation">Installation</h3>
-<h4 id="ng-mode-switcher">ng-mode-switcher</h4>
-<p>To add ng-mode-switcher along with the required marked library to your package.json use the following commands.</p>
-<pre><code class="language-bash">npm install ng-mode-switcher
+<h4 id="ngx-mode-switcher">ngx-mode-switcher</h4>
+<p>To add ngx-mode-switcher along with the required marked library to your package.json use the following commands.</p>
+<pre><code class="language-bash">npm install ngx-mode-switcher
 </code></pre>
-<p>In <strong>app.module.ts</strong> file import <code>NgModeSwitcherModule</code></p>
+<p>In <strong>app.module.ts</strong> file import <code>NgxModeSwitcherModule</code></p>
 <pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">NgModule</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
 <span class="hljs-keyword">import</span> { <span class="hljs-title class_">BrowserModule</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/platform-browser&#x27;</span>;
 <span class="hljs-keyword">import</span> { <span class="hljs-title class_">AppRoutingModule</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./app-routing.module&#x27;</span>;
 <span class="hljs-keyword">import</span> { <span class="hljs-title class_">AppComponent</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./app.component&#x27;</span>;
-<span class="hljs-keyword">import</span> { <span class="hljs-title class_">NgModeSwitcherModule</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;ng-mode-switcher&#x27;</span>;
+<span class="hljs-keyword">import</span> { <span class="hljs-title class_">NgxModeSwitcherModule</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;ngx-mode-switcher&#x27;</span>;
 
 @<span class="hljs-title class_">NgModule</span>({
     <span class="hljs-attr">declarations</span>: [
@@ -164,7 +164,7 @@
     <span class="hljs-attr">imports</span>: [
         <span class="hljs-title class_">BrowserModule</span>,
         <span class="hljs-title class_">AppRoutingModule</span>,
-        <span class="hljs-title class_">NgModeSwitcherModule</span>
+        <span class="hljs-title class_">NgxModeSwitcherModule</span>
     ],
     <span class="hljs-attr">providers</span>: [],
     <span class="hljs-attr">bootstrap</span>: [<span class="hljs-title class_">AppComponent</span>]
@@ -227,10 +227,10 @@ $borderColor_light: <span class="hljs-number">#000</span>;
 }
 </code></pre>
 <p>Next, in <code>app.component.html</code> add the mode selector</p>
-<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ng-mode-switcher</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ng-mode-switcher</span>&gt;</span>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ngx-mode-switcher</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ngx-mode-switcher</span>&gt;</span>
 </code></pre>
 <p>You may also pass <code>config</code> as an object:</p>
-<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ng-mode-switcher</span> [<span class="hljs-attr">config</span>]=<span class="hljs-string">&quot;customConfig&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ng-mode-switcher</span>&gt;</span>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ngx-mode-switcher</span> [<span class="hljs-attr">config</span>]=<span class="hljs-string">&quot;customConfig&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ngx-mode-switcher</span>&gt;</span>
 </code></pre>
 <p><strong>Default Config:</strong></p>
 <pre><code class="language-js"><span class="hljs-attr">config</span>: <span class="hljs-title class_">IConfig</span> = {
@@ -309,7 +309,7 @@ $borderColor_light: <span class="hljs-number">#000</span>;
 }
 </code></pre>
 <hr>
-<p>Implementing light and dark modes in your Angular application not only enhances user experience but also demonstrates a commitment to accessibility and personalization. With the <code>ng-mode-switcher</code> library, integrating these modes becomes straightforward and flexible, allowing for a seamless transition between themes based on user preferences or system settings. By leveraging SCSS variables and mixins, you can maintain a clean and adaptable codebase, ensuring that your application remains visually consistent and user-friendly across different themes.</p>
+<p>Implementing light and dark modes in your Angular application not only enhances user experience but also demonstrates a commitment to accessibility and personalization. With the <code>ngx-mode-switcher</code> library, integrating these modes becomes straightforward and flexible, allowing for a seamless transition between themes based on user preferences or system settings. By leveraging SCSS variables and mixins, you can maintain a clean and adaptable codebase, ensuring that your application remains visually consistent and user-friendly across different themes.</p>
 <p>I hope this guide has provided you with the insights and tools needed to effectively implement and customize mode switching in your Angular projects. Embrace the power of dynamic theming and give your users the control they crave for a tailored browsing experience.</p>
 
             <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>

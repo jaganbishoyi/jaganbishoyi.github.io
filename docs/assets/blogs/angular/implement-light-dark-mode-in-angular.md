@@ -1,10 +1,10 @@
 In today's web development landscape, providing users with the option to toggle between light and dark modes has become a standard practice. This feature not only enhances the user experience but also caters to accessibility preferences and system-level settings. This feature may look very simple to the end users, but it takes some additional effort to correctly implement in a web application.
 
-In this blog, we’ll walk through how to implement light, dark, and auto modes in an Angular application using the powerful and flexible `ng-mode-switcher` library. Whether you’re looking for a quick integration or full customization, this guide has you covered.
+In this blog, we’ll walk through how to implement light, dark, and auto modes in an Angular application using the powerful and flexible `ngx-mode-switcher` library. Whether you’re looking for a quick integration or full customization, this guide has you covered.
 
 ### Let's get started..!
 
-[ng-mode-switcher](https://www.npmjs.com/package/ng-mode-switcher) is an Angular library that offers a simpler, cleaner, and more efficient approach to implementing the mode-switching feature.
+[ngx-mode-switcher](https://www.npmjs.com/package/ngx-mode-switcher) is an Angular library that offers a simpler, cleaner, and more efficient approach to implementing the mode-switching feature.
 
 Demo available @ [https://jaganb.dev/angular-mode-switcher-demo/](https://jaganb.dev/angular-mode-switcher-demo/)
 
@@ -12,22 +12,22 @@ Code available @ Github [https://github.com/jaganbishoyi/angular-mode-switcher-d
 
 ### Installation
 
-#### ng-mode-switcher
+#### ngx-mode-switcher
 
-To add ng-mode-switcher along with the required marked library to your package.json use the following commands.
+To add ngx-mode-switcher along with the required marked library to your package.json use the following commands.
 
 ```bash
-npm install ng-mode-switcher
+npm install ngx-mode-switcher
 ```
 
-In **app.module.ts** file import `NgModeSwitcherModule`
+In **app.module.ts** file import `NgxModeSwitcherModule`
 
 ```js
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgModeSwitcherModule } from 'ng-mode-switcher';
+import { NgxModeSwitcherModule } from 'ngx-mode-switcher';
 
 @NgModule({
     declarations: [
@@ -36,7 +36,7 @@ import { NgModeSwitcherModule } from 'ng-mode-switcher';
     imports: [
         BrowserModule,
         AppRoutingModule,
-        NgModeSwitcherModule
+        NgxModeSwitcherModule
     ],
     providers: [],
     bootstrap: [AppComponent]
@@ -114,13 +114,13 @@ main {
 Next, in `app.component.html` add the mode selector
 
 ```html
-<ng-mode-switcher></ng-mode-switcher>
+<ngx-mode-switcher></ngx-mode-switcher>
 ```
 
 You may also pass `config` as an object:
 
 ```html
-<ng-mode-switcher [config]="customConfig"></ng-mode-switcher>
+<ngx-mode-switcher [config]="customConfig"></ngx-mode-switcher>
 ```
 
 **Default Config:**
@@ -218,6 +218,6 @@ main {
 
 ---
 
-Implementing light and dark modes in your Angular application not only enhances user experience but also demonstrates a commitment to accessibility and personalization. With the `ng-mode-switcher` library, integrating these modes becomes straightforward and flexible, allowing for a seamless transition between themes based on user preferences or system settings. By leveraging SCSS variables and mixins, you can maintain a clean and adaptable codebase, ensuring that your application remains visually consistent and user-friendly across different themes.
+Implementing light and dark modes in your Angular application not only enhances user experience but also demonstrates a commitment to accessibility and personalization. With the `ngx-mode-switcher` library, integrating these modes becomes straightforward and flexible, allowing for a seamless transition between themes based on user preferences or system settings. By leveraging SCSS variables and mixins, you can maintain a clean and adaptable codebase, ensuring that your application remains visually consistent and user-friendly across different themes.
 
 I hope this guide has provided you with the insights and tools needed to effectively implement and customize mode switching in your Angular projects. Embrace the power of dynamic theming and give your users the control they crave for a tailored browsing experience.

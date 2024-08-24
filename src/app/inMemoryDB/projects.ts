@@ -226,13 +226,13 @@ export const projects: IProject[] = [
         featured: [true, 2],
     },
     {
-        name: 'ng-mode-switcher',
+        name: 'ngx-mode-switcher',
         description: [
-            'ng-mode-switcher is a versatile Angular library that allows developers to effortlessly integrate dark mode, light mode, and auto (system default) mode switching into their applications.',
+            'ngx-mode-switcher is a versatile Angular library that allows developers to effortlessly integrate dark mode, light mode, and auto (system default) mode switching into their applications.',
             'With a simple configuration, you can provide users with a seamless experience, adapting to their preferred display settings.',
             'This library offers full customization.'
         ],
-        image: 'ng-mode-switcher.png',
+        image: 'ngx-mode-switcher.png',
         id: '8',
         links: [
             {
@@ -243,7 +243,7 @@ export const projects: IProject[] = [
             {
                 id: '2',
                 name: 'npm',
-                url: 'https://www.npmjs.com/package/ng-mode-switcher',
+                url: 'https://www.npmjs.com/package/ngx-mode-switcher',
             },
             {
                 id: '3',
@@ -252,12 +252,12 @@ export const projects: IProject[] = [
             },
         ],
         overview: [
-            "Enhancing User Experience with `ng-mode-switcher` in an Angular Application.",
-            "In today's digital landscape, providing users with the ability to switch between dark, light, and system modes is not just a luxury—it’s an expectation. When working on a feature-rich Angular application, the development team wanted to integrate this functionality without over-complicating the codebase or spending excessive time building a custom solution. That’s where ng-mode-switcher came in, offering a straightforward yet powerful solution for mode switching in Angular applications.",
-            "Upon integrating ng-mode-switcher, the team immediately appreciated the simplicity it brought to the table. With minimal setup, the application gained the ability to toggle between light, dark, and auto modes. The core functionality of the library allowed users to switch modes seamlessly, and the auto mode smartly adjusted to the user’s system preference—whether they were using dark mode at night or light mode during the day. This automation removed the need for manual adjustments, enhancing the user experience by aligning the application with the user’s environment effortlessly.",
-            "Beyond its core functionality, ng-mode-switcher provided significant flexibility in its implementation. The library offered configuration options that enabled the team to customize how the mode switching appeared in the user interface. For instance, the ability to show or hide the legend meant the developers could decide whether to display mode options to users or keep the interface minimalistic, adapting it to the design needs of the project. Additionally, the developers were able to rename the modes, tailoring the experience to match the specific terminology and branding of the application.",
-            "The adaptability and ease of use made ng-mode-switcher a valuable asset to the development process. Rather than building custom mode-switching logic from scratch, the team leveraged the library’s well-documented features to implement a fully functional solution that fit seamlessly into their Angular project. The ability to quickly switch between modes, along with the customization options, gave the developers control over both the technical and visual aspects of the application.",
-            "In summary, ng-mode-switcher delivered both functionality and flexibility, allowing the development team to offer a polished mode-switching feature that enhanced the user experience. By integrating this library, the team saved development time while gaining the ability to customize the mode-switching interface to align perfectly with their application’s design and user expectations."
+            "Enhancing User Experience with `ngx-mode-switcher` in an Angular Application.",
+            "In today's digital landscape, providing users with the ability to switch between dark, light, and system modes is not just a luxury—it’s an expectation. When working on a feature-rich Angular application, the development team wanted to integrate this functionality without over-complicating the codebase or spending excessive time building a custom solution. That’s where ngx-mode-switcher came in, offering a straightforward yet powerful solution for mode switching in Angular applications.",
+            "Upon integrating ngx-mode-switcher, the team immediately appreciated the simplicity it brought to the table. With minimal setup, the application gained the ability to toggle between light, dark, and auto modes. The core functionality of the library allowed users to switch modes seamlessly, and the auto mode smartly adjusted to the user’s system preference—whether they were using dark mode at night or light mode during the day. This automation removed the need for manual adjustments, enhancing the user experience by aligning the application with the user’s environment effortlessly.",
+            "Beyond its core functionality, ngx-mode-switcher provided significant flexibility in its implementation. The library offered configuration options that enabled the team to customize how the mode switching appeared in the user interface. For instance, the ability to show or hide the legend meant the developers could decide whether to display mode options to users or keep the interface minimalistic, adapting it to the design needs of the project. Additionally, the developers were able to rename the modes, tailoring the experience to match the specific terminology and branding of the application.",
+            "The adaptability and ease of use made ngx-mode-switcher a valuable asset to the development process. Rather than building custom mode-switching logic from scratch, the team leveraged the library’s well-documented features to implement a fully functional solution that fit seamlessly into their Angular project. The ability to quickly switch between modes, along with the customization options, gave the developers control over both the technical and visual aspects of the application.",
+            "In summary, ngx-mode-switcher delivered both functionality and flexibility, allowing the development team to offer a polished mode-switching feature that enhanced the user experience. By integrating this library, the team saved development time while gaining the ability to customize the mode-switching interface to align perfectly with their application’s design and user expectations."
         ],
         techs: ['Angular', 'GitHub', 'npm'],
         featured: [true, 1],

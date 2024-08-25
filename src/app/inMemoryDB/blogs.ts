@@ -8,7 +8,7 @@ export const blogs: IBlogContent[] = [
         description: 'async and await are modern JavaScript features introduced in ES2017 (ES8) that make it easier to work with asynchronous code. They allow you to write asynchronous code in a more readable, synchronous-like manner.',
         publishDate: '2024-08-12',
         category: category.JAVASCRIPT,
-        tags: [tags.JAVASCRIPT],
+        tags: [],
         id: '1',
         slug: 'async-await-in-javaScript',
         featured: true,
@@ -237,7 +237,7 @@ export const blogs: IBlogContent[] = [
         publishDate: '2024-08-22',
         category: category.CODING_CHALLENGES,
         tags: [],
-        id: '14',
+        id: '15',
         slug: 'palindrome',
         featured: false,
         author: {
@@ -246,5 +246,20 @@ export const blogs: IBlogContent[] = [
             publishedDate: '2024-08-22'
         },
         URL: 'coding-challenges/palindrome.md'
+    }, {
+        title: 'JavaScript ES6(ECMAScript 6) features.',
+        description: "JavaScript ES6 (ECMAScript 6) was a major update to JavaScript, bringing new syntax and features aimed at making the language more powerful and easier to work with.",
+        publishDate: '2024-08-25',
+        category: category.JAVASCRIPT,
+        tags: [tags.INTERVIEW],
+        id: '16',
+        slug: 'javascript-es𝟔-features',
+        featured: false,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-25'
+        },
+        URL: 'javascript/javascript-es𝟔-features.md'
     }
 ]

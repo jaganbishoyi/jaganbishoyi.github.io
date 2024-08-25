@@ -58,5 +58,5 @@ export enum ICategory {
 
 export enum ITags {
     INTERVIEW = 'interview',
-    JAVASCRIPT = 'javascript',
+    TIPS = 'tips',
 }

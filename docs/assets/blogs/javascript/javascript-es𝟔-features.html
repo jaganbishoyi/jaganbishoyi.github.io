@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>1&period; &ast;&ast;Let and Const&ast;&ast;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p>JavaScript ES6 (ECMAScript 6) was a major update to JavaScript, bringing new syntax and features aimed at making the language more powerful and easier to work with. Here’s a detailed breakdown of key ES6 features:</p>
+<h3 id="1-let-and-const">1. <strong>Let and Const</strong></h3>
+<p>ES6 introduced two new ways to declare variables: <code>let</code> and <code>const</code>.</p>
+<ul>
+<li>
+<p><strong>let:</strong> Declares a block-scoped variable, which is limited to the block, statement, or expression where it is used.</p>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> a = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+  <span class="hljs-keyword">let</span> a = <span class="hljs-number">20</span>;
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a); <span class="hljs-comment">// 20</span>
+}
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a); <span class="hljs-comment">// 10</span>
+</code></pre>
+</li>
+<li>
+<p><strong>const:</strong> Declares a block-scoped constant that cannot be reassigned after it’s been initialized.</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">PI</span> = <span class="hljs-number">3.14</span>;
+<span class="hljs-variable constant_">PI</span> = <span class="hljs-number">3</span>; <span class="hljs-comment">// Error: Assignment to constant variable.</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="2-arrow-functions">2. <strong>Arrow Functions</strong></h3>
+<p>Arrow functions provide a concise syntax for writing functions. They also lexically bind the value of <code>this</code>, so it retains the value of <code>this</code> from its enclosing context.</p>
+<ul>
+<li>
+<p><strong>Syntax:</strong></p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">add</span> = (<span class="hljs-params">a, b</span>) =&gt; a + b;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">add</span>(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// 8</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="3-template-literals">3. <strong>Template Literals</strong></h3>
+<p>Template literals allow for easier string manipulation. They use backticks ( ` ` ) instead of quotes and support embedded expressions using <code>${expression}</code>.</p>
+<ul>
+<li>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> name = <span class="hljs-string">&#x27;John&#x27;</span>;
+<span class="hljs-keyword">const</span> message = <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(message); <span class="hljs-comment">// Hello, John!</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="4-default-parameters">4. <strong>Default Parameters</strong></h3>
+<p>ES6 allows you to set default values for function parameters.</p>
+<ul>
+<li>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name = <span class="hljs-string">&#x27;Guest&#x27;</span></span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>;
+}
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">greet</span>()); <span class="hljs-comment">// Hello, Guest!</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">greet</span>(<span class="hljs-string">&#x27;John&#x27;</span>)); <span class="hljs-comment">// Hello, John!</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="5-destructuring-assignment">5. <strong>Destructuring Assignment</strong></h3>
+<p>Destructuring allows for unpacking values from arrays or objects into distinct variables.</p>
+<ul>
+<li>
+<p><strong>Array Destructuring:</strong></p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> [a, b] = [<span class="hljs-number">10</span>, <span class="hljs-number">20</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a); <span class="hljs-comment">// 10</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(b); <span class="hljs-comment">// 20</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Object Destructuring:</strong></p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> person = { <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;John&#x27;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">30</span> };
+<span class="hljs-keyword">const</span> { name, age } = person;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name); <span class="hljs-comment">// John</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(age); <span class="hljs-comment">// 30</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="6-rest-and-spread-operators">6. <strong>Rest and Spread Operators</strong></h3>
+<ul>
+<li>
+<p><strong>Rest Operator (<code>...</code>)</strong>: Collects all remaining elements into an array.</p>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">...numbers</span>) {
+  <span class="hljs-keyword">return</span> numbers.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">acc, curr</span>) =&gt;</span> acc + curr, <span class="hljs-number">0</span>);
+}
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">sum</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// 6</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Spread Operator (<code>...</code>)</strong>: Expands elements from an array or object.</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<span class="hljs-keyword">const</span> newArr = [...arr, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(newArr); <span class="hljs-comment">// [1, 2, 3, 4, 5]</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="7-classes">7. <strong>Classes</strong></h3>
+<p>ES6 introduces a cleaner syntax for defining classes and dealing with inheritance.</p>
+<ul>
+<li>
+<p><strong>Class Example:</strong></p>
+<pre><code class="language-js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">name, age</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">age</span> = age;
+  }
+
+  <span class="hljs-title function_">greet</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello, my name is <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.name}</span>.`</span>);
+  }
+}
+
+<span class="hljs-keyword">const</span> john = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>(<span class="hljs-string">&#x27;John&#x27;</span>, <span class="hljs-number">30</span>);
+john.<span class="hljs-title function_">greet</span>(); <span class="hljs-comment">// Hello, my name is John.</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="8-modules">8. <strong>Modules</strong></h3>
+<p>ES6 allows you to import and export code between different files using the module syntax.</p>
+<ul>
+<li>
+<p><strong>Exporting:</strong></p>
+<pre><code class="language-js"><span class="hljs-comment">// module.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-variable constant_">PI</span> = <span class="hljs-number">3.14</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a, b</span>) {
+  <span class="hljs-keyword">return</span> a + b;
+}
+</code></pre>
+</li>
+<li>
+<p><strong>Importing:</strong></p>
+<pre><code class="language-js"><span class="hljs-comment">// main.js</span>
+<span class="hljs-keyword">import</span> { <span class="hljs-variable constant_">PI</span>, add } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./module.js&#x27;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable constant_">PI</span>); <span class="hljs-comment">// 3.14</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">add</span>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// 5</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="9-promises">9. <strong>Promises</strong></h3>
+<p>Promises provide a way to handle asynchronous operations more cleanly, especially when compared to traditional callbacks.</p>
+<ul>
+<li>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> myPromise = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+  <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">resolve</span>(<span class="hljs-string">&#x27;Success!&#x27;</span>), <span class="hljs-number">1000</span>);
+});
+
+myPromise.<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result)); <span class="hljs-comment">// After 1 second: Success!</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="10-enhanced-object-literals">10. <strong>Enhanced Object Literals</strong></h3>
+<p>ES6 enhances the object literal syntax, making it easier to define properties and methods in objects.</p>
+<ul>
+<li>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> name = <span class="hljs-string">&#x27;John&#x27;</span>;
+<span class="hljs-keyword">const</span> person = {
+  name,
+  <span class="hljs-title function_">greet</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello, my name is <span class="hljs-subst">${<span class="hljs-variable language_">this</span>.name}</span>.`</span>);
+  }
+};
+person.<span class="hljs-title function_">greet</span>(); <span class="hljs-comment">// Hello, my name is John.</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="11-iterators-and-generators">11. <strong>Iterators and Generators</strong></h3>
+<ul>
+<li>
+<p><strong>Iterators</strong>:</p>
+<p>An iterator is an object that defines a sequence and potentially a return value upon its termination. The iterator interface provides a method next() that returns an object with two properties:</p>
+<ul>
+<li>value: The next value in the sequence.</li>
+<li>done: A boolean indicating if the sequence has been completed (true or false).</li>
+</ul>
+</li>
+<li>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">createIterator</span>(<span class="hljs-params">array</span>) {
+  <span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">next</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">if</span> (index &lt; array.<span class="hljs-property">length</span>) {
+        <span class="hljs-keyword">return</span> { <span class="hljs-attr">value</span>: array[index++], <span class="hljs-attr">done</span>: <span class="hljs-literal">false</span> };
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> { <span class="hljs-attr">value</span>: <span class="hljs-literal">undefined</span>, <span class="hljs-attr">done</span>: <span class="hljs-literal">true</span> };
+      }
+    }
+  };
+}
+
+<span class="hljs-keyword">const</span> iterator = <span class="hljs-title function_">createIterator</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(iterator.<span class="hljs-title function_">next</span>()); <span class="hljs-comment">// { value: 1, done: false }</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(iterator.<span class="hljs-title function_">next</span>()); <span class="hljs-comment">// { value: 2, done: false }</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(iterator.<span class="hljs-title function_">next</span>()); <span class="hljs-comment">// { value: 3, done: false }</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(iterator.<span class="hljs-title function_">next</span>()); <span class="hljs-comment">// { value: undefined, done: true }</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Generators</strong>:</p>
+<p>Generators are special functions in JavaScript that allow you to define an iterative algorithm by writing a function whose execution can be paused and resumed. Generators are denoted by the function* syntax, and they yield values using the yield keyword.</p>
+</li>
+<li>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js"><span class="hljs-keyword">function</span>* <span class="hljs-title function_">generatorFunction</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">3</span>;
+}
+
+<span class="hljs-keyword">const</span> generator = <span class="hljs-title function_">generatorFunction</span>();
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(generator.<span class="hljs-title function_">next</span>()); <span class="hljs-comment">// { value: 1, done: false }</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(generator.<span class="hljs-title function_">next</span>()); <span class="hljs-comment">// { value: 2, done: false }</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(generator.<span class="hljs-title function_">next</span>()); <span class="hljs-comment">// { value: 3, done: false }</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(generator.<span class="hljs-title function_">next</span>()); <span class="hljs-comment">// { value: undefined, done: true }</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="12-symbols">12. <strong>Symbols</strong></h3>
+<p>Symbols are a new primitive type in ES6. They are unique and can be used as object property keys without risking name collisions.</p>
+<ul>
+<li>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> sym = <span class="hljs-title class_">Symbol</span>(<span class="hljs-string">&#x27;unique&#x27;</span>);
+<span class="hljs-keyword">const</span> obj = { [sym]: <span class="hljs-string">&#x27;value&#x27;</span> };
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(obj[sym]); <span class="hljs-comment">// value</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="13-block-scoped-functions">13. <strong>Block-Scoped Functions</strong></h3>
+<p>In ES6, functions declared inside a block are scoped to that block.</p>
+<pre><code class="language-js">{
+  <span class="hljs-keyword">function</span> <span class="hljs-title function_">sayHello</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Hello&#x27;</span>;
+  }
+}
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">sayHello</span>()); <span class="hljs-comment">// ReferenceError: sayHello is not defined</span>
+</code></pre>
+<h3 id="14-map-and-set">14. <strong>Map and Set</strong></h3>
+<p>ES6 introduces new data structures like <code>Map</code> and <code>Set</code>.</p>
+<ul>
+<li>
+<p><strong>Map:</strong> Stores key-value pairs and remembers the original insertion order.</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>();
+map.<span class="hljs-title function_">set</span>(<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;John&#x27;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(map.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;name&#x27;</span>)); <span class="hljs-comment">// John</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Set:</strong> Stores unique values of any type.</p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>]);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(set); <span class="hljs-comment">// Set { 1, 2, 3 }</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="15-forof-loop">15. <strong>for...of Loop</strong></h3>
+<p>The <code>for...of</code> loop provides a simpler way to iterate over iterable objects like arrays, strings, and more.</p>
+<ul>
+<li>
+<p><strong>Example:</strong></p>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> num <span class="hljs-keyword">of</span> arr) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(num);
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>ES6 brought significant improvements to JavaScript, making it easier to write cleaner, more modular, and scalable code. Its features like <code>let</code>, <code>const</code>, <code>arrow functions</code>, <code>classes</code>, and <code>modules</code> have become foundational in modern JavaScript development.</p>
+<p>Let me know if you'd like to dive deeper into any specific feature or need examples on how to use them effectively!</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

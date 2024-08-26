@@ -24,7 +24,10 @@ export class BlogComponent implements OnInit {
             const category = queryParams['category'];
             const tag = queryParams['tag'];
 
-            let queryParam = {} as { filter: string; value: string };
+            let queryParam = {
+                filter: '',
+                value: ''
+            } as { filter: string; value: string };
 
             if (category) {
                 queryParam = {
@@ -35,11 +38,6 @@ export class BlogComponent implements OnInit {
                 queryParam = {
                     filter: 'tag',
                     value: tag
-                };
-            } else {
-                queryParam = {
-                    filter: '',
-                    value: ''
                 };
             }
 

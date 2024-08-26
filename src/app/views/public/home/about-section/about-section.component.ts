@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UtilsService } from '@services/utils.services';
 
 @Component({
     selector: 'app-about-section',
@@ -39,9 +38,4 @@ export class AboutSectionComponent {
         'Agile/Scrum',
     ];
 
-    constructor(private utilsService: UtilsService) {}
-
-    navigate(id: string): void {
-        this.utilsService.scrollToView(id);
-    }
 }

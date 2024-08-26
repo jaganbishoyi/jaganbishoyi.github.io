@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SingleBlogComponent } from './single-blog.component';
+import { SharedModule } from '../../shared.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('SingleBlogComponent', () => {
     let component: SingleBlogComponent;
@@ -8,6 +10,7 @@ describe('SingleBlogComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
+            imports: [SharedModule, RouterTestingModule],
             declarations: [SingleBlogComponent]
         });
         fixture = TestBed.createComponent(SingleBlogComponent);

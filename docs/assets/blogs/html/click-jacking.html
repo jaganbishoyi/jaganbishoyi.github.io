@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>What is Clickjacking&quest;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h3 id="what-is-clickjacking">What is Clickjacking?</h3>
+<p><strong>Clickjacking</strong> is a type of cyber attack where a malicious actor tricks a user into clicking on something different from what the user perceives, potentially resulting in unintended actions such as revealing confidential information, downloading malware, or making unauthorized transactions. This is usually done by embedding an invisible or disguised malicious page (like a button or link) within a legitimate page using elements like iframe.</p>
+<p>For example, an attacker may overlay a legitimate-looking button on a malicious hidden iframe. When the user clicks the button, they unknowingly perform actions on the hidden page, like transferring money or changing settings, without realizing it.</p>
+<h3 id="how-to-prevent-clickjacking-attacks-in-html">How to Prevent Clickjacking Attacks in HTML</h3>
+<p>To prevent clickjacking attacks, you can use several techniques:</p>
+<ol>
+<li>
+<p><strong>X-Frame-Options Header</strong>:
+This HTTP response header can be used to control whether your webpage can be embedded in an iframe. The values of this header include:</p>
+<ul>
+<li><code>DENY</code>: Prevents the page from being displayed in a frame or iframe, completely blocking framing.</li>
+<li><code>SAMEORIGIN</code>: Allows the page to be framed only by pages on the same origin.</li>
+<li><code>ALLOW-FROM uri</code>: Allows the page to be framed only by a specified origin (though this value is less commonly supported).</li>
+</ul>
+<p><strong>Example</strong> (in HTTP headers):</p>
+<pre><code class="language-http"><span class="hljs-attribute">X-Frame-Options</span><span class="hljs-punctuation">: </span>DENY
+</code></pre>
+</li>
+<li>
+<p><strong>Content Security Policy (CSP) Frame Ancestors Directive</strong>:
+CSP can be used to define which domains are allowed to frame your content. It’s a more flexible and modern way than <code>X-Frame-Options</code>.</p>
+<p><strong>Example</strong> (in HTTP headers):</p>
+<pre><code class="language-http"><span class="hljs-attribute">Content-Security-Policy</span><span class="hljs-punctuation">: </span>frame-ancestors &#x27;self&#x27; example.com;
+</code></pre>
+<p>This policy allows only the current site (<code>self</code>) and <code>example.com</code> to embed the page in an iframe.</p>
+</li>
+<li>
+<p><strong>Frame Busting JavaScript</strong> (Legacy Method):
+This method uses JavaScript to prevent a webpage from being embedded in an iframe by checking the page's parent and top frame. If they don’t match, the page can be redirected.</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-property">top</span> !== <span class="hljs-variable language_">window</span>.<span class="hljs-property">self</span>) {
+  <span class="hljs-variable language_">window</span>.<span class="hljs-property">top</span>.<span class="hljs-property">location</span> = <span class="hljs-variable language_">window</span>.<span class="hljs-property">self</span>.<span class="hljs-property">location</span>;
+}
+</code></pre>
+<p>However, this method is considered less effective than the HTTP headers approach and can be bypassed in some cases.</p>
+</li>
+<li>
+<p><strong>Implement UI Redress Protections</strong>:
+If your application involves important actions like money transfers or sensitive data updates, add confirmation dialogs, CAPTCHA, or re-authentication steps to ensure user intent.</p>
+</li>
+</ol>
+<h3 id="best-practice">Best Practice:</h3>
+<p>The most reliable methods are using the <strong>X-Frame-Options</strong> header and the <strong>Content Security Policy</strong> with the <code>frame-ancestors</code> directive since they are enforced by the browser and cannot be easily bypassed by the attacker.</p>
+
+            
+            
+        </body>
+        </html>

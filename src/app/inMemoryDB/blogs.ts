@@ -246,7 +246,8 @@ export const blogs: IBlogContent[] = [
             publishedDate: '2024-08-22'
         },
         URL: 'coding-challenges/palindrome.md'
-    }, {
+    },
+    {
         title: 'JavaScript ES6(ECMAScript 6) features.',
         description: "JavaScript ES6 (ECMAScript 6) was a major update to JavaScript, bringing new syntax and features aimed at making the language more powerful and easier to work with.",
         publishDate: '2024-08-25',
@@ -261,5 +262,57 @@ export const blogs: IBlogContent[] = [
             publishedDate: '2024-08-25'
         },
         URL: 'javascript/javascript-es𝟔-features.md'
+    },
+    {
+        title: 'What is Cross-Site Scripting (XSS), and how can it be prevented in HTML?',
+        description: "Cross-Site Scripting (XSS) is a type of security vulnerability typically found in web applications. It occurs when an attacker is able to inject malicious scripts into web pages that are viewed by other users. These scripts are executed in the context of the victim's browser, allowing the attacker to perform actions like stealing cookies, session tokens, or other sensitive information, defacing web pages, or redirecting users to malicious sites.",
+        publishDate: '2024-08-27',
+        category: category.HTML,
+        tags: [tags.INTERVIEW],
+        id: '17',
+        slug: 'cross-site-scripting',
+        featured: false,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-27'
+        },
+        URL: 'html/cross-site-scripting.md',
+        related: ['content-security-policy', 'click-jacking']
+    },
+    {
+        title: 'What is Content Security Policy (CSP), and how does it enhance security?',
+        description: "Content Security Policy (CSP) is a security feature that helps prevent a variety of attacks on websites, including Cross-Site Scripting (XSS), clickjacking, and other types of code injection attacks. It allows web developers to specify which sources of content (such as scripts, styles, images, etc.) are allowed to be loaded and executed on a web page. This reduces the risk of malicious scripts being executed on a website, as only resources from trusted sources are permitted.",
+        publishDate: '2024-08-27',
+        category: category.HTML,
+        tags: [tags.INTERVIEW],
+        id: '18',
+        slug: 'content-security-policy',
+        featured: false,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-27'
+        },
+        URL: 'html/content-security-policy.md',
+        related: ['cross-site-scripting', 'click-jacking']
+    },
+    {
+        title: 'What is Clickjacking ? How do you prevent Clickjacking attacks in HTML?',
+        description: "Clickjacking is a type of cyber attack where a malicious actor tricks a user into clicking on something different from what the user perceives, potentially resulting in unintended actions such as revealing confidential information, downloading malware, or making unauthorized transactions. This is usually done by embedding an invisible or disguised malicious page (like a button or link) within a legitimate page using elements like iframes.",
+        publishDate: '2024-08-27',
+        category: category.HTML,
+        tags: [tags.INTERVIEW],
+        id: '19',
+        slug: 'click-jacking',
+        featured: false,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-27'
+        },
+        URL: 'html/click-jacking.md',
+        related: ['content-security-policy', 'cross-site-scripting']
     }
+
 ]

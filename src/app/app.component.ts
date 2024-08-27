@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     topPosToStartShowing = 100;
 
     @HostListener('window:scroll')
-    checkScroll() {
+    checkScroll(): void {
         const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
         if (scrollPosition >= this.topPosToStartShowing) {
@@ -30,7 +30,6 @@ export class AppComponent implements OnInit {
 
     constructor(
         private utils: UtilsService,
-        // private injector: Injector,
         private router: Router,
         // eslint-disable-next-line @typescript-eslint/ban-types
         @Inject(PLATFORM_ID) private platformId: Object
@@ -47,7 +46,7 @@ export class AppComponent implements OnInit {
         // console.log(slug);
     }
 
-    gotoTop() {
+    gotoTop(): void {
         window.scroll({
             top: 0,
             left: 0,

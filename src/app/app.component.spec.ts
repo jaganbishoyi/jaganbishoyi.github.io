@@ -20,4 +20,21 @@ describe('AppComponent', () => {
     it('should create', () => {
         expect(component).toBeTruthy();
     });
+
+    it('should call window.scroll with the correct parameters when gotoTop() is called', () => {
+        const scrollSpy = jasmine.createSpy('scroll');
+        const originalScroll = window.scroll;
+
+        (window as any).scroll = scrollSpy;
+
+        component.gotoTop();
+
+        expect(scrollSpy).toHaveBeenCalledWith({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+
+        (window as any).scroll = originalScroll;
+    });
 });

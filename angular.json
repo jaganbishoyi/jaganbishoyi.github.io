@@ -111,7 +111,8 @@
                             "node_modules/bootstrap/dist/js/bootstrap.min.js"
                         ],
                         "codeCoverage": true,
-                        "karmaConfig": "karma.conf.js"
+                        "karmaConfig": "karma.conf.js",
+                        "codeCoverageExclude": ["src/**/*routing.module.ts"]
                     }
                 },
                 "lint": {

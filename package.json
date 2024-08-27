@@ -6,7 +6,8 @@
         "start": "ng serve",
         "build": "ng build --configuration production --base-href https://jaganb.dev/",
         "watch": "ng build --watch --configuration development",
-        "test": "ng test --watch=false --browsers=ChromeHeadless",
+        "test": "ng test",
+        "husky-test": "ng test --watch=false --browsers=ChromeHeadless",
         "lint": "ng lint",
         "prepare": "husky install"
     },

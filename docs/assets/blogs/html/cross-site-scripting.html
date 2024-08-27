@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>What is Cross-Site Scripting &lpar;XSS&rpar;&quest;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h3 id="what-is-cross-site-scripting-xss">What is Cross-Site Scripting (XSS)?</h3>
+<p><strong>Cross-Site Scripting (XSS)</strong> is a type of security vulnerability typically found in web applications. It occurs when an attacker is able to inject malicious scripts into web pages that are viewed by other users. These scripts are executed in the context of the victim's browser, allowing the attacker to perform actions like stealing cookies, session tokens, or other sensitive information, defacing web pages, or redirecting users to malicious sites.</p>
+<p>There are three main types of XSS:</p>
+<ol>
+<li><strong>Stored XSS (Persistent XSS)</strong>: The malicious script is permanently stored on the target server (e.g., in a database) and is executed when a victim visits the affected page.</li>
+<li><strong>Reflected XSS (Non-persistent XSS)</strong>: The script is reflected off a web server (e.g., as part of a URL parameter) and is executed in the victim’s browser when they visit a specially crafted link.</li>
+<li><strong>DOM-based XSS</strong>: The attack occurs entirely on the client side, where the injected script modifies the structure or behavior of the page by interacting with the DOM (Document Object Model).</li>
+</ol>
+<h3 id="how-to-prevent-xss-in-html">How to Prevent XSS in HTML</h3>
+<p>Preventing XSS attacks involves proper handling of user input and output, ensuring that malicious scripts cannot be executed in the user's browser. Some techniques for preventing XSS attacks include:</p>
+<ol>
+<li>
+<p><strong>Sanitize and Validate Input</strong>:</p>
+<ul>
+<li>Always sanitize and validate user inputs on both the client and server side. Make sure that user data is treated as untrusted and never allowed to inject executable code.</li>
+<li>Use libraries and frameworks that provide secure input sanitization mechanisms. For instance, libraries like <code>DOMPurify</code> can help clean HTML input.</li>
+</ul>
+</li>
+<li>
+<p><strong>Escape User Input</strong>:</p>
+<ul>
+<li>Escape special characters in user inputs to prevent them from being interpreted as code. In HTML contexts, escaping characters such as <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>&quot;</code>, and <code>'</code> can prevent scripts from executing.</li>
+<li>In JavaScript contexts, ensure special characters are appropriately escaped to prevent injection into script tags or inline scripts.</li>
+</ul>
+<p><strong>Example</strong> (HTML escaping):</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Username: <span class="hljs-symbol">&amp;lt;</span>script<span class="hljs-symbol">&amp;gt;</span>alert(&#x27;XSS&#x27;)<span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Use Content Security Policy (CSP)</strong>:</p>
+<ul>
+<li>A <strong>Content Security Policy (CSP)</strong> is an HTTP response header that restricts the sources from which content (scripts, styles, images, etc.) can be loaded. This helps mitigate XSS by preventing the execution of inline scripts or scripts from untrusted sources.</li>
+</ul>
+<p><strong>Example</strong> (in HTTP headers):</p>
+<pre><code class="language-http"><span class="hljs-attribute">Content-Security-Policy</span><span class="hljs-punctuation">: </span>script-src &#x27;self&#x27; https://trustedscripts.example.com;
+</code></pre>
+<p>This ensures that only scripts from the same origin (<code>self</code>) or trusted domains (e.g., <code>trustedscripts.example.com</code>) can be executed.</p>
+</li>
+<li>
+<p><strong>Avoid Inline JavaScript</strong>:</p>
+<ul>
+<li>Avoid embedding JavaScript directly in HTML elements (e.g., using <code>onclick</code>, <code>onmouseover</code>, etc.). Instead, use external scripts or bind event listeners via JavaScript files.</li>
+<li>Disallow the use of <code>eval()</code> and similar methods that can interpret strings as code, as these methods are vulnerable to script injection.</li>
+</ul>
+</li>
+<li>
+<p><strong>HTTPOnly and Secure Flags for Cookies</strong>:</p>
+<ul>
+<li>Set the <strong>HTTPOnly</strong> flag on cookies to prevent them from being accessed via JavaScript (e.g., <code>document.cookie</code>). This makes it harder for XSS attacks to steal session cookies.</li>
+<li>Use the <strong>Secure</strong> flag for cookies to ensure they are only transmitted over HTTPS.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-http"><span class="hljs-attribute">Set-Cookie</span><span class="hljs-punctuation">: </span>sessionid=abc123; HttpOnly; Secure;
+</code></pre>
+</li>
+<li>
+<p><strong>Output Encoding</strong>:</p>
+<ul>
+<li>Encode data before rendering it to the user to ensure that any potentially dangerous characters are converted to a harmless representation.</li>
+<li>HTML, URL, and JavaScript encoding can help prevent XSS attacks by ensuring that user-provided data is rendered as plain text instead of being interpreted as executable code.</li>
+</ul>
+<p><strong>Example</strong> (JavaScript encoding):</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> safeData = <span class="hljs-built_in">encodeURIComponent</span>(userInput);
+</code></pre>
+</li>
+</ol>
+<h3 id="best-practices">Best Practices:</h3>
+<ul>
+<li>Always treat user input as potentially dangerous and sanitize/validate it properly.</li>
+<li>Apply a strong Content Security Policy to limit the sources of executable scripts.</li>
+<li>Use libraries and frameworks that inherently protect against XSS, such as Angular or React, which automatically escape user input in templates.</li>
+</ul>
+
+            
+            
+        </body>
+        </html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>What is Content Security Policy &lpar;CSP&rpar;&quest;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h3 id="what-is-content-security-policy-csp">What is Content Security Policy (CSP)?</h3>
+<p><strong>Content Security Policy (CSP)</strong> is a security feature that helps prevent a variety of attacks on websites, including <strong>Cross-Site Scripting (XSS)</strong>, <strong>clickjacking</strong>, and other types of code injection attacks. It allows web developers to specify which sources of content (such as scripts, styles, images, etc.) are allowed to be loaded and executed on a web page. This reduces the risk of malicious scripts being executed on a website, as only resources from trusted sources are permitted.</p>
+<p>CSP is implemented as an HTTP response header (<code>Content-Security-Policy</code>) that defines a set of rules specifying where content can come from. If content attempts to load from a source that is not permitted by the policy, the browser blocks it.</p>
+<h3 id="how-csp-enhances-security">How CSP Enhances Security</h3>
+<p>CSP enhances security by:</p>
+<ol>
+<li>
+<p><strong>Preventing XSS (Cross-Site Scripting) Attacks</strong>:</p>
+<ul>
+<li>CSP can block the execution of inline scripts (e.g., scripts inside <code>&lt;script&gt;</code> tags or HTML attributes) unless explicitly allowed.</li>
+<li>It also restricts the sources from which scripts can be loaded, preventing attackers from injecting scripts hosted on malicious domains.</li>
+<li>By default, CSP disallows unsafe inline scripts unless <code>unsafe-inline</code> is specified, but it's best to avoid this to reduce vulnerability.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-http"><span class="hljs-attribute">Content-Security-Policy</span><span class="hljs-punctuation">: </span>script-src &#x27;self&#x27; https://trustedscripts.example.com;
+</code></pre>
+<p>This policy allows scripts only from the current origin (<code>self</code>) and from <code>trustedscripts.example.com</code>, reducing the risk of malicious script execution.</p>
+</li>
+<li>
+<p><strong>Preventing Code Injection</strong>:</p>
+<ul>
+<li>CSP can limit the types of content (e.g., images, fonts, frames) that can be loaded, preventing the injection of malicious code through third-party resources.</li>
+<li>It blocks content that attempts to be loaded from unauthorized or untrusted sources, reducing the likelihood of attackers injecting harmful resources.</li>
+</ul>
+</li>
+<li>
+<p><strong>Mitigating Clickjacking</strong>:</p>
+<ul>
+<li>CSP has a <code>frame-ancestors</code> directive that controls which websites can embed your content in a frame or iframe. This helps prevent clickjacking attacks by ensuring that your site cannot be framed by untrusted domains.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-http"><span class="hljs-attribute">Content-Security-Policy</span><span class="hljs-punctuation">: </span>frame-ancestors &#x27;self&#x27;;
+</code></pre>
+<p>This policy prevents your page from being embedded in iframes by any external domain.</p>
+</li>
+<li>
+<p><strong>Blocking Mixed Content</strong>:</p>
+<ul>
+<li>CSP can be used to enforce that all resources (scripts, images, etc.) are loaded securely over HTTPS. This helps protect against &quot;mixed content&quot; attacks, where a secure HTTPS site loads insecure HTTP resources, which could be intercepted and modified by attackers.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-http"><span class="hljs-attribute">Content-Security-Policy</span><span class="hljs-punctuation">: </span>default-src https:;
+</code></pre>
+<p>This policy ensures that all resources are loaded via HTTPS.</p>
+</li>
+<li>
+<p><strong>Restricting Dangerous Methods</strong>:</p>
+<ul>
+<li>CSP can block the use of <code>eval()</code> and other dangerous methods that convert strings into executable code. This helps prevent XSS and code injection attacks.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-http"><span class="hljs-attribute">Content-Security-Policy</span><span class="hljs-punctuation">: </span>script-src &#x27;self&#x27;; script-src-elem &#x27;none&#x27;;
+</code></pre>
+<p>This policy blocks the use of dangerous functions like <code>eval()</code> by limiting where scripts can be sourced.</p>
+</li>
+</ol>
+<h3 id="how-to-implement-csp">How to Implement CSP</h3>
+<p>CSP is configured via an HTTP response header or a <code>&lt;meta&gt;</code> tag in the HTML document's <code>&lt;head&gt;</code> section. Here’s an example of an HTTP header that implements CSP:</p>
+<pre><code class="language-http"><span class="hljs-attribute">Content-Security-Policy</span>:
+default-src &#x27;self&#x27;;
+script-src &#x27;self&#x27; https://trustedscripts.example.com;
+object-src &#x27;none&#x27;;
+frame-ancestors &#x27;self&#x27;;
+</code></pre>
+<p>In this policy:</p>
+<ul>
+<li><code>default-src 'self';</code> allows content (e.g., images, media) only from the same origin.</li>
+<li><code>script-src 'self' https://trustedscripts.example.com;</code> allows scripts only from the same origin and <code>trustedscripts.example.com</code>.</li>
+<li><code>object-src 'none';</code> blocks any <code>object</code> elements, which could include plugins like Flash or Java applets.</li>
+<li><code>frame-ancestors 'self';</code> ensures that the page cannot be framed by other websites.</li>
+</ul>
+<h3 id="csp-directives">CSP Directives</h3>
+<p>Here are some of the key CSP directives:</p>
+<ul>
+<li><code>default-src</code>: Sets a default policy for loading content types like scripts, styles, images, etc., if no specific policy is provided.</li>
+<li><code>script-src</code>: Restricts the sources of JavaScript.</li>
+<li><code>style-src</code>: Restricts the sources of CSS styles.</li>
+<li><code>img-src</code>: Restricts the sources of images.</li>
+<li><code>font-src</code>: Restricts the sources of web fonts.</li>
+<li><code>connect-src</code>: Restricts the sources of AJAX, WebSocket, and other connections.</li>
+<li><code>frame-ancestors</code>: Controls which domains can embed your content in a frame or iframe.</li>
+<li><code>report-uri</code>: Specifies a URI where the browser sends violation reports when a CSP policy is violated.</li>
+</ul>
+<h3 id="example-of-a-csp-in-html">Example of a CSP in HTML</h3>
+<p>You can also implement CSP via a <code>&lt;meta&gt;</code> tag in the HTML file:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;Content-Security-Policy&quot;</span>
+<span class="hljs-attr">content</span>=<span class="hljs-string">&quot;default-src &#x27;self&#x27;; script-src &#x27;self&#x27; https://trustedscripts.example.com;
+object-src &#x27;none&#x27;; frame-ancestors &#x27;self&#x27;;&quot;</span>&gt;</span>
+</code></pre>
+<h3 id="benefits-of-csp">Benefits of CSP</h3>
+<ul>
+<li>Reduces the attack surface by limiting where scripts and resources can be loaded from.</li>
+<li>Provides a robust defense against common web vulnerabilities like XSS and clickjacking.</li>
+<li>Offers granular control over resource loading, enhancing overall security.</li>
+</ul>
+<h3 id="best-practices">Best Practices</h3>
+<ul>
+<li>Start with a report-only mode (<code>Content-Security-Policy-Report-Only</code>) to identify violations before enforcing the policy.</li>
+<li>Gradually tighten the policy as you gain more confidence that the policy does not interfere with legitimate content.</li>
+<li>Avoid allowing unsafe directives such as <code>unsafe-inline</code> or <code>unsafe-eval</code>.</li>
+</ul>
+<p>By adopting a well-configured CSP, web developers can significantly enhance the security of their applications and reduce the risk of many common web-based attacks.</p>
+
+            
+            
+        </body>
+        </html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>How CSRF Works</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p><strong>Cross-Site Request Forgery (CSRF)</strong> is a security vulnerability that occurs when an attacker tricks a user into performing an action on a web application where the user is authenticated. The attacker leverages the user's authenticated session to perform unauthorized actions, such as transferring funds, changing account details, or other sensitive operations, without the user's knowledge.</p>
+<h3 id="how-csrf-works">How CSRF Works</h3>
+<ol>
+<li><strong>User Authentication</strong>: The user logs into a legitimate website, and the website sets an authentication cookie in the user's browser.</li>
+<li><strong>Malicious Request</strong>: The attacker tricks the user into visiting a malicious website, which contains a crafted request to the legitimate website.</li>
+<li><strong>Request Execution</strong>: The user's browser automatically includes the authentication cookie when making the request to the legitimate website, making it appear as if the user intentionally initiated the action.</li>
+<li><strong>Action Completed</strong>: The legitimate website processes the request, assuming it was made by the authenticated user, leading to unintended actions.</li>
+</ol>
+<h3 id="mitigation-techniques">Mitigation Techniques</h3>
+<p>To protect against CSRF attacks, several techniques can be implemented:</p>
+<ol>
+<li>
+<p><strong>CSRF Tokens</strong>:</p>
+<ul>
+<li><strong>Description</strong>: CSRF tokens are unique, unpredictable values generated by the server and included in forms or requests. When the form is submitted, the server validates the token to ensure that the request is legitimate.</li>
+<li><strong>Implementation</strong>:
+<ul>
+<li>The server generates a token and stores it in the user's session.</li>
+<li>The token is embedded in the form as a hidden field or included in the request headers.</li>
+<li>The server checks the received token against the stored token. If they match, the request is processed; otherwise, it is rejected.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>SameSite Cookies</strong>:</p>
+<ul>
+<li><strong>Description</strong>: The <code>SameSite</code> attribute on cookies restricts how cookies are sent with cross-site requests, helping to prevent CSRF attacks.</li>
+<li><strong>Implementation</strong>:
+<ul>
+<li>
+<p>Set the <code>SameSite</code> attribute to <code>Lax</code> or <code>Strict</code> in cookies to control their behavior in cross-origin requests.</p>
+</li>
+<li>
+<p>Example:</p>
+<pre><code class="language-http"><span class="hljs-attribute">Set-Cookie</span><span class="hljs-punctuation">: </span>session_id=abc123; SameSite=Lax; Secure
+</code></pre>
+</li>
+<li>
+<p><code>Lax</code> allows cookies to be sent with top-level navigation GET requests but blocks them in other cross-origin requests. <code>Strict</code> blocks cookies in all cross-origin contexts.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Double Submit Cookie</strong>:</p>
+<ul>
+<li><strong>Description</strong>: This technique involves sending the CSRF token both as a cookie and as a hidden form field. The server checks that both tokens match.</li>
+<li><strong>Implementation</strong>:
+<ul>
+<li>The server sends the CSRF token as a cookie.</li>
+<li>The token is also sent as a hidden form field.</li>
+<li>The server validates that the token in the form matches the token in the cookie.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Referer and Origin Header Validation</strong>:</p>
+<ul>
+<li><strong>Description</strong>: The server can validate the <code>Referer</code> or <code>Origin</code> headers to ensure that the request originates from the same domain.</li>
+<li><strong>Implementation</strong>:
+<ul>
+<li>Check the <code>Referer</code> or <code>Origin</code> headers on incoming requests to verify they match the expected domain.</li>
+<li>This method may have limitations, as some legitimate requests might not include these headers due to browser or proxy configurations.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Custom Request Headers</strong>:</p>
+<ul>
+<li><strong>Description</strong>: Require requests to include a custom header (e.g., <code>X-Requested-With</code>) that cannot be added cross-origin by attackers.</li>
+<li><strong>Implementation</strong>:
+<ul>
+<li>The server validates the presence of the custom header in the request.</li>
+<li>This method is often used in conjunction with other techniques, as it is not foolproof alone.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>By implementing these techniques, web applications can effectively mitigate the risk of CSRF attacks and protect user data and actions from unauthorized access.</p>
+
+            
+            
+        </body>
+        </html>

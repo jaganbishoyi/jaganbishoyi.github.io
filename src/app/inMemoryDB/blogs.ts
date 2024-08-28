@@ -278,7 +278,7 @@ export const blogs: IBlogContent[] = [
             publishedDate: '2024-08-27'
         },
         URL: 'html/cross-site-scripting.md',
-        related: ['content-security-policy', 'click-jacking']
+        related: ['content-security-policy', 'click-jacking', 'cross-site-request-forgery']
     },
     {
         title: 'What is Content Security Policy (CSP), and how does it enhance security?',
@@ -295,7 +295,7 @@ export const blogs: IBlogContent[] = [
             publishedDate: '2024-08-27'
         },
         URL: 'html/content-security-policy.md',
-        related: ['cross-site-scripting', 'click-jacking']
+        related: ['cross-site-scripting', 'click-jacking', 'cross-site-request-forgery']
     },
     {
         title: 'What is Clickjacking ? How do you prevent Clickjacking attacks in HTML?',
@@ -312,7 +312,24 @@ export const blogs: IBlogContent[] = [
             publishedDate: '2024-08-27'
         },
         URL: 'html/click-jacking.md',
-        related: ['content-security-policy', 'cross-site-scripting']
+        related: ['content-security-policy', 'cross-site-scripting', 'cross-site-request-forgery']
+    },
+    {
+        title: 'What is Cross-Site Request Forgery (CSRF) and how can it be mitigated in HTML?',
+        description: "Cross-Site Request Forgery (CSRF) is a security vulnerability that occurs when an attacker tricks a user into performing an action on a web application where the user is authenticated. The attacker leverages the user's authenticated session to perform unauthorized actions, such as transferring funds, changing account details, or other sensitive operations, without the user's knowledge.",
+        publishDate: '2024-08-28',
+        category: category.HTML,
+        tags: [tags.INTERVIEW],
+        id: '20',
+        slug: 'cross-site-request-forgery',
+        featured: false,
+        author: {
+            name: 'Jagan Mohan Bishoyi',
+            image: 'assets/images/me.png',
+            publishedDate: '2024-08-28'
+        },
+        URL: 'html/cross-site-request-forgery.md',
+        related: ['content-security-policy', 'cross-site-scripting', 'click-jacking']
     }
 
 ]

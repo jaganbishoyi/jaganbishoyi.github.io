@@ -11,6 +11,7 @@ import { UtilsService } from '@services/utils.services';
     styleUrls: ['./project-details.component.scss'],
 })
 export class ProjectDetailsComponent implements OnInit {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     project: IProject | any = {} as IProject;
     projectNotAvailable = false;
 

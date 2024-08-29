@@ -3,13 +3,25 @@
 .blog-container {
     min-height: 90vh;
 
+    .blogs {
+        .search {
+            margin-bottom: 25px;
+
+            input {
+                height: 42px;
+
+                &:focus {
+                    box-shadow: none;
+                    border-color: $violet;
+                }
+            }
+        }
+    }
+
     .no-data {
-        background: $white;
         margin: 0 0 1rem;
-        position: relative;
-        border-radius: 7px;
-        padding: 1.25rem;
-        box-shadow: 0 3px 10px $black-shadow;
+        padding: 2.5rem 1.25rem;
+        text-align: center;
     }
 
     @media only screen and (max-width: 768px) {

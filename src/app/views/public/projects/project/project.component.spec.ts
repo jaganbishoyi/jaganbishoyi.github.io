@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjectComponent } from './project.component';
-import { Router, Params } from '@angular/router';
+import { Router } from '@angular/router';
 import { IProject } from '@interfaces/general.interface';
 
 describe('ProjectComponent', () => {

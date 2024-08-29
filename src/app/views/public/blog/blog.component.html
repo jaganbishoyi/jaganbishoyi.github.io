@@ -4,12 +4,18 @@
             <div class="col-md-3 my-5 side-nav">
                 <app-blog-side-navigation></app-blog-side-navigation>
             </div>
-            <div class="col-md-9 my-5 blogs" *ngIf="filteredBlogs && filteredBlogs.length;else other_content">
-                <app-single-blog [content]="blog" *ngFor="let blog of filteredBlogs"></app-single-blog>
-                <div class="mt-5" *ngIf="blogs && blogs.length > pageSize">
-                    <app-pagination [total]="blogs.length" [pageSize]="pageSize"
-                        (selectedPage)="getFilteredBlog($event)">
-                    </app-pagination>
+            <div class="col-md-9 my-5 blogs">
+                <div class="search">
+                    <input type="text" name="search" id="searchInput" placeholder="Search for a blog / topic"
+                        class="form-control" (input)="onSearchInputChange($event)" autocomplete="off">
+                </div>
+                <div *ngIf="filteredBlogs && filteredBlogs.length;else other_content">
+                    <app-single-blog [content]="blog" *ngFor="let blog of filteredBlogs"></app-single-blog>
+                    <div class="mt-5" *ngIf="blogs && blogs.length > pageSize && showPagination">
+                        <app-pagination [total]="blogs.length" [pageSize]="pageSize"
+                            (selectedPage)="getFilteredBlog($event)">
+                        </app-pagination>
+                    </div>
                 </div>
             </div>
         </div>
@@ -17,7 +23,7 @@
 </div>
 
 <ng-template #other_content>
-    <div class="col-md-9 my-5 d-flex justify-content-center align-items-center flex-column no-data">
+    <div class="no-data">
         <h4>No data available for this section.</h4>
         <p>Please check other sections.</p>
     </div>

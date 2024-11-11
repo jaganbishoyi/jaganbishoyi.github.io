@@ -1,0 +1,45 @@
+<div class="bg-1 interview-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 my-5 side-nav">
+                <app-interview-prep-side-navigation></app-interview-prep-side-navigation>
+            </div>
+            <div class="col-md-9 my-5 interview">
+                <div class="container-fluid" *ngIf="!invalidCategory;else other_content">
+                    <div class="row interview-details">
+                        <div class="col-12">
+                            <div class="interview-heading">
+                                <h1>{{interview.title}}</h1>
+                                <p class="description mt-3">{{interview.description}}</p>
+                                <p class="date mt-3 text-left"> <b>Last updated on :</b> {{interview.lastUpdated |
+                                    date}} </p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="mt-4 bg-white p-3">
+                                <app-preview-markdown [path]="path"> </app-preview-markdown>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #other_content>
+    <div class="container-fluid">
+        <div class="row interview-details bg-2">
+            <div class="col-12">
+                <div class="interview-heading">
+                    <h1>Look like you're lost</h1>
+                    <p class="mt-3">No content found for the selected category!</p>
+                    <button type="button" class="btn custom-btn action-btn" routerLink="/admin/interview-prep">
+                        All Interview Prep Resources
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

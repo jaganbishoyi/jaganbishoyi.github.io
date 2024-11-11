@@ -5,16 +5,17 @@
 @import "./assets/styles/font";
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: $dim-gray;
     border-radius: 10px;
-}
 
-::-webkit-scrollbar-thumb:hover {
-    background: $gray;
+    &:hover {
+        background: $gray;
+        cursor: pointer;
+    }
 }
 
 ::-moz-selection {

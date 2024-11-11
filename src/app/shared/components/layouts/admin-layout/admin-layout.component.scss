@@ -1,0 +1,32 @@
+@import "../../../../../assets/styles/variables";
+
+.admin-wrap {
+    .admin-header {
+        position: fixed;
+        width: 100%;
+        height: $header-height;
+        box-shadow: 0 2px 4px 1px $black-shadow;
+        z-index: 1;
+        top: 0;
+        background-color: $white;
+    }
+
+    .body-content {
+        margin-top: $header-height;
+        min-height: calc(100vh - (#{$header-height} + #{$footer-height}));
+    }
+
+    .admin-footer {
+        background: $black;
+        color: $white;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .admin-wrap {
+        .body-content {
+            margin-top: $header-height-responsive-view;
+            min-height: calc(100vh - (#{$header-height-responsive-view} + #{$footer-height}));
+        }
+    }
+}

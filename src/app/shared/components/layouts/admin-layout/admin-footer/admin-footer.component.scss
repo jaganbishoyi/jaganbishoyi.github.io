@@ -1,0 +1,71 @@
+@import "../../../../../../assets/styles/variables";
+
+.footer {
+    margin: 0 40px;
+    padding: 50px 0 25px 0;
+
+    .content {
+        h5 {
+            text-transform: uppercase;
+            margin: 20px 0 25px 0 !important;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 15px !important;
+            max-width: 800px;
+        }
+
+        .social {
+            a {
+                img {
+                    margin-right: 1rem;
+                    width: 27px;
+                }
+
+                &:last-child {
+                    img {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        &.social {
+            text-align: right;
+        }
+    }
+
+    .copy-right {
+        p {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid $gray;
+            margin-top: 60px !important;
+            font-size: 12px !important;
+        }
+
+        a {
+            text-decoration: underline;
+            color: $white;
+            background-color: $black;
+        }
+    }
+}
+
+@media only screen and (max-width: 418px) {
+    .footer {
+        margin: 0 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .footer {
+        .content {
+            &.social {
+                text-align: left;
+                margin-top: 40px;
+            }
+        }
+    }
+}

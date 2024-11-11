@@ -60,3 +60,12 @@ export enum ITags {
     INTERVIEW = 'interview',
     TIPS = 'tips',
 }
+
+export interface IInterview {
+    title: string;
+    description: string;
+    lastUpdated: string;
+    category: ICategory;
+    id: string;
+    URL: string;
+}

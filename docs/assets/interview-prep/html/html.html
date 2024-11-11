@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>1&period; &ast;&ast;What are the new features introduced in HTML5&quest;&ast;&ast;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h3 id="1-what-are-the-new-features-introduced-in-html5">1. <strong>What are the new features introduced in HTML5?</strong></h3>
+<p><strong>Answer:</strong> HTML5 introduced several new features to improve web development, including:</p>
+<ul>
+<li><strong>Semantic elements</strong> like <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;article&gt;</code> to define the structure of a web page.</li>
+<li><strong>Multimedia support</strong> with native audio (<code>&lt;audio&gt;</code>) and video (<code>&lt;video&gt;</code>) tags.</li>
+<li><strong>Canvas API</strong> for drawing graphics using JavaScript.</li>
+<li><strong>Local storage</strong> with <code>localStorage</code> and <code>sessionStorage</code> for storing data on the client-side.</li>
+<li><strong>Geolocation API</strong> for location-based services.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>My Website<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Article Title<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is a sample article using HTML5 semantic elements.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<h3 id="2-how-do-you-ensure-your-html-code-is-accessible">2. <strong>How do you ensure your HTML code is accessible?</strong></h3>
+<p><strong>Answer:</strong> To ensure accessibility, you can:</p>
+<ul>
+<li>Use semantic HTML tags (<code>&lt;nav&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>).</li>
+<li>Add <code>alt</code> attributes to images.</li>
+<li>Use ARIA (Accessible Rich Internet Applications) roles and attributes.</li>
+<li>Ensure proper tab order with <code>tabindex</code>.</li>
+<li>Provide labels for form controls using <code>&lt;label&gt;</code>.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;logo.png&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Company Logo&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Submit Form&quot;</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<h3 id="3-explain-the-difference-between-div-and-span-when-would-you-use-each">3. <strong>Explain the difference between <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code>. When would you use each?</strong></h3>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><code>&lt;div&gt;</code> is a block-level element, meaning it takes up the full width available, with a line break before and after.</li>
+<li><code>&lt;span&gt;</code> is an inline element, meaning it only takes up as much width as necessary and doesn’t force a line break.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is inside a div.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is an inline <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>span element<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> inside a paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<h3 id="4-what-is-the-purpose-of-the-doctype-declaration-in-html">4. <strong>What is the purpose of the <code>doctype</code> declaration in HTML?</strong></h3>
+<p><strong>Answer:</strong> The <code>&lt;!DOCTYPE html&gt;</code> declaration defines the document type and version of HTML. It helps the browser render the page correctly, ensuring standards-compliant rendering.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Sample Page<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello, World!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="5-what-are-semantic-html-elements-and-why-are-they-important">5. <strong>What are semantic HTML elements, and why are they important?</strong></h3>
+<p><strong>Answer:</strong> Semantic HTML elements have meaningful names that describe their purpose and content. They help with accessibility, SEO, and code readability.</p>
+<p>Semantic HTML, also known as semantic markup, refers to the use of HTML tags that convey the meaning or semantics of the content contained within them.</p>
+<p>By adding semantic HTML tags to your pages, you provide additional information that helps define the roles and relative importance of the different parts of your page. It enhance the SEO and accessability of the page.</p>
+<p>If we don't use the semantic element properly it will affect the usability and reduce the site reach.</p>
+<p>Ref - <a href="https://www.semrush.com/blog/semantic-html5-guide/">https://www.semrush.com/blog/semantic-html5-guide/</a></p>
+<p><strong>Examples:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<h3 id="6-describe-the-box-model-in-html-and-how-it-affects-element-layout">6. <strong>Describe the box model in HTML and how it affects element layout.</strong></h3>
+<p><strong>Answer:</strong> The box model in HTML describes the structure of an element’s layout, including:</p>
+<ul>
+<li><strong>Content:</strong> The actual content of the element.</li>
+<li><strong>Padding:</strong> The space between the content and the border.</li>
+<li><strong>Border:</strong> The boundary around the padding.</li>
+<li><strong>Margin:</strong> The space outside the border that separates the element from others.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
+  <span class="hljs-selector-tag">div</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">5px</span> solid black;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span>;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Box Model Example<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="7-what-is-the-difference-between-inline-block-and-inline-block-elements">7. <strong>What is the difference between inline, block, and inline-block elements?</strong></h3>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><strong>Inline:</strong> Elements only take up as much width as needed (e.g., <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>).</li>
+<li><strong>Block:</strong> Elements take up the full width available and start on a new line (e.g., <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>).</li>
+<li><strong>Inline-block:</strong> Elements are like inline elements but respect height and width properties (e.g., <code>&lt;img&gt;</code>, <code>&lt;button&gt;</code>).</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>This is inline<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>This is block<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;image.jpg&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display:inline-block;&quot;</span> /&gt;</span>
+</code></pre>
+<h3 id="8-how-can-you-embed-multimedia-content-audio-and-video-in-html">8. <strong>How can you embed multimedia content (audio and video) in HTML?</strong></h3>
+<p><strong>Answer:</strong> You can use the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements to embed multimedia content.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">controls</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;audio.mp3&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;audio/mpeg&quot;</span> /&gt;</span>
+  Your browser does not support the audio element.
+<span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">controls</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;video.mp4&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;video/mp4&quot;</span> /&gt;</span>
+  Your browser does not support the video element.
+<span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
+</code></pre>
+<h3 id="9-what-are-meta-tags-and-how-do-they-impact-seo-and-web-performance">9. <strong>What are meta tags, and how do they impact SEO and web performance?</strong></h3>
+<p><strong>Answer:</strong> Meta tags provide metadata about the HTML document, such as descriptions, keywords, author, and viewport settings. They impact SEO by helping search engines understand the content and performance by controlling browser behavior (e.g., viewport settings for responsive design).</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;description&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;This is a sample webpage.&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;keywords&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;HTML, CSS, JavaScript&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span>
+</code></pre>
+<h3 id="10-explain-the-purpose-and-usage-of-the-data--attributes">10. <strong>Explain the purpose and usage of the <code>data-*</code> attributes.</strong></h3>
+<p><strong>Answer:</strong> <code>data-*</code> attributes allow you to store custom data within HTML elements, which can be accessed via JavaScript. They are useful for storing information that is not visible to the user but is needed for client-side processing.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-user-id</span>=<span class="hljs-string">&quot;12345&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;admin&quot;</span>&gt;</span>User Info<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">var</span> userId = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-property">dataset</span>.<span class="hljs-property">userId</span>;
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(userId); <span class="hljs-comment">// Outputs: 12345</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="11-how-do-you-optimize-html-for-performance">11. <strong>How do you optimize HTML for performance?</strong></h3>
+<p><strong>Answer:</strong> Some techniques to optimize HTML for performance include:</p>
+<ul>
+<li>Minifying HTML files.</li>
+<li>Using asynchronous loading for scripts.</li>
+<li>Deferring non-critical CSS and JavaScript.</li>
+<li>Reducing the number of HTTP requests by combining files.</li>
+<li>Using <code>preload</code> and <code>prefetch</code> for critical resources.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;preload&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;styles.css&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;style&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span> <span class="hljs-attr">async</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="12-discuss-the-use-of-the-picture-element-in-responsive-images-how-does-it-compare-to-img">12. <strong>Discuss the use of the <code>picture</code> element in responsive images. How does it compare to <code>img</code>?</strong></h3>
+<p><strong>Answer:</strong> The <code>&lt;picture&gt;</code> element provides a way to display different images based on the device’s screen size, resolution, or other factors. It allows for multiple <code>&lt;source&gt;</code> elements, each with its <code>media</code> attribute, making it more flexible than the <code>&lt;img&gt;</code> tag.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;(max-width: 799px)&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;small.jpg&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;(min-width: 800px)&quot;</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;large.jpg&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;default.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Responsive image&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span>
+</code></pre>
+<h3 id="13-what-are-the-best-practices-for-structuring-a-large-html-document">13. <strong>What are the best practices for structuring a large HTML document?</strong></h3>
+<p><strong>Answer:</strong> Best practices include:</p>
+<ul>
+<li>Using semantic elements to define sections (<code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, etc.).</li>
+<li>Keeping the HTML structure clean and logical.</li>
+<li>Using comments to separate sections.</li>
+<li>Modularizing the code with reusable components.</li>
+<li>Keeping the code DRY (Don't Repeat Yourself).</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-comment">&lt;!-- Header Section --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- Main Content Section --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- Footer Section --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+</code></pre>
+<h3 id="14-explain-the-use-and-benefits-of-aria-accessible-rich-internet-applications-roles-in-html">14. <strong>Explain the use and benefits of <code>ARIA</code> (Accessible Rich Internet Applications) roles in HTML.</strong></h3>
+<p><strong>Answer:</strong> ARIA roles and attributes enhance the accessibility of web applications, especially for users with disabilities. They help in defining roles, states, and properties of HTML elements, making it easier for assistive technologies to interpret the content.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-pressed</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>Toggle<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<h3 id="15-how-would-you-handle-cross-browser-compatibility-issues-with-html">15. <strong>How would you handle cross-browser compatibility issues with HTML?</strong></h3>
+<p><strong>Answer:</strong> Techniques include:</p>
+<ul>
+<li>Using feature detection libraries like Modernizr.</li>
+<li>Writing fallbacks for unsupported features.</li>
+<li>Using Polyfills for older browsers.</li>
+<li>Testing across multiple browsers and devices.</li>
+<li>Following web standards and avoiding browser-specific hacks.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-comment">&lt;!-- Feature Detection --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">if</span> (<span class="hljs-string">&#x27;geolocation&#x27;</span> <span class="hljs-keyword">in</span> navigator) {
+    <span class="hljs-comment">// Geolocation is supported</span>
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// Fallback for older browsers</span>
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="16-what-are-the-differences-between-localstorage-sessionstorage-and-cookies-how-would-you-use-them-in-conjunction-with-html">16. <strong>What are the differences between <code>localStorage</code>, <code>sessionStorage</code>, and cookies? How would you use them in conjunction with HTML?</strong></h3>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><strong>localStorage:</strong> Stores data with no expiration time; data persists even after the browser is closed.</li>
+<li><strong>sessionStorage:</strong> Stores data for the duration of the page session; data is lost when the tab or window is closed.</li>
+<li><strong>Cookies:</strong> Store small amounts of data that are sent with every HTTP request; can have an expiration time.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-comment">// localStorage example</span>
+  <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">setItem</span>(<span class="hljs-string">&#x27;key&#x27;</span>, <span class="hljs-string">&#x27;value&#x27;</span>);
+
+  <span class="hljs-comment">// sessionStorage example</span>
+  sessionStorage.<span class="hljs-title function_">setItem</span>(<span class="hljs-string">&#x27;key&#x27;</span>, <span class="hljs-string">&#x27;value&#x27;</span>);
+
+  <span class="hljs-comment">// Cookie example</span>
+  <span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">&#x27;username=John; expires=Fri, 31 Dec 2024 12:00:00 UTC&#x27;</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="17-how-do-you-manage-forms-in-html-discuss-the-new-input-types-introduced-in-html5">17. <strong>How do you manage forms in HTML? Discuss the new input types introduced in HTML5.</strong></h3>
+<p><strong>Answer:</strong> HTML5 introduced new input types to enhance form management, such as <code>email</code>, <code>url</code>, <code>number</code>, <code>date</code>, <code>time</code>, <code>range</code>, <code>color</code>, and <code>search</code>. These input types provide built-in validation and UI enhancements.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Enter your email&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;date&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;range&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;10&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+<h3 id="18-what-is-the-purpose-of-the-shadow-dom-and-how-does-it-relate-to-html">18. <strong>What is the purpose of the <code>shadow DOM</code>, and how does it relate to HTML?</strong></h3>
+<p><strong>Answer:</strong> The <code>shadow DOM</code> is a feature that encapsulates a section of the DOM tree, isolating it from the rest of the document. It’s used in Web Components to create reusable, self-contained elements with their own styles and scripts, avoiding style and script conflicts with the main document.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;host&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml">
+  const host = document.querySelector(&#x27;#host&#x27;);
+  const shadowRoot = host.attachShadow({ mode: &#x27;open&#x27; });
+  shadowRoot.innerHTML = `<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"><span class="hljs-selector-tag">p</span> { <span class="hljs-attribute">color</span>: red; }</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Shadow DOM content<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>`;
+</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="19-how-do-you-implement-custom-data-attributes-in-html-and-what-are-their-use-cases">19. <strong>How do you implement custom data attributes in HTML, and what are their use cases?</strong></h3>
+<p><strong>Answer:</strong> Custom data attributes (<code>data-*</code>) allow you to embed custom data in HTML elements. They are useful for storing extra information that can be accessed and manipulated using JavaScript.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-user-id</span>=<span class="hljs-string">&quot;12345&quot;</span> <span class="hljs-attr">data-role</span>=<span class="hljs-string">&quot;admin&quot;</span>&gt;</span>User Info<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">const</span> userId = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;[data-user-id]&#x27;</span>).<span class="hljs-property">dataset</span>.<span class="hljs-property">userId</span>;
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(userId); <span class="hljs-comment">// Outputs: 12345</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="20-explain-the-concept-of-progressive-enhancement-and-how-html-plays-a-role-in-it">20. <strong>Explain the concept of progressive enhancement and how HTML plays a role in it.</strong></h3>
+<p><strong>Answer:</strong> Progressive enhancement is a strategy for web design that focuses on providing a basic level of user experience for all users while enhancing the experience for those with more advanced browser features. HTML plays a key role by serving as the foundation that all users can access, regardless of their browser's capabilities.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-comment">&lt;!-- Basic HTML for all users --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/submit&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">required</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Enhanced experience with JavaScript --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;form&#x27;</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;submit&#x27;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) {
+    event.<span class="hljs-title function_">preventDefault</span>();
+    <span class="hljs-comment">// AJAX form submission for modern browsers</span>
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h1 id="security-related-questions-focused-on-html">Security-related questions focused on HTML</h1>
+<h3 id="1-what-is-cross-site-scripting-xss-and-how-can-it-be-prevented-in-html">1. <strong>What is Cross-Site Scripting (XSS), and how can it be prevented in HTML?</strong></h3>
+<p><strong>Answer:</strong> XSS is a vulnerability where attackers inject malicious scripts into web pages viewed by others. It can be prevented by:</p>
+<ul>
+<li>Escaping user input.</li>
+<li>Validating and sanitizing input.</li>
+<li>Using Content Security Policy (CSP) headers.</li>
+</ul>
+<p><strong>Example Prevention:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">const</span> userInput = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;input&#x27;</span>).<span class="hljs-property">value</span>;
+  <span class="hljs-keyword">const</span> sanitizedInput = userInput.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&lt;/g</span>, <span class="hljs-string">&#x27;&amp;lt;&#x27;</span>).<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/&gt;/g</span>, <span class="hljs-string">&#x27;&amp;gt;&#x27;</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="2-what-is-content-security-policy-csp-and-how-does-it-enhance-security">2. <strong>What is Content Security Policy (CSP), and how does it enhance security?</strong></h3>
+<p><strong>Answer:</strong> CSP is an HTTP header that restricts resources (e.g., scripts, images) the browser can load. It helps prevent XSS and other attacks by allowing only trusted content.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+  <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;Content-Security-Policy&quot;</span>
+  <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;default-src &#x27;self&#x27;; script-src &#x27;self&#x27; https://trusted.cdn.com;&quot;</span>
+/&gt;</span>
+</code></pre>
+<h3 id="3-how-do-you-prevent-clickjacking-attacks-in-html">3. <strong>How do you prevent Clickjacking attacks in HTML?</strong></h3>
+<p><strong>Answer:</strong> Clickjacking can be prevented by using the <code>X-Frame-Options</code> header or the <code>frame-ancestors</code> directive in CSP to prevent the site from being embedded in an iframe.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-Frame-Options&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;DENY&quot;</span> /&gt;</span>
+<span class="hljs-comment">&lt;!-- Or --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;Content-Security-Policy&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;frame-ancestors &#x27;none&#x27;;&quot;</span> /&gt;</span>
+</code></pre>
+<h3 id="4-what-are-the-risks-of-using-the-innerhtml-property-and-how-can-they-be-mitigated">4. <strong>What are the risks of using the <code>innerHTML</code> property, and how can they be mitigated?</strong></h3>
+<p><strong>Answer:</strong> Using <code>innerHTML</code> can introduce XSS vulnerabilities if untrusted input is inserted. To mitigate this, avoid using <code>innerHTML</code> with user input or sanitize the input before insertion.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html">document.getElementById(&#x27;content&#x27;).innerHTML = sanitizedContent;
+</code></pre>
+<h3 id="5-what-is-the-purpose-of-the-httponly-attribute-in-cookies">5. <strong>What is the purpose of the <code>HttpOnly</code> attribute in cookies?</strong></h3>
+<p><strong>Answer:</strong> The <code>HttpOnly</code> attribute prevents client-side scripts from accessing cookies, reducing the risk of XSS attacks.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html">Set-Cookie: sessionId=abc123; HttpOnly;
+</code></pre>
+<h3 id="6-explain-the-secure-attribute-in-cookies-and-its-significance">6. <strong>Explain the <code>Secure</code> attribute in cookies and its significance.</strong></h3>
+<p><strong>Answer:</strong> The <code>Secure</code> attribute ensures cookies are only sent over HTTPS, protecting them from being intercepted during transmission.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html">Set-Cookie: sessionId=abc123; Secure;
+</code></pre>
+<h3 id="7-what-is-cross-site-request-forgery-csrf-and-how-can-it-be-mitigated-in-html-forms">7. <strong>What is Cross-Site Request Forgery (CSRF), and how can it be mitigated in HTML forms?</strong></h3>
+<p><strong>Answer:</strong> CSRF is an attack where a malicious site tricks a user into performing actions on another site where they are authenticated. It can be mitigated by using CSRF tokens in forms and validating them server-side.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;POST&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/submit&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;csrf_token&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;uniqueToken123&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+<h3 id="8-why-is-it-important-to-validate-and-sanitize-user-input-on-both-the-client-and-server-sides">8. <strong>Why is it important to validate and sanitize user input on both the client and server sides?</strong></h3>
+<p><strong>Answer:</strong> Validating and sanitizing input on the client-side improves user experience by providing immediate feedback, while server-side validation is crucial for security since client-side validation can be bypassed.</p>
+<h3 id="9-what-are-the-dangers-of-using-deprecated-html-tags-like-marquee-and-blink">9. <strong>What are the dangers of using deprecated HTML tags like <code>&lt;marquee&gt;</code> and <code>&lt;blink&gt;</code>?</strong></h3>
+<p><strong>Answer:</strong> Deprecated tags can lead to inconsistent behavior across browsers and might have vulnerabilities that are no longer patched, posing security risks.</p>
+<h3 id="10-how-does-https-improve-the-security-of-html-content">10. <strong>How does HTTPS improve the security of HTML content?</strong></h3>
+<p><strong>Answer:</strong> HTTPS encrypts the communication between the client and server, protecting the data from being intercepted or tampered with by attackers.</p>
+<h3 id="11-what-are-the-security-implications-of-allowing-file-uploads-via-html-forms">11. <strong>What are the security implications of allowing file uploads via HTML forms?</strong></h3>
+<p><strong>Answer:</strong> Allowing file uploads can introduce risks like:</p>
+<ul>
+<li>Uploading malicious files (e.g., scripts, executables).</li>
+<li>Overwriting existing files.</li>
+<li>Consuming excessive server resources.</li>
+</ul>
+<p>Mitigation strategies include validating file types, using antivirus scanning, and storing files securely.</p>
+<h3 id="12-how-can-the-sandbox-attribute-of-iframes-enhance-security">12. <strong>How can the <code>sandbox</code> attribute of iframes enhance security?</strong></h3>
+<p><strong>Answer:</strong> The <code>sandbox</code> attribute restricts what an iframe can do, such as preventing script execution, form submission, and navigation. This reduces the risk of malicious content being embedded.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;content.html&quot;</span> <span class="hljs-attr">sandbox</span>=<span class="hljs-string">&quot;allow-scripts&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span>
+</code></pre>
+<h3 id="13-what-is-http-strict-transport-security-hsts-and-how-does-it-protect-html-pages">13. <strong>What is HTTP Strict Transport Security (HSTS), and how does it protect HTML pages?</strong></h3>
+<p><strong>Answer:</strong> HSTS is an HTTP header that forces browsers to only communicate with the server over HTTPS, even if the user tries to access the site via HTTP. It protects against man-in-the-middle attacks.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html">Strict-Transport-Security: max-age=31536000; includeSubDomains
+</code></pre>
+<h3 id="14-what-is-the-risk-of-using-inline-javascript-in-html-and-how-can-it-be-mitigated">14. <strong>What is the risk of using inline JavaScript in HTML, and how can it be mitigated?</strong></h3>
+<p><strong>Answer:</strong> Inline JavaScript can be a vector for XSS attacks. Mitigation includes using external scripts, setting a strict CSP, and avoiding the use of <code>eval()</code> and similar functions.</p>
+<h3 id="15-how-can-html-forms-be-protected-against-sql-injection">15. <strong>How can HTML forms be protected against SQL Injection?</strong></h3>
+<p><strong>Answer:</strong> While SQL Injection is more a concern at the backend, ensuring that HTML forms properly validate and sanitize input before sending it to the server reduces the risk. Also, use prepared statements on the server side.</p>
+<h3 id="16-what-is-the-danger-of-using-the-eval-function-in-javascript-embedded-in-html">16. <strong>What is the danger of using the <code>eval()</code> function in JavaScript embedded in HTML?</strong></h3>
+<p><strong>Answer:</strong> The <code>eval()</code> function can execute arbitrary code, making it a significant security risk, especially if it processes user input. It should be avoided or replaced with safer alternatives.</p>
+<h3 id="17-how-do-you-secure-sensitive-information-in-html-forms-such-as-passwords-or-credit-card-details">17. <strong>How do you secure sensitive information in HTML forms, such as passwords or credit card details?</strong></h3>
+<p><strong>Answer:</strong> Sensitive information should be transmitted over HTTPS, and forms should use <code>autocomplete=&quot;off&quot;</code> for fields like passwords. The backend should also ensure encryption and secure storage.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/submit&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">&quot;off&quot;</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+<h3 id="18-what-is-the-role-of-the-relnoopener-noreferrer-attribute-in-html-links">18. <strong>What is the role of the <code>rel=&quot;noopener noreferrer&quot;</code> attribute in HTML links?</strong></h3>
+<p><strong>Answer:</strong> This attribute prevents the new page opened by a link (<code>_blank</code>) from gaining access to the original page via <code>window.opener</code>, reducing the risk of phishing attacks.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://example.com&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;noopener noreferrer&quot;</span>
+  &gt;</span>Visit Example&lt;/a
+&gt;
+</code></pre>
+<h3 id="19-why-should-you-avoid-using-autocompleteon-for-certain-html-form-fields">19. <strong>Why should you avoid using <code>autocomplete=&quot;on&quot;</code> for certain HTML form fields?</strong></h3>
+<p><strong>Answer:</strong> Using <code>autocomplete=&quot;on&quot;</code> for sensitive fields like passwords or credit card numbers can lead to unintended autofilling of data in public or shared computers, posing a security risk.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">autocomplete</span>=<span class="hljs-string">&quot;off&quot;</span> /&gt;</span>
+</code></pre>
+<h3 id="20-how-can-you-prevent-sensitive-html-content-from-being-indexed-by-search-engines">20. <strong>How can you prevent sensitive HTML content from being indexed by search engines?</strong></h3>
+<p><strong>Answer:</strong> You can use the <code>robots.txt</code> file or the <code>meta</code> tag with <code>robots</code> attributes like <code>noindex</code> and <code>nofollow</code> to prevent search engines from indexing sensitive pages.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;robots&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;noindex, nofollow&quot;</span> /&gt;</span>
+</code></pre>
+<h1 id="performance-related-questions-focused-on-html">Performance-related questions focused on HTML</h1>
+<h3 id="1-what-is-the-impact-of-html-structure-on-page-performance">1. <strong>What is the impact of HTML structure on page performance?</strong></h3>
+<p><strong>Answer:</strong> The structure of HTML affects how quickly the browser can parse and render the page. A well-organized structure with minimal DOM depth and optimized use of elements can improve performance by reducing the time it takes to construct the DOM tree.</p>
+<h3 id="2-how-does-the-use-of-inline-styles-affect-page-performance">2. <strong>How does the use of inline styles affect page performance?</strong></h3>
+<p><strong>Answer:</strong> Inline styles are directly applied to elements, leading to faster initial rendering since no external CSS needs to be loaded. However, they can increase the HTML file size and reduce maintainability, which can negatively affect performance in larger projects.</p>
+<h3 id="3-why-is-it-important-to-minimize-http-requests-in-html">3. <strong>Why is it important to minimize HTTP requests in HTML?</strong></h3>
+<p><strong>Answer:</strong> Each HTTP request adds latency, increasing the time it takes for the page to load. Reducing the number of requests (e.g., by combining CSS/JS files and using image sprites) improves performance by minimizing this overhead.</p>
+<h3 id="4-what-is-the-purpose-of-using-the-defer-and-async-attributes-with-scripts-in-html">4. <strong>What is the purpose of using the <code>defer</code> and <code>async</code> attributes with scripts in HTML?</strong></h3>
+<p><strong>Answer:</strong></p>
+<ul>
+<li><strong><code>async</code>:</strong> Loads the script asynchronously, allowing the page to continue parsing HTML while the script loads. It executes as soon as it’s ready.</li>
+<li><strong><code>defer</code>:</strong> Loads the script in parallel with HTML parsing but delays execution until the HTML document is fully parsed.</li>
+</ul>
+<p>Both attributes can improve performance by preventing blocking of the HTML parsing process.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span> <span class="hljs-attr">async</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;script.js&quot;</span> <span class="hljs-attr">defer</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="5-how-does-lazy-loading-improve-the-performance-of-images-and-videos">5. <strong>How does lazy loading improve the performance of images and videos?</strong></h3>
+<p><strong>Answer:</strong> Lazy loading defers the loading of non-essential images and videos until they are needed (e.g., when they enter the viewport). This reduces initial load time and conserves bandwidth.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;image.jpg&quot;</span> <span class="hljs-attr">loading</span>=<span class="hljs-string">&quot;lazy&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Lazy Loaded Image&quot;</span> /&gt;</span>
+</code></pre>
+<h3 id="6-what-is-the-impact-of-using-too-many-dom-elements-on-performance">6. <strong>What is the impact of using too many DOM elements on performance?</strong></h3>
+<p><strong>Answer:</strong> A large number of DOM elements increases the complexity of the DOM tree, leading to slower rendering, longer reflows, and higher memory usage. Optimizing the number of elements can improve performance.</p>
+<h3 id="7-how-do-html5-semantic-elements-contribute-to-performance">7. <strong>How do HTML5 semantic elements contribute to performance?</strong></h3>
+<p><strong>Answer:</strong> HTML5 semantic elements (like <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;section&gt;</code>) improve performance indirectly by making the code more understandable and maintainable. This can lead to better-optimized code and easier application of CSS/JS, reducing rendering and processing times.</p>
+<h3 id="8-why-is-it-important-to-set-explicit-widths-and-heights-on-images-in-html">8. <strong>Why is it important to set explicit widths and heights on images in HTML?</strong></h3>
+<p><strong>Answer:</strong> Setting explicit dimensions prevents layout shifts by allowing the browser to allocate the correct space before the image loads, improving perceived performance and user experience.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;image.jpg&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;600&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;400&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Image with dimensions&quot;</span> /&gt;</span>
+</code></pre>
+<h3 id="9-how-does-the-use-of-cdns-content-delivery-networks-affect-html-page-performance">9. <strong>How does the use of CDNs (Content Delivery Networks) affect HTML page performance?</strong></h3>
+<p><strong>Answer:</strong> CDNs distribute content across multiple geographically dispersed servers, reducing latency and improving load times for users by serving resources from a location closer to them.</p>
+<h3 id="10-what-is-the-impact-of-file-size-on-html-performance-and-how-can-it-be-minimized">10. <strong>What is the impact of file size on HTML performance, and how can it be minimized?</strong></h3>
+<p><strong>Answer:</strong> Larger HTML files take longer to download and parse, slowing down the page load. Minimizing file size can be achieved by removing unnecessary whitespace, comments, and using minification tools.</p>
+<h3 id="11-how-do-browser-caching-strategies-improve-html-performance">11. <strong>How do browser caching strategies improve HTML performance?</strong></h3>
+<p><strong>Answer:</strong> Caching stores a copy of the web resources on the user’s device, reducing the need to re-download them on subsequent visits. Properly configured cache headers (<code>Cache-Control</code>, <code>Expires</code>) can significantly reduce load times.</p>
+<h3 id="12-what-is-the-impact-of-using-too-many-fonts-on-html-performance">12. <strong>What is the impact of using too many fonts on HTML performance?</strong></h3>
+<p><strong>Answer:</strong> Loading multiple font files increases HTTP requests and file sizes, slowing down page load times. Limiting the number of font families and weights, and using modern font formats like WOFF2, can improve performance.</p>
+<h3 id="13-how-does-the-preload-attribute-improve-html-performance">13. <strong>How does the <code>preload</code> attribute improve HTML performance?</strong></h3>
+<p><strong>Answer:</strong> The <code>preload</code> attribute tells the browser to fetch resources (like fonts, images, or scripts) earlier in the loading process, improving performance by reducing the time it takes to load critical resources.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;preload&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;style.css&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;style&quot;</span> /&gt;</span>
+</code></pre>
+<h3 id="14-how-can-the-use-of-web-workers-in-html-improve-performance">14. <strong>How can the use of web workers in HTML improve performance?</strong></h3>
+<p><strong>Answer:</strong> Web workers run scripts in the background, parallel to the main thread, preventing heavy JavaScript tasks from blocking the UI rendering process and improving performance.</p>
+<h3 id="15-what-is-the-benefit-of-using-defer-for-script-loading-instead-of-placing-scripts-at-the-bottom-of-the-html-document">15. <strong>What is the benefit of using <code>defer</code> for script loading instead of placing scripts at the bottom of the HTML document?</strong></h3>
+<p><strong>Answer:</strong> Using <code>defer</code> allows scripts to be loaded in parallel with HTML parsing and ensures they execute in the correct order after the HTML document is fully parsed, optimizing both load time and script execution timing.</p>
+<h3 id="16-how-does-the-use-of-the-viewport-meta-tag-affect-performance-on-mobile-devices">16. <strong>How does the use of the <code>viewport</code> meta tag affect performance on mobile devices?</strong></h3>
+<p><strong>Answer:</strong> The <code>viewport</code> meta tag controls the layout of the page on mobile devices. Proper configuration ensures content is rendered correctly and prevents excessive scaling or reflow, improving performance.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span>
+</code></pre>
+<h3 id="17-how-can-the-use-of-data--attributes-affect-performance">17. <strong>How can the use of <code>data-</code> attributes affect performance?</strong></h3>
+<p><strong>Answer:</strong> While <code>data-</code> attributes are useful for storing extra information, excessive use can bloat the HTML and increase the DOM size, potentially affecting performance. It’s important to use them judiciously.</p>
+<h3 id="18-what-is-the-role-of-critical-rendering-path-optimization-in-html-performance">18. <strong>What is the role of <code>critical rendering path</code> optimization in HTML performance?</strong></h3>
+<p><strong>Answer:</strong> The critical rendering path is the sequence of steps the browser takes to render a page. Optimizing it involves minimizing resources that block rendering (like CSS and JavaScript), reducing the number of critical resources, and compressing resources to improve page load times.</p>
+<h3 id="19-how-can-reducing-the-depth-of-the-dom-tree-improve-html-performance">19. <strong>How can reducing the depth of the DOM tree improve HTML performance?</strong></h3>
+<p><strong>Answer:</strong> A shallower DOM tree is quicker to render and manipulate, leading to faster page loads and interactions. Minimizing nested elements reduces reflows and repaints, improving performance.</p>
+<h3 id="20-why-is-it-important-to-compress-and-optimize-images-in-html">20. <strong>Why is it important to compress and optimize images in HTML?</strong></h3>
+<p><strong>Answer:</strong> Images often make up a large portion of a page's total size. Compressing and optimizing images reduces their file size, decreasing load times and improving overall page performance.</p>
+<p><strong>Example Tools:</strong> Use formats like WebP, and tools like ImageOptim or online compressors.</p>
+
+            
+            
+        </body>
+        </html>

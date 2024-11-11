@@ -45,3 +45,4 @@ testem.log
 Thumbs.db
 
 /src/assets/blogs/**/*.html
+/src/assets/interview-prep/**/*.html

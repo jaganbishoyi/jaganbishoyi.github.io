@@ -1,0 +1,37 @@
+@import "../../../../../assets/styles/variables";
+
+ul.side-navs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin: 10px 0;
+        padding: 10px 15px;
+        background-color: $white;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        border-radius: 4px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        transform: perspective(1px) translateZ(0);
+        transition-duration: 0.3s;
+        transition-property: box-shadow, transform;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            box-shadow: 0px 3px 10px -7px $black;
+            transform: scale(1.03);
+        }
+
+        &.active {
+            background-color: $violet;
+            color: $white;
+        }
+    }
+}

@@ -54,3 +54,31 @@ export const blogSideNavs: INav[] = [
         route: category.CODING_CHALLENGES
     }
 ];
+
+export const interviewPrepSideNavs: INav[] = [
+    {
+        name: 'Angular',
+        route: category.ANGULAR
+    },
+    {
+        name: 'Javascript',
+        route: category.JAVASCRIPT
+    },
+    {
+        name: 'HTML',
+        route: category.HTML
+    },
+    {
+        name: 'CSS',
+        route: category.CSS
+    },
+    {
+        name: 'Version Control',
+        route: category.VERSION_CONTROL
+    },
+    {
+        name: 'Coding Challenges',
+        route: category.CODING_CHALLENGES
+    }
+];
+

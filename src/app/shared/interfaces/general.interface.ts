@@ -38,7 +38,7 @@ export interface IBlogContent {
     featured: boolean;
     author: IAuthor;
     URL: string;
-    related?: string[] // slug
+    related?: string[]; // slug
 }
 
 export interface IAuthor {
@@ -48,17 +48,18 @@ export interface IAuthor {
 }
 
 export enum ICategory {
-    ANGULAR = 'angular',
-    JAVASCRIPT = 'javascript',
-    HTML = 'html',
-    CSS = 'css',
-    VERSION_CONTROL = 'version-control',
-    CODING_CHALLENGES = 'coding-challenge'
+    ANGULAR = "angular",
+    JAVASCRIPT = "javascript",
+    HTML = "html",
+    CSS = "css",
+    VERSION_CONTROL = "version-control",
+    CODING_CHALLENGES = "coding-challenge",
+    COMMON_QUESTIONS = "common-questions",
 }
 
 export enum ITags {
-    INTERVIEW = 'interview',
-    TIPS = 'tips',
+    INTERVIEW = "interview",
+    TIPS = "tips",
 }
 
 export interface IInterview {

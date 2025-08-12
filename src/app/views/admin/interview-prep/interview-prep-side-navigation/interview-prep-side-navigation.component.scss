@@ -4,6 +4,8 @@ ul.side-navs {
     list-style: none;
     padding: 0;
     margin: 0;
+    position: sticky;
+    top: 75px;
 
     li {
         margin: 10px 0;

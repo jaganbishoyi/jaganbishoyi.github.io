@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>1&period; Program to find longest word in a given sentence&quest;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h3 id="1-program-to-find-longest-word-in-a-given-sentence">1. Program to find longest word in a given sentence?</h3>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">findLongestWord</span>(<span class="hljs-params">sentence</span>) {
+    <span class="hljs-keyword">const</span> words = sentence.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[^\w\s]/g</span>, <span class="hljs-string">&quot;&quot;</span>).<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>);
+
+    <span class="hljs-keyword">let</span> longest = <span class="hljs-string">&quot;&quot;</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> word <span class="hljs-keyword">of</span> words) {
+        <span class="hljs-keyword">if</span> (word.<span class="hljs-property">length</span> &gt; longest.<span class="hljs-property">length</span>) {
+            longest = word;
+        }
+    }
+
+    <span class="hljs-keyword">return</span> longest;
+}
+
+<span class="hljs-keyword">const</span> input = <span class="hljs-string">&quot;The quick, brown: fox&#x27; jumped over the lazy dog!&quot;</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Longest word:&quot;</span>, <span class="hljs-title function_">findLongestWord</span>(input)); <span class="hljs-comment">// Output: jumped</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/.../</code></td>
+<td>Defines the regex pattern</td>
+</tr>
+<tr>
+<td><code>[...]</code></td>
+<td>A character class (matches any one of the characters inside)</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>Inside a character class, <code>^</code> means not</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>Matches any &quot;word&quot; character: <code>[a-zA-Z0-9_]</code></td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>Matches any whitespace character: space, tab, newline</td>
+</tr>
+<tr>
+<td><code>[^\w\s]</code></td>
+<td>Matches any character that is NOT a word character or whitespace</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>Global flag — replace all matches in the string, not just the first</td>
+</tr>
+</tbody>
+</table>
+<h4 id="keep-punctuation--just-remove-it-from-length-counting-instead-of-stripping-punctuation-before-splitting-we-keep-the-original-words-but-comparing-length-we-count-only-letters--digits">Keep punctuation — just remove it from length counting. Instead of stripping punctuation before splitting, we keep the original words, but comparing length, we count only letters / digits.</h4>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">findLongestWordKeepPunctuation</span>(<span class="hljs-params">sentence</span>) {
+    <span class="hljs-keyword">const</span> words = sentence.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>);
+    <span class="hljs-keyword">let</span> longest = <span class="hljs-string">&quot;&quot;</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> word <span class="hljs-keyword">of</span> words) {
+        <span class="hljs-comment">// Remove punctuation for length comparison only</span>
+        <span class="hljs-keyword">const</span> cleanWord = word.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[^\w]/g</span>, <span class="hljs-string">&quot;&quot;</span>);
+        <span class="hljs-keyword">if</span> (cleanWord.<span class="hljs-property">length</span> &gt; longest.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[^\w]/g</span>, <span class="hljs-string">&quot;&quot;</span>).<span class="hljs-property">length</span>) {
+            longest = word; <span class="hljs-comment">// Keep original word with punctuation</span>
+        }
+    }
+    <span class="hljs-keyword">return</span> longest;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">findLongestWordKeepPunctuation</span>(<span class="hljs-string">&quot;Hello!!! world-wide web&quot;</span>));
+<span class="hljs-comment">// Output: world-wide</span>
+</code></pre>
+<h4 id="return-tiesmultiple-words-with-same-max-length">Return ties(multiple words with same max length)</h4>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">findLongestWordsWithTies</span>(<span class="hljs-params">sentence</span>) {
+    <span class="hljs-keyword">const</span> words = sentence.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[^\w\s]/g</span>, <span class="hljs-string">&quot;&quot;</span>).<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>);
+    <span class="hljs-keyword">let</span> longestWords = [];
+    <span class="hljs-keyword">let</span> maxLen = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> word <span class="hljs-keyword">of</span> words) {
+        <span class="hljs-keyword">if</span> (word.<span class="hljs-property">length</span> &gt; maxLen) {
+            maxLen = word.<span class="hljs-property">length</span>;
+            longestWords = [word]; <span class="hljs-comment">// reset list</span>
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (word.<span class="hljs-property">length</span> === maxLen) {
+            longestWords.<span class="hljs-title function_">push</span>(word); <span class="hljs-comment">// add tie</span>
+        }
+    }
+    <span class="hljs-keyword">return</span> longestWords;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">findLongestWordsWithTies</span>(<span class="hljs-string">&quot;The quick brown fox jumped over lazy dogs&quot;</span>));
+<span class="hljs-comment">// Output: [&quot;jumped&quot;, &quot;quick&quot;, &quot;brown&quot;]</span>
+</code></pre>
+<h4 id="handle-empty-strings-or-only-punctuation">Handle empty strings or only punctuation</h4>
+<h4 id="here-we-guard-against---or-">Here we guard against &quot; &quot; or &quot;!!!...&quot;.</h4>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">findLongestWordSafe</span>(<span class="hljs-params">sentence</span>) {
+    <span class="hljs-keyword">const</span> words = sentence.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[^\w\s]/g</span>, <span class="hljs-string">&quot;&quot;</span>).<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>).<span class="hljs-title function_">filter</span>(<span class="hljs-title class_">Boolean</span>);
+    <span class="hljs-keyword">if</span> (words.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>; <span class="hljs-comment">// No valid words</span>
+
+    <span class="hljs-keyword">let</span> longest = <span class="hljs-string">&quot;&quot;</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> word <span class="hljs-keyword">of</span> words) {
+        <span class="hljs-keyword">if</span> (word.<span class="hljs-property">length</span> &gt; longest.<span class="hljs-property">length</span>) {
+            longest = word;
+        }
+    }
+    <span class="hljs-keyword">return</span> longest;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">findLongestWordSafe</span>(<span class="hljs-string">&quot;!!!???&quot;</span>)); <span class="hljs-comment">// Output: null</span>
+</code></pre>
+<h4 id="shortest-word-ignoring-punctuation">Shortest word (ignoring punctuation)</h4>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">findShortestWord</span>(<span class="hljs-params">sentence</span>) {
+    <span class="hljs-keyword">const</span> words = sentence.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[^\w\s]/g</span>, <span class="hljs-string">&quot;&quot;</span>).<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>).<span class="hljs-title function_">filter</span>(<span class="hljs-title class_">Boolean</span>);
+    <span class="hljs-keyword">if</span> (words.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+
+    <span class="hljs-keyword">let</span> shortest = words[<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> word <span class="hljs-keyword">of</span> words) {
+        <span class="hljs-keyword">if</span> (word.<span class="hljs-property">length</span> &lt; shortest.<span class="hljs-property">length</span>) {
+            shortest = word;
+        }
+    }
+    <span class="hljs-keyword">return</span> shortest;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">findShortestWord</span>(<span class="hljs-string">&quot;The quick brown fox jumped over the lazy dog&quot;</span>));
+<span class="hljs-comment">// Output: The</span>
+</code></pre>
+<h4 id="most-frequent-word">Most frequent word</h4>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">findMostFrequentWord</span>(<span class="hljs-params">sentence</span>) {
+    <span class="hljs-keyword">const</span> words = sentence.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[^\w\s]/g</span>, <span class="hljs-string">&quot;&quot;</span>).<span class="hljs-title function_">toLowerCase</span>().<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>).<span class="hljs-title function_">filter</span>(<span class="hljs-title class_">Boolean</span>);
+    <span class="hljs-keyword">const</span> freqMap = {};
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> word <span class="hljs-keyword">of</span> words) {
+        freqMap[word] = (freqMap[word] || <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>;
+    }
+
+    <span class="hljs-keyword">let</span> mostFrequent = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">let</span> maxCount = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> [word, count] <span class="hljs-keyword">of</span> <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">entries</span>(freqMap)) {
+        <span class="hljs-keyword">if</span> (count &gt; maxCount) {
+            maxCount = count;
+            mostFrequent = word;
+        }
+    }
+    <span class="hljs-keyword">return</span> mostFrequent;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">findMostFrequentWord</span>(<span class="hljs-string">&quot;apple banana apple orange banana apple&quot;</span>));
+<span class="hljs-comment">// Output: apple</span>
+</code></pre>
+<h3 id="2-how-to-check-whether-a-string-is-palindrome-or-not">2. How to check whether a string is palindrome or not?</h3>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">isPalindrome</span>(<span class="hljs-params">inputString</span>) {
+    <span class="hljs-keyword">let</span> reverseString = inputString.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">reverse</span>().<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;&#x27;</span>);
+
+    <span class="hljs-keyword">if</span> (reverseString === inputString) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+}
+
+<span class="hljs-keyword">const</span> input = <span class="hljs-string">&quot;Hello&quot;</span>;
+<span class="hljs-keyword">const</span> input2 = <span class="hljs-string">&quot;lol&quot;</span>;
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isPalindrome</span>(input)); <span class="hljs-comment">// false</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isPalindrome</span>(input2)); <span class="hljs-comment">// true</span>
+</code></pre>
+<h3 id="3-write-a-program-to-remove-duplicates-from-an-array">3. Write a program to remove duplicates from an array?</h3>
+<h4 id="using-hasownproperty">Using hasOwnProperty()</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">removeDuplicate</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">let</span> newArray = [];
+    <span class="hljs-keyword">let</span> obj = {};
+    arr.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> {
+        <span class="hljs-keyword">if</span> (!obj.<span class="hljs-title function_">hasOwnProperty</span>(element)) {
+            obj[element] = <span class="hljs-number">1</span>;
+            newArray.<span class="hljs-title function_">push</span>(element);
+        }
+    });
+    <span class="hljs-keyword">return</span> newArray;
+}
+
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>]; <span class="hljs-comment">// O/P - [1,2,3]</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">removeDuplicate</span>(arr));
+</code></pre>
+<h4 id="using-includes">using includes()</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">removeDuplicates</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">const</span> uniqueItems = [];
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>; index &lt; arr.<span class="hljs-property">length</span>; index++) {
+        <span class="hljs-keyword">if</span> (!uniqueItems.<span class="hljs-title function_">includes</span>(arr[index])) {
+            uniqueItems.<span class="hljs-title function_">push</span>(arr[index]);
+        }
+    }
+
+    <span class="hljs-keyword">return</span> uniqueItems;
+}
+</code></pre>
+<h4 id="using-set">using set()</h4>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;mango&quot;</span>, <span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;orange&quot;</span>, <span class="hljs-string">&quot;mango&quot;</span>, <span class="hljs-string">&quot;mango&quot;</span>];
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">removeDuplicates</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">return</span> [...<span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>(arr)];
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">removeDuplicates</span>(arr));
+</code></pre>
+<h4 id="using-map---for-primitives">Using Map() - for primitives</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">removeDuplicates</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">const</span> map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>();
+    <span class="hljs-keyword">const</span> results = [];
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> arr) {
+        <span class="hljs-keyword">if</span> (!map.<span class="hljs-title function_">has</span>(item)) {
+            map.<span class="hljs-title function_">set</span>(item, <span class="hljs-literal">true</span>);
+            results.<span class="hljs-title function_">push</span>(item);
+        }
+    }
+
+    <span class="hljs-keyword">return</span> results;
+}
+
+<span class="hljs-keyword">const</span> input = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">const</span> output = <span class="hljs-title function_">removeDuplicates</span>(input);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Original:&quot;</span>, input);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Without duplicates:&quot;</span>, output);
+</code></pre>
+<h4 id="remove-duplicate-object-from-the-array">Remove duplicate object from the array</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">removeObjectDuplicates</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">const</span> map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>();
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> obj <span class="hljs-keyword">of</span> arr) {
+        <span class="hljs-keyword">if</span> (!map.<span class="hljs-title function_">has</span>(obj.<span class="hljs-property">id</span>)) {
+            map.<span class="hljs-title function_">set</span>(obj.<span class="hljs-property">id</span>, obj);
+        }
+    }
+    <span class="hljs-keyword">return</span> [...map.<span class="hljs-title function_">values</span>()];
+}
+
+<span class="hljs-comment">// Example</span>
+<span class="hljs-keyword">const</span> data = [
+    { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;A&quot;</span> },
+    { <span class="hljs-attr">id</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;B&quot;</span> },
+    { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;A (duplicate)&quot;</span> }
+];
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">removeObjectDuplicates</span>(data));
+<span class="hljs-comment">// Output: [{ id: 1, name: &quot;A&quot; }, { id: 2, name: &quot;B&quot; }]</span>
+</code></pre>
+<h3 id="4-program-to-find-reverse-of-a-string-without-using-built-in-method">4. Program to find Reverse of a string without using built-in method?</h3>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> str = <span class="hljs-string">&quot;Hello&quot;</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">stringReverse</span>(<span class="hljs-params">str</span>) {
+    <span class="hljs-keyword">let</span> reversedStr = <span class="hljs-string">&quot;&quot;</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = str.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+        reversedStr += str[i];
+    }
+
+    <span class="hljs-keyword">return</span> reversedStr;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">stringReverse</span>(str));
+
+</code></pre>
+<h4 id="reverse-string-recursive">Reverse string Recursive</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">reverseStringRecursive</span>(<span class="hljs-params">str</span>) {
+    <span class="hljs-comment">// Base case: if string is empty or one character, return it</span>
+    <span class="hljs-keyword">if</span> (str.<span class="hljs-property">length</span> &lt;= <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">return</span> str;
+    }
+
+    <span class="hljs-comment">// Recursive step: take last character + reverse the rest</span>
+    <span class="hljs-keyword">return</span> str[str.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>] + <span class="hljs-title function_">reverseStringRecursive</span>(str.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, str.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>));
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">reverseStringRecursive</span>(<span class="hljs-string">&quot;hello&quot;</span>)); <span class="hljs-comment">// ➝ &quot;olleh&quot;</span>
+</code></pre>
+<h4 id="reverse-words-in-a-sentencekeep-word-order-reversed">Reverse Words in a Sentence(Keep Word Order Reversed)</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">reverseWords</span>(<span class="hljs-params">sentence</span>) {
+    <span class="hljs-keyword">let</span> word = <span class="hljs-string">&quot;&quot;</span>;
+    <span class="hljs-keyword">let</span> words = [];
+
+    <span class="hljs-comment">// Build words manually</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt;= sentence.<span class="hljs-property">length</span>; i++) {
+        <span class="hljs-keyword">if</span> (sentence[i] === <span class="hljs-string">&quot; &quot;</span> || i === sentence.<span class="hljs-property">length</span>) {
+            <span class="hljs-keyword">if</span> (word.<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span>) {
+                words.<span class="hljs-title function_">push</span>(word);
+                word = <span class="hljs-string">&quot;&quot;</span>;
+            }
+        } <span class="hljs-keyword">else</span> {
+            word += sentence[i];
+        }
+    }
+
+    <span class="hljs-comment">// Now reverse the array of words manually</span>
+    <span class="hljs-keyword">let</span> reversedSentence = <span class="hljs-string">&quot;&quot;</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = words.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+        reversedSentence += words[i];
+        <span class="hljs-keyword">if</span> (i !== <span class="hljs-number">0</span>) reversedSentence += <span class="hljs-string">&quot; &quot;</span>;
+    }
+
+    <span class="hljs-keyword">return</span> reversedSentence;
+}
+
+<span class="hljs-comment">// Example</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">reverseWords</span>(<span class="hljs-string">&quot;hello world from angular&quot;</span>)); <span class="hljs-comment">// ➝ &quot;angular from world hello&quot;</span>
+</code></pre>
+<h4 id="both-the-word-order-reversed-and-the-characters-in-each-word-reversed">Both the word order reversed and the characters in each word reversed.</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">reverseSentenceAndWords</span>(<span class="hljs-params">sentence</span>) {
+    <span class="hljs-comment">// Step 1: Split into words</span>
+    <span class="hljs-keyword">const</span> words = sentence.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27; &#x27;</span>);
+
+    <span class="hljs-comment">// Step 2: Reverse word order manually</span>
+    <span class="hljs-keyword">let</span> reversedWordsOrder = [];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = words.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+        reversedWordsOrder.<span class="hljs-title function_">push</span>(words[i]);
+    }
+
+    <span class="hljs-comment">// Step 3: Reverse characters in each word manually</span>
+    <span class="hljs-keyword">let</span> finalWords = reversedWordsOrder.<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">word</span> =&gt;</span> {
+        <span class="hljs-keyword">let</span> reversed = <span class="hljs-string">&#x27;&#x27;</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = word.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span>; j--) {
+            reversed += word[j];
+        }
+        <span class="hljs-keyword">return</span> reversed;
+    });
+
+    <span class="hljs-comment">// Step 4: Join back into a string</span>
+    <span class="hljs-keyword">return</span> finalWords.<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27; &#x27;</span>);
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">reverseSentenceAndWords</span>(<span class="hljs-string">&quot;Hello World from JavaScript&quot;</span>));
+<span class="hljs-comment">// Output: &quot;tpircSavaJ morf dlroW olleH&quot;</span>
+</code></pre>
+<h3 id="5-find-the-max-count-of-consecutive-1s-in-an-array">5. Find the max count of consecutive 1’s in an array?</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">findMaxConsecutiveOnes</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">let</span> maxCount = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">let</span> currentCount = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; arr.<span class="hljs-property">length</span>; i++) {
+        <span class="hljs-keyword">if</span> (arr[i] === <span class="hljs-number">1</span>) {
+            currentCount++;
+            maxCount = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">max</span>(maxCount, currentCount);
+        } <span class="hljs-keyword">else</span> {
+            currentCount = <span class="hljs-number">0</span>; <span class="hljs-comment">// Reset when 0 is found</span>
+        }
+    }
+
+    <span class="hljs-keyword">return</span> maxCount;
+}
+
+<span class="hljs-comment">// Example:</span>
+<span class="hljs-keyword">const</span> input = [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Max consecutive 1s:&quot;</span>, <span class="hljs-title function_">findMaxConsecutiveOnes</span>(input)); <span class="hljs-comment">// Output: 3</span>
+</code></pre>
+<h3 id="6-find-the-factorial-of-given-number">6. Find the factorial of given number?</h3>
+<h4 id="iterative-approach-loop">Iterative Approach (Loop)</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">factorialIterative</span>(<span class="hljs-params">n</span>) {
+    <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>; <span class="hljs-comment">// Factorial not defined for negative numbers</span>
+    <span class="hljs-keyword">let</span> result = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++) {
+        result *= i;
+    }
+    <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">factorialIterative</span>(<span class="hljs-number">5</span>)); <span class="hljs-comment">// Output: 120</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">findFactorial</span>(<span class="hljs-number">4</span>));
+</code></pre>
+<h4 id="recursive-approach">Recursive Approach</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">factorialRecursive</span>(<span class="hljs-params">n</span>) {
+    <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;         <span class="hljs-comment">// Not defined for negative numbers</span>
+    <span class="hljs-keyword">if</span> (n === <span class="hljs-number">0</span> || n === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;  <span class="hljs-comment">// Base case</span>
+    <span class="hljs-keyword">return</span> n * <span class="hljs-title function_">factorialRecursive</span>(n - <span class="hljs-number">1</span>); <span class="hljs-comment">// Recursive case</span>
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">factorialRecursive</span>(<span class="hljs-number">5</span>)); <span class="hljs-comment">// Output: 120</span>
+</code></pre>
+<h4 id="memorization-approach">Memorization approach</h4>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> n = <span class="hljs-number">5</span>;
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">n, cache = []</span>) {
+    <span class="hljs-keyword">if</span> (n === <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    }
+    <span class="hljs-keyword">if</span> (cache[n] !== <span class="hljs-literal">undefined</span>) {
+        <span class="hljs-keyword">return</span> cache[n];
+    }
+    cache[n] = n * <span class="hljs-title function_">factorial</span>(n - <span class="hljs-number">1</span>, cache);
+    <span class="hljs-keyword">return</span> cache[n];
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">factorial</span>(n));
+</code></pre>
+<h3 id="7-given-2-arrays-that-are-sorted-03431-and-4630-merge-them-and-sort-034463031">7. Given 2 arrays that are sorted [0,3,4,31] and [4,6,30]. Merge them and sort [0,3,4,4,6,30,31]?</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">mergeTwoArray</span>(<span class="hljs-params">arr1, arr2</span>) {
+    <span class="hljs-keyword">let</span> result = [...arr1, ...arr2];
+    <span class="hljs-keyword">return</span> result.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a - b);
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">mergeTwoArray</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]));
+</code></pre>
+<h3 id="8-create-a-function-which-will-accepts-two-arrays-arr1-and-arr2-the-function-should-return-true-if-every-value-in-arr1-has-its-corresponding-value-squared-in-array2-the-frequency-of-values-must-be-same">8. Create a function which will accepts two arrays arr1 and arr2. The function should return true if every value in arr1 has its corresponding value squared in array2. The frequency of values must be same.</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">same</span>(<span class="hljs-params">arr1, arr2</span>) {
+    <span class="hljs-keyword">if</span> (arr1.<span class="hljs-property">length</span> !== arr2.<span class="hljs-property">length</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+
+    <span class="hljs-keyword">const</span> frequency1 = {};
+    <span class="hljs-keyword">const</span> frequency2 = {};
+
+    <span class="hljs-comment">// Count frequency of each number in arr1</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> num <span class="hljs-keyword">of</span> arr1) {
+        frequency1[num] = (frequency1[num] || <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>;
+    }
+
+    <span class="hljs-comment">// Count frequency of each number in arr2</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> num <span class="hljs-keyword">of</span> arr2) {
+        frequency2[num] = (frequency2[num] || <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>;
+    }
+
+    <span class="hljs-comment">// Check if square of each key in frequency1 exists in frequency2 with same count</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> frequency1) {
+        <span class="hljs-keyword">const</span> squaredKey = key * key;
+
+        <span class="hljs-keyword">if</span> (!(squaredKey <span class="hljs-keyword">in</span> frequency2)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+
+        <span class="hljs-keyword">if</span> (frequency2[squaredKey] !== frequency1[key]) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">same</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>]));           <span class="hljs-comment">// true</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">same</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">9</span>]));              <span class="hljs-comment">// false</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">same</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>]));           <span class="hljs-comment">// false (frequency mismatch)</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">same</span>([<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">4</span>]));           <span class="hljs-comment">// true</span>
+</code></pre>
+<h3 id="9-given-two-strings-find-if-one-string-can-be-formed-by-rearranging-the-letters-of-other-string--check-if-two-strings-are-anagrams-of-each-other">9. Given two strings. Find if one string can be formed by rearranging the letters of other string / Check if two strings are anagrams of each other.</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">isAnagram</span>(<span class="hljs-params">str1, str2</span>) {
+    <span class="hljs-keyword">if</span> (str1.<span class="hljs-property">length</span> !== str2.<span class="hljs-property">length</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+
+    <span class="hljs-keyword">const</span> frequency = {};
+
+    <span class="hljs-comment">// Count characters in str1</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> char <span class="hljs-keyword">of</span> str1) {
+        frequency[char] = (frequency[char] || <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>;
+    }
+
+    <span class="hljs-comment">// Decrease count for characters in str2</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> char <span class="hljs-keyword">of</span> str2) {
+        <span class="hljs-keyword">if</span> (!frequency[char]) {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        } <span class="hljs-keyword">else</span> {
+            frequency[char]--;
+        }
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isAnagram</span>(<span class="hljs-string">&quot;listen&quot;</span>, <span class="hljs-string">&quot;silent&quot;</span>));  <span class="hljs-comment">// true</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isAnagram</span>(<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;olleh&quot;</span>));     <span class="hljs-comment">// true</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isAnagram</span>(<span class="hljs-string">&quot;rat&quot;</span>, <span class="hljs-string">&quot;car&quot;</span>));         <span class="hljs-comment">// false</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isAnagram</span>(<span class="hljs-string">&quot;aabbcc&quot;</span>, <span class="hljs-string">&quot;abcabc&quot;</span>));   <span class="hljs-comment">// true</span>
+</code></pre>
+<h3 id="10-write-logic-to-get-unique-objects-from-below-array">10. Write logic to get unique objects from below array?</h3>
+<h4 id="using-mapbest-for-unique-by-key">Using Map(Best for Unique by Key)</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getUniqueObjects</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">const</span> map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>();
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> obj <span class="hljs-keyword">of</span> arr) {
+        <span class="hljs-keyword">if</span> (!map.<span class="hljs-title function_">has</span>(obj.<span class="hljs-property">id</span>)) {
+            map.<span class="hljs-title function_">set</span>(obj.<span class="hljs-property">id</span>, obj); <span class="hljs-comment">// Keep first occurrence</span>
+        }
+    }
+    <span class="hljs-keyword">return</span> [...map.<span class="hljs-title function_">values</span>()];
+}
+
+<span class="hljs-comment">// Usage</span>
+<span class="hljs-keyword">const</span> uniqueUsers = <span class="hljs-title function_">getUniqueObjects</span>(users);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(uniqueUsers);
+</code></pre>
+<h4 id="using-filter--set-one-liner-style">Using filter() + Set (One-liner style)</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getUniqueObjects</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">const</span> seen = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>();
+    <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">obj</span> =&gt;</span> {
+        <span class="hljs-keyword">if</span> (seen.<span class="hljs-title function_">has</span>(obj.<span class="hljs-property">id</span>)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        seen.<span class="hljs-title function_">add</span>(obj.<span class="hljs-property">id</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    });
+}
+</code></pre>
+<h4 id="if-you-want-to-remove-duplicates-by-multiple-fieldseg-id--name-you-can-use-a-custom-key">If you want to remove duplicates by multiple fields(e.g., id + name), you can use a custom key:</h4>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> seen = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>();
+<span class="hljs-keyword">const</span> unique = users.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">user</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> key = <span class="hljs-string">`<span class="hljs-subst">${user.id}</span>-<span class="hljs-subst">${user.name}</span>`</span>;
+    <span class="hljs-keyword">if</span> (seen.<span class="hljs-title function_">has</span>(key)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    seen.<span class="hljs-title function_">add</span>(key);
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+});
+</code></pre>
+<h4 id="remove-duplicates-by-deep-equality">Remove Duplicates by Deep Equality</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">removeDuplicateObjects</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">const</span> seen = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>();
+
+    <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">obj</span> =&gt;</span> {
+        <span class="hljs-keyword">const</span> json = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(obj);
+        <span class="hljs-keyword">if</span> (seen.<span class="hljs-title function_">has</span>(json)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        seen.<span class="hljs-title function_">add</span>(json);
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    });
+}
+</code></pre>
+<h3 id="11-write-a-javascript-program-to-find-the-maximum-number-in-an-array">11. Write a JavaScript program to find the maximum number in an array.</h3>
+<h4 id="using-a-loopno-built---in-methods">Using a Loop(No Built - in Methods)</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">findMax</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">if</span> (arr.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">undefined</span>;
+
+    <span class="hljs-keyword">let</span> max = arr[<span class="hljs-number">0</span>];
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; arr.<span class="hljs-property">length</span>; i++) {
+        <span class="hljs-keyword">if</span> (arr[i] &gt; max) {
+            max = arr[i];
+        }
+    }
+
+    <span class="hljs-keyword">return</span> max;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">findMax</span>([<span class="hljs-number">4</span>, <span class="hljs-number">10</span>, <span class="hljs-number">7</span>, <span class="hljs-number">99</span>, <span class="hljs-number">5</span>])); <span class="hljs-comment">// Output: 99</span>
+</code></pre>
+<h4 id="using-mathmax-with-spread-operator">Using <code>Math.max()</code> with Spread Operator</h4>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">4</span>, <span class="hljs-number">10</span>, <span class="hljs-number">7</span>, <span class="hljs-number">99</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">const</span> max = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">max</span>(...arr);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(max); <span class="hljs-comment">// Output: 99</span>
+</code></pre>
+<h4 id="using-reduce">Using <code>reduce()</code></h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">findMax</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">max, curr</span>) =&gt;</span> curr &gt; max ? curr : max, arr[<span class="hljs-number">0</span>]);
+}
+</code></pre>
+<h3 id="12-write-a-javascript-function-that-takes-an-array-of-numbers-and-returns-a-new-array-with-only-the-even-numbers">12. Write a JavaScript function that takes an array of numbers and returns a new array with only the even numbers.</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getEvenNumbers</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span> num % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>);
+}
+
+<span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>];
+<span class="hljs-keyword">const</span> evenNumbers = <span class="hljs-title function_">getEvenNumbers</span>(numbers);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(evenNumbers); <span class="hljs-comment">// Output: [2, 4, 6, 8, 10]</span>
+</code></pre>
+<h4 id="a-version-without-using-filter">A version without using filter()</h4>
+<pre><code class="language-js">
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">getEvenNumbers</span>(<span class="hljs-params">numbers</span>) {
+    <span class="hljs-keyword">const</span> result = [];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; numbers.<span class="hljs-property">length</span>; i++) {
+        <span class="hljs-keyword">if</span> (numbers[i] % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) {
+            result.<span class="hljs-title function_">push</span>(numbers[i]);
+        }
+    }
+    <span class="hljs-keyword">return</span> result;
+}
+</code></pre>
+<h4 id="using-forof-loop">Using for...of Loop</h4>
+<pre><code class="language-js">
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">getEvenNumbers</span>(<span class="hljs-params">numbers</span>) {
+    <span class="hljs-keyword">const</span> result = [];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> num <span class="hljs-keyword">of</span> numbers) {
+        <span class="hljs-keyword">if</span> (num % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) {
+            result.<span class="hljs-title function_">push</span>(num);
+        }
+    }
+    <span class="hljs-keyword">return</span> result;
+}
+</code></pre>
+<h3 id="13-write-a-javascript-function-to-check-if-a-given-number-is-prime">13. Write a JavaScript function to check if a given number is prime.</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">isPrime</span>(<span class="hljs-params">n</span>) {
+    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;       <span class="hljs-comment">// 0 and 1 are not prime</span>
+    <span class="hljs-keyword">if</span> (n === <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;       <span class="hljs-comment">// 2 is the only even prime</span>
+    <span class="hljs-keyword">if</span> (n % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;  <span class="hljs-comment">// Eliminate even numbers &gt; 2</span>
+
+    <span class="hljs-keyword">const</span> sqrt = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">sqrt</span>(n);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">3</span>; i &lt;= sqrt; i += <span class="hljs-number">2</span>) {
+        <span class="hljs-keyword">if</span> (n % i === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isPrime</span>(<span class="hljs-number">2</span>));   <span class="hljs-comment">// true</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isPrime</span>(<span class="hljs-number">11</span>));  <span class="hljs-comment">// true</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isPrime</span>(<span class="hljs-number">15</span>));  <span class="hljs-comment">// false</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isPrime</span>(<span class="hljs-number">97</span>));  <span class="hljs-comment">// true</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isPrime</span>(<span class="hljs-number">1</span>));   <span class="hljs-comment">// false</span>
+</code></pre>
+<h4 id="list-of-all-primes-in-a-given-range">List of All Primes in a Given Range</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getPrimesInRange</span>(<span class="hljs-params">start, end</span>) {
+    <span class="hljs-keyword">const</span> primes = [];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = start; i &lt;= end; i++) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-title function_">isPrime</span>(i)) {
+            primes.<span class="hljs-title function_">push</span>(i);
+        }
+    }
+    <span class="hljs-keyword">return</span> primes;
+}
+</code></pre>
+<h4 id="reuses-the-standard-isprime-function">Reuses the standard isPrime() function</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">isPrime</span>(<span class="hljs-params">n</span>) {
+    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">if</span> (n === <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">if</span> (n % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+
+    <span class="hljs-keyword">const</span> sqrt = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">sqrt</span>(n);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">3</span>; i &lt;= sqrt; i += <span class="hljs-number">2</span>) {
+        <span class="hljs-keyword">if</span> (n % i === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">getPrimesInRange</span>(<span class="hljs-number">10</span>, <span class="hljs-number">30</span>));
+<span class="hljs-comment">// Output: [11, 13, 17, 19, 23, 29]</span>
+</code></pre>
+<h4 id="recursive-version-of-prime-check">Recursive Version of Prime Check</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">isPrimeRecursive</span>(<span class="hljs-params">n, i = <span class="hljs-number">2</span></span>) {
+    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">if</span> (n === <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">if</span> (n % i === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">if</span> (i * i &gt; n) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-title function_">isPrimeRecursive</span>(n, i + <span class="hljs-number">1</span>);
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isPrimeRecursive</span>(<span class="hljs-number">7</span>));   <span class="hljs-comment">// true</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isPrimeRecursive</span>(<span class="hljs-number">9</span>));   <span class="hljs-comment">// false</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isPrimeRecursive</span>(<span class="hljs-number">97</span>));  <span class="hljs-comment">// true</span>
+</code></pre>
+<h3 id="14-write-a-javascript-program-to-find-the-largest-element-in-a-nested-array-3-4-58-709-8-9-10-11-111-2">14. Write a JavaScript program to find the largest element in a nested array. [[3, 4, 58], [709, 8, 9, [10, 11]], [111, 2]]</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">findLargestInNestedArray</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">let</span> max = -<span class="hljs-title class_">Infinity</span>;
+    <span class="hljs-keyword">let</span> found = <span class="hljs-literal">false</span>; <span class="hljs-comment">// Flag to check if we found any number</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">findMax</span>(<span class="hljs-params">subArray</span>) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> subArray) {
+            <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Array</span>.<span class="hljs-title function_">isArray</span>(item)) {
+                <span class="hljs-title function_">findMax</span>(item); <span class="hljs-comment">// Recursive call for nested arrays</span>
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> item === <span class="hljs-string">&#x27;number&#x27;</span>) {
+                found = <span class="hljs-literal">true</span>; <span class="hljs-comment">// Mark that we found at least one number</span>
+                <span class="hljs-keyword">if</span> (item &gt; max) {
+                    max = item;
+                }
+            }
+        }
+    }
+
+    <span class="hljs-title function_">findMax</span>(arr);
+    <span class="hljs-keyword">return</span> found ? max : <span class="hljs-literal">null</span>; <span class="hljs-comment">// Return null if no number found</span>
+}
+
+
+<span class="hljs-keyword">const</span> nestedArray = [[<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">58</span>], [<span class="hljs-number">709</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, [<span class="hljs-number">10</span>, <span class="hljs-number">11</span>]], [<span class="hljs-number">111</span>, <span class="hljs-number">2</span>]];
+<span class="hljs-keyword">const</span> largest = <span class="hljs-title function_">findLargestInNestedArray</span>(nestedArray);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(largest); <span class="hljs-comment">// Output: 709</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">findLargestInNestedArray</span>([[<span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">709</span>], [<span class="hljs-number">111</span>]])); <span class="hljs-comment">// 709</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">findLargestInNestedArray</span>([])); <span class="hljs-comment">// null</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">findLargestInNestedArray</span>([[], []])); <span class="hljs-comment">// null</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">findLargestInNestedArray</span>([[[], []]])); <span class="hljs-comment">// null</span>
+</code></pre>
+<h3 id="15-write-a-javascript-function-that-returns-the-fibonacci-sequence-up-to-a-given-number-of-terms">15. Write a JavaScript function that returns the Fibonacci sequence up to a given number of terms.</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getFibonacciSequence</span>(<span class="hljs-params">n</span>) {
+    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> [];
+    <span class="hljs-keyword">if</span> (n === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> [<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">if</span> (n === <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>];
+
+    <span class="hljs-keyword">const</span> sequence = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">2</span>; i &lt; n; i++) {
+        <span class="hljs-keyword">const</span> next = sequence[i - <span class="hljs-number">1</span>] + sequence[i - <span class="hljs-number">2</span>];
+        sequence.<span class="hljs-title function_">push</span>(next);
+    }
+    <span class="hljs-keyword">return</span> sequence;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">getFibonacciSequence</span>(<span class="hljs-number">1</span>));  <span class="hljs-comment">// [0]</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">getFibonacciSequence</span>(<span class="hljs-number">5</span>));  <span class="hljs-comment">// [0, 1, 1, 2, 3]</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">getFibonacciSequence</span>(<span class="hljs-number">10</span>)); <span class="hljs-comment">// [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]</span>
+</code></pre>
+<h4 id="recursive-version-by-number-of-terms">Recursive Version (by number of terms)</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getFibonacciRecursive</span>(<span class="hljs-params">n</span>) {
+    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> [];
+    <span class="hljs-keyword">if</span> (n === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> [<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">if</span> (n === <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>];
+
+    <span class="hljs-keyword">const</span> seq = <span class="hljs-title function_">getFibonacciRecursive</span>(n - <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">const</span> next = seq[seq.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>] + seq[seq.<span class="hljs-property">length</span> - <span class="hljs-number">2</span>];
+    <span class="hljs-keyword">return</span> [...seq, next];
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">getFibonacciRecursive</span>(<span class="hljs-number">7</span>));
+<span class="hljs-comment">// Output: [0, 1, 1, 2, 3, 5, 8]</span>
+
+</code></pre>
+<h4 id="fibonacci-sequence-up-to-a-maximum-value">Fibonacci Sequence up to a Maximum Value</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getFibonacciUpToMax</span>(<span class="hljs-params">maxValue</span>) {
+    <span class="hljs-keyword">if</span> (maxValue &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> [];
+
+    <span class="hljs-keyword">const</span> sequence = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>];
+    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+        <span class="hljs-keyword">const</span> next = sequence[sequence.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>] + sequence[sequence.<span class="hljs-property">length</span> - <span class="hljs-number">2</span>];
+        <span class="hljs-keyword">if</span> (next &gt; maxValue) <span class="hljs-keyword">break</span>;
+        sequence.<span class="hljs-title function_">push</span>(next);
+    }
+
+    <span class="hljs-keyword">return</span> sequence;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">getFibonacciUpToMax</span>(<span class="hljs-number">50</span>));
+<span class="hljs-comment">// Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]</span>
+</code></pre>
+<h4 id="fibonacci-with-memoization">Fibonacci with Memoization</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">fibonacciMemo</span>(<span class="hljs-params">n, memo = {}</span>) {
+    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">if</span> (n === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+
+    <span class="hljs-keyword">if</span> (memo[n]) <span class="hljs-keyword">return</span> memo[n];
+
+    memo[n] = <span class="hljs-title function_">fibonacciMemo</span>(n - <span class="hljs-number">1</span>, memo) + <span class="hljs-title function_">fibonacciMemo</span>(n - <span class="hljs-number">2</span>, memo);
+    <span class="hljs-keyword">return</span> memo[n];
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">fibonacciMemo</span>(<span class="hljs-number">0</span>));  <span class="hljs-comment">// Output: 0</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">fibonacciMemo</span>(<span class="hljs-number">1</span>));  <span class="hljs-comment">// Output: 1</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">fibonacciMemo</span>(<span class="hljs-number">6</span>));  <span class="hljs-comment">// Output: 8</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">fibonacciMemo</span>(<span class="hljs-number">10</span>)); <span class="hljs-comment">// Output: 55</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">fibonacciMemo</span>(<span class="hljs-number">50</span>)); <span class="hljs-comment">// Output: 12586269025</span>
+</code></pre>
+<h3 id="16-given-a-string-write-a-javascript-function-to-count-the-occurrences-of-each-character-in-the-string">16. Given a string, write a javascript function to count the occurrences of each character in the string.</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">countCharacters</span>(<span class="hljs-params">str</span>) {
+    <span class="hljs-keyword">const</span> counts = {};
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> char <span class="hljs-keyword">of</span> str) {
+        <span class="hljs-keyword">if</span> (counts[char]) {
+            counts[char]++;
+        } <span class="hljs-keyword">else</span> {
+            counts[char] = <span class="hljs-number">1</span>;
+        }
+    }
+
+    <span class="hljs-keyword">return</span> counts;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">countCharacters</span>(<span class="hljs-string">&quot;hello&quot;</span>));
+<span class="hljs-comment">// Output: { h: 1, e: 1, l: 2, o: 1 }</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">countCharacters</span>(<span class="hljs-string">&quot;Mississippi&quot;</span>));
+<span class="hljs-comment">// Output: { M: 1, i: 4, s: 4, p: 2 }</span>
+</code></pre>
+<h4 id="get-most-frequent-character">Get Most Frequent Character</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getMostFrequentCharacter</span>(<span class="hljs-params">str</span>) {
+    <span class="hljs-keyword">const</span> counts = {};
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> char <span class="hljs-keyword">of</span> str) {
+        counts[char] = (counts[char] || <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>;
+    }
+
+    <span class="hljs-keyword">let</span> maxChar = <span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-keyword">let</span> maxCount = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> char <span class="hljs-keyword">in</span> counts) {
+        <span class="hljs-keyword">if</span> (counts[char] &gt; maxCount) {
+            maxCount = counts[char];
+            maxChar = char;
+        }
+    }
+
+    <span class="hljs-keyword">return</span> { <span class="hljs-attr">character</span>: maxChar, <span class="hljs-attr">count</span>: maxCount };
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">getMostFrequentCharacter</span>(<span class="hljs-string">&quot;hello&quot;</span>));
+<span class="hljs-comment">// Output: { character: &#x27;l&#x27;, count: 2 }</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">getMostFrequentCharacter</span>(<span class="hljs-string">&quot;Mississippi&quot;</span>));
+<span class="hljs-comment">// Output: { character: &#x27;i&#x27;, count: 4 }</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">getMostFrequentCharacter</span>(<span class="hljs-string">&quot;  aaAAbccC  &quot;</span>));
+<span class="hljs-comment">// Output: { character: &#x27; &#x27;, count: 4 }</span>
+</code></pre>
+<h4 id="case-insensitive--ignore-spaces">Case-insensitive &amp; ignore spaces</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getMostFrequentCharacterCleaned</span>(<span class="hljs-params">str</span>) {
+    <span class="hljs-keyword">const</span> counts = {};
+    <span class="hljs-keyword">const</span> cleaned = str.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/\s/g</span>, <span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">toLowerCase</span>();
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> char <span class="hljs-keyword">of</span> cleaned) {
+        counts[char] = (counts[char] || <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>;
+    }
+
+    <span class="hljs-keyword">let</span> maxChar = <span class="hljs-string">&#x27;&#x27;</span>;
+    <span class="hljs-keyword">let</span> maxCount = <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> char <span class="hljs-keyword">in</span> counts) {
+        <span class="hljs-keyword">if</span> (counts[char] &gt; maxCount) {
+            maxCount = counts[char];
+            maxChar = char;
+        }
+    }
+
+    <span class="hljs-keyword">return</span> { <span class="hljs-attr">character</span>: maxChar, <span class="hljs-attr">count</span>: maxCount };
+}
+</code></pre>
+<h3 id="17-write-a-javascript-function-that-sorts-an-array-of-numbers-in-ascending-order">17. Write a javascript function that sorts an array of numbers in ascending order.</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sortNumbersAscending</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a - b);
+}
+
+<span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">10</span>, <span class="hljs-number">2</span>, <span class="hljs-number">33</span>, <span class="hljs-number">4</span>, <span class="hljs-number">15</span>, <span class="hljs-number">1</span>];
+<span class="hljs-keyword">const</span> sorted = <span class="hljs-title function_">sortNumbersAscending</span>(numbers);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sorted); <span class="hljs-comment">// Output: [1, 2, 4, 10, 15, 33]</span>
+</code></pre>
+<h4 id="custom-sorting-for-objects-by-numeric-property">custom sorting for objects by numeric property</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sortObjectsByNumericProperty</span>(<span class="hljs-params">arr, property</span>) {
+    <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a[property] - b[property]);
+}
+
+<span class="hljs-keyword">const</span> users = [
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">32</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">25</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Charlie&quot;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">40</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;David&quot;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">29</span> }
+];
+
+<span class="hljs-keyword">const</span> sortedByAge = <span class="hljs-title function_">sortObjectsByNumericProperty</span>(users, <span class="hljs-string">&quot;age&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sortedByAge);
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// [</span>
+<span class="hljs-comment">//   { name: &#x27;Bob&#x27;, age: 25 },</span>
+<span class="hljs-comment">//   { name: &#x27;David&#x27;, age: 29 },</span>
+<span class="hljs-comment">//   { name: &#x27;Alice&#x27;, age: 32 },</span>
+<span class="hljs-comment">//   { name: &#x27;Charlie&#x27;, age: 40 }</span>
+<span class="hljs-comment">// ]</span>
+</code></pre>
+<h3 id="18-write-a-javascript-function-that-sorts-an-array-of-numbers-in-descending-order">18. Write a javascript function that sorts an array of numbers in descending order.</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sortNumbersDescending</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b - a);
+}
+
+<span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">10</span>, <span class="hljs-number">2</span>, <span class="hljs-number">33</span>, <span class="hljs-number">4</span>, <span class="hljs-number">15</span>, <span class="hljs-number">1</span>];
+<span class="hljs-keyword">const</span> sorted = <span class="hljs-title function_">sortNumbersDescending</span>(numbers);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sorted); <span class="hljs-comment">// Output: [33, 15, 10, 4, 2, 1]</span>
+</code></pre>
+<h4 id="avoid-mutating-the-original-array">Avoid Mutating the Original Array</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sortNumbersDescendingCopy</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">return</span> [...arr].<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b - a);
+}
+</code></pre>
+<h3 id="19-write-a-javascript-function-that-reverses-the-order-of-words-in-a-sentence-without-using-the-built-in-reverse-method">19. Write a javascript function that reverses the order of words in a sentence without using the built-in reverse() method.</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">reverseWords</span>(<span class="hljs-params">sentence</span>) {
+    <span class="hljs-keyword">const</span> words = sentence.<span class="hljs-title function_">trim</span>().<span class="hljs-title function_">split</span>(<span class="hljs-regexp">/\s+/</span>); <span class="hljs-comment">// Split by any whitespace</span>
+    <span class="hljs-keyword">const</span> reversed = [];
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = words.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+        reversed.<span class="hljs-title function_">push</span>(words[i]);
+    }
+
+    <span class="hljs-keyword">return</span> reversed.<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27; &#x27;</span>);
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">reverseWords</span>(<span class="hljs-string">&quot;Hello world from JavaScript&quot;</span>));
+<span class="hljs-comment">// Output: &quot;JavaScript from world Hello&quot;</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">reverseWords</span>(<span class="hljs-string">&quot;   This   is   spaced    out  &quot;</span>));
+<span class="hljs-comment">// Output: &quot;out spaced is This&quot;</span>
+</code></pre>
+<h4 id="to-reverse-letters-in-each-word-too">To reverse letters in each word too</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">reverseWordsAndLetters</span>(<span class="hljs-params">sentence</span>) {
+    <span class="hljs-keyword">const</span> words = sentence.<span class="hljs-title function_">trim</span>().<span class="hljs-title function_">split</span>(<span class="hljs-regexp">/\s+/</span>);
+    <span class="hljs-keyword">const</span> result = [];
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = words.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+        <span class="hljs-keyword">const</span> word = words[i];
+        <span class="hljs-keyword">let</span> reversedWord = <span class="hljs-string">&#x27;&#x27;</span>;
+
+        <span class="hljs-comment">// Reverse letters in the word without using split().reverse().join()</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = word.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span>; j--) {
+            reversedWord += word[j];
+        }
+
+        result.<span class="hljs-title function_">push</span>(reversedWord);
+    }
+
+    <span class="hljs-keyword">return</span> result.<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27; &#x27;</span>);
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">reverseWordsAndLetters</span>(<span class="hljs-string">&quot;Hello world from JavaScript&quot;</span>));
+<span class="hljs-comment">// Output: &quot;tpircSavaJ morf dlrow olleH&quot;</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">reverseWordsAndLetters</span>(<span class="hljs-string">&quot;  This  is   cool  &quot;</span>));
+<span class="hljs-comment">// Output: &quot;looc si sihT&quot;</span>
+
+</code></pre>
+<h3 id="20-implement-a-javascript-function-that-flattens-a-nested-array-into-a-single-dimensional-array">20. Implement a javascript function that flattens a nested array into a single-dimensional array.</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">flattenArray</span>(<span class="hljs-params">arr</span>) {
+    <span class="hljs-keyword">const</span> result = [];
+
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">flatten</span>(<span class="hljs-params">subArray</span>) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> subArray) {
+            <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Array</span>.<span class="hljs-title function_">isArray</span>(item)) {
+                <span class="hljs-title function_">flatten</span>(item); <span class="hljs-comment">// Recursively flatten nested arrays</span>
+            } <span class="hljs-keyword">else</span> {
+                result.<span class="hljs-title function_">push</span>(item); <span class="hljs-comment">// Push non-array values</span>
+            }
+        }
+    }
+
+    <span class="hljs-title function_">flatten</span>(arr);
+    <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-keyword">const</span> nested = [<span class="hljs-number">1</span>, [<span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>]], <span class="hljs-number">6</span>], <span class="hljs-number">7</span>];
+<span class="hljs-keyword">const</span> flat = <span class="hljs-title function_">flattenArray</span>(nested);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(flat); <span class="hljs-comment">// Output: [1, 2, 3, 4, 5, 6, 7]</span>
+</code></pre>
+<h4 id="to-limit-flattening-to-a-specific-depth">To limit flattening to a specific depth</h4>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">flattenArrayToDepth</span>(<span class="hljs-params">arr, depth = <span class="hljs-number">1</span></span>) {
+    <span class="hljs-keyword">const</span> result = [];
+
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">flatten</span>(<span class="hljs-params">subArray, currentDepth</span>) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> subArray) {
+            <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Array</span>.<span class="hljs-title function_">isArray</span>(item) &amp;&amp; currentDepth &lt; depth) {
+                <span class="hljs-title function_">flatten</span>(item, currentDepth + <span class="hljs-number">1</span>); <span class="hljs-comment">// Flatten only if depth allows</span>
+            } <span class="hljs-keyword">else</span> {
+                result.<span class="hljs-title function_">push</span>(item);
+            }
+        }
+    }
+
+    <span class="hljs-title function_">flatten</span>(arr, <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-keyword">const</span> nested1 = [<span class="hljs-number">1</span>, [<span class="hljs-number">2</span>, [<span class="hljs-number">3</span>, [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>]]], <span class="hljs-number">6</span>];
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">flattenArrayToDepth</span>(nested1, <span class="hljs-number">1</span>));
+<span class="hljs-comment">// Output: [1, 2, [3, [4, 5]], 6]</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">flattenArrayToDepth</span>(nested1, <span class="hljs-number">2</span>));
+<span class="hljs-comment">// Output: [1, 2, 3, [4, 5], 6]</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">flattenArrayToDepth</span>(nested1, <span class="hljs-number">3</span>));
+<span class="hljs-comment">// Output: [1, 2, 3, 4, 5, 6]</span>
+</code></pre>
+<h3 id="21-write-a-function-which-converts-string-input-into-an-object-abc-somevalue-a-b-c-somevalue">21. Write a function which converts string input into an object (&quot;a.b.c&quot;, &quot;someValue&quot;); {a: {b: {c: &quot;someValue&quot;}}}</h3>
+<pre><code class="language-js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">stringToNestedObject</span>(<span class="hljs-params">path, value</span>) {
+    <span class="hljs-keyword">const</span> keys = path.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;.&#x27;</span>); <span class="hljs-comment">// Split the string into keys</span>
+    <span class="hljs-keyword">const</span> result = {}; <span class="hljs-comment">// Initialize the outermost object</span>
+    <span class="hljs-keyword">let</span> current = result; <span class="hljs-comment">// Reference to the current level of the object</span>
+
+    <span class="hljs-comment">// Loop through each key, creating nested objects as needed</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; keys.<span class="hljs-property">length</span>; i++) {
+        <span class="hljs-keyword">const</span> key = keys[i];
+
+        <span class="hljs-keyword">if</span> (i === keys.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>) {
+            <span class="hljs-comment">// If it&#x27;s the last key, set the value</span>
+            current[key] = value;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// Otherwise, create an empty object if it doesn&#x27;t exist</span>
+            current[key] = current[key] || {};
+            current = current[key]; <span class="hljs-comment">// Move to the next level</span>
+        }
+    }
+
+    <span class="hljs-keyword">return</span> result;
+}
+
+<span class="hljs-comment">// Example usage</span>
+<span class="hljs-keyword">const</span> path = <span class="hljs-string">&quot;a.b.c&quot;</span>;
+<span class="hljs-keyword">const</span> value = <span class="hljs-string">&quot;someValue&quot;</span>;
+<span class="hljs-keyword">const</span> result = <span class="hljs-title function_">stringToNestedObject</span>(path, value);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result); <span class="hljs-comment">// Output: { a: { b: { c: &quot;someValue&quot; } } }</span>
+</code></pre>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

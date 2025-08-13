@@ -10,6 +10,8 @@ import { TagsComponent } from './components/tags/tags.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { CategoryComponent } from './components/category/category.component';
 import { TitleCasePipe } from './pipes/title-case.pipe';
+import { ScrollProgressDirective } from './directive/scroll-progress.directive';
+import { ScrollProgressComponent } from './components/scroll-progress/scroll-progress.component';
 
 const pipes = [TitleCasePipe];
 
@@ -19,16 +21,21 @@ const components = [
     PreviewMarkdownComponent,
     TagsComponent,
     PaginationComponent,
-    CategoryComponent
+    CategoryComponent,
+    ScrollProgressComponent
+];
+
+const directives = [
+    ScrollProgressDirective
 ];
 
 @NgModule({
-    declarations: [...components, ...pipes],
+    declarations: [...components, ...directives, ...pipes],
     imports: [
         CommonModule,
         RouterModule,
         MarkdownModule.forRoot({ loader: HttpClient })
     ],
-    exports: [...components, ...pipes]
+    exports: [...components, ...directives, ...pipes]
 })
 export class SharedModule { }

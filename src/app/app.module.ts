@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutsModule } from './shared/components/layouts/layouts.module';
 import { getRequestUrl, REQUEST_URL } from './request-url.service';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { getRequestUrl, REQUEST_URL } from './request-url.service';
             closeButton: true,
             autoDismiss: false,
         }),
+        SharedModule
     ],
     providers: [
         { provide: REQUEST_URL, useFactory: getRequestUrl },

@@ -7,6 +7,7 @@ import { PublicHeaderComponent } from './public-layout/public-header/public-head
 import { AdminFooterComponent } from './admin-layout/admin-footer/admin-footer.component';
 import { AdminHeaderComponent } from './admin-layout/admin-header/admin-header.component';
 import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
+import { SharedModule } from '../../shared.module';
 
 
 const components = [
@@ -22,6 +23,7 @@ const components = [
     imports: [
         RouterModule,
         CommonModule,
+        SharedModule
     ],
     declarations: components,
     exports: components,

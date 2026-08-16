@@ -6,7 +6,7 @@ In this blog, we’ll walk through how to implement light, dark, and auto modes 
 
 [ngx-mode-switcher](https://www.npmjs.com/package/ngx-mode-switcher) is an Angular library that offers a simpler, cleaner, and more efficient approach to implementing the mode-switching feature.
 
-Demo available @ [https://jaganb.dev/angular-mode-switcher-demo/](https://jaganb.dev/angular-mode-switcher-demo/)
+Demo available @ [https://jaganbishoyi.github.io/angular-mode-switcher-demo/](https://jaganbishoyi.github.io/angular-mode-switcher-demo/)
 
 Code available @ Github [https://github.com/jaganbishoyi/angular-mode-switcher-demo](https://github.com/jaganbishoyi/angular-mode-switcher-demo)
 
@@ -23,34 +23,28 @@ npm install ngx-mode-switcher
 In **app.module.ts** file import `NgxModeSwitcherModule`
 
 ```js
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NgxModeSwitcherModule } from 'ngx-mode-switcher';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { NgxModeSwitcherModule } from "ngx-mode-switcher";
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgxModeSwitcherModule
-    ],
+    declarations: [AppComponent],
+    imports: [BrowserModule, AppRoutingModule, NgxModeSwitcherModule],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
 Inside the assets/styles/ directory create 3 files:
 
-* _dark.scss
-* _light.scss
-* _variables.scss
+-   \_dark.scss
+-   \_light.scss
+-   \_variables.scss
 
-In _dark.scss file add colors related to dark mode.
+In \_dark.scss file add colors related to dark mode.
 
 ```css
 $bgColor_dark: #000;
@@ -58,7 +52,7 @@ $textColor_dark: #fff;
 $borderColor_dark: #fff;
 ```
 
-In _light.scss file add colors related to light mode.
+In \_light.scss file add colors related to light mode.
 
 ```css
 $bgColor_light: #fff;
@@ -129,11 +123,11 @@ You may also pass `config` as an object:
 config: IConfig = {
     legend: {
         visible: true,
-        LIGHT: 'light',
-        DARK: 'dark',
-        SYSTEM: 'system'
-    }
-}
+        LIGHT: "light",
+        DARK: "dark",
+        SYSTEM: "system",
+    },
+};
 ```
 
 **Custom Config:**
@@ -143,9 +137,9 @@ Hide the legend
 ```js
 customConfig: IConfig = {
     legend: {
-        visible: false
-    }
-}
+        visible: false,
+    },
+};
 ```
 
 Add custom legends
@@ -154,11 +148,11 @@ Add custom legends
 customConfig: IConfig = {
     legend: {
         visible: true,
-        LIGHT: 'day',
-        DARK: 'night',
-        SYSTEM: 'auto'
-    }
-}
+        LIGHT: "day",
+        DARK: "night",
+        SYSTEM: "auto",
+    },
+};
 ```
 
 Now, you can utilize the color variables (`--bgColor`, `--textColor`, and `--borderColor`) throughout the entire application, just as we demonstrated in the `demo.component.scss` and `styles.scss` files.

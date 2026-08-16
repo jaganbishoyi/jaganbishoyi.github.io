@@ -1,38 +1,36 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Location } from '@angular/common';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { Location } from "@angular/common";
 
-import { ProjectDetailsComponent } from './project-details.component';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ProjectDetailsComponent } from "./project-details.component";
+import { RouterTestingModule } from "@angular/router/testing";
 
-describe('ProjectDetailsComponent', () => {
+describe("ProjectDetailsComponent", () => {
     let component: ProjectDetailsComponent;
     let fixture: ComponentFixture<ProjectDetailsComponent>;
     let location: Location;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [
-                RouterTestingModule
-            ],
+            imports: [RouterTestingModule],
             declarations: [ProjectDetailsComponent],
-            providers: [Location]
+            providers: [Location],
         });
     });
 
     beforeEach(() => {
         location = TestBed.inject(Location); // Inject the Location service
-        spyOn(location, 'back'); // Spy on the back method
+        spyOn(location, "back"); // Spy on the back method
 
         fixture = TestBed.createComponent(ProjectDetailsComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
 
-    it('should create', () => {
+    it("should create", () => {
         expect(component).toBeTruthy();
     });
 
-    it('should call location.back when navigateBack is called', () => {
+    it("should call location.back when navigateBack is called", () => {
         // Call the method
         component.navigateBack();
 
@@ -40,28 +38,28 @@ describe('ProjectDetailsComponent', () => {
         expect(location.back).toHaveBeenCalled();
     });
 
-    it('should navigate to project details page on click of project link button', () => {
-        spyOn(component, 'navigate');
+    it("should navigate to project details page on click of project link button", () => {
+        spyOn(component, "navigate");
 
         const project = {
-            name: 'Portfolio',
+            name: "Portfolio",
             description: ["Portfolio"],
-            image: 'portfolio.png',
-            id: '1',
+            image: "portfolio.png",
+            id: "1",
             links: [
                 {
-                    id: '1',
-                    name: 'live',
-                    url: 'https://jaganb.dev/',
+                    id: "1",
+                    name: "live",
+                    url: "https://jaganbishoyi.github.io/",
                 },
                 {
-                    id: '2',
-                    name: 'github',
-                    url: 'https://github.com/jaganbishoyi/jaganbishoyi.github.io',
+                    id: "2",
+                    name: "github",
+                    url: "https://github.com/jaganbishoyi/jaganbishoyi.github.io",
                 },
             ],
-            overview: ['Portfolio'],
-            techs: ['Angular', 'Bootstrap', 'Husky', 'ESLint', 'GitHub'],
+            overview: ["Portfolio"],
+            techs: ["Angular", "Bootstrap", "Husky", "ESLint", "GitHub"],
             featured: [true, 3],
         };
 
@@ -74,18 +72,18 @@ describe('ProjectDetailsComponent', () => {
         expect(component.navigate).toHaveBeenCalled();
     });
 
-    it('should call window.open with the correct URL and target', () => {
+    it("should call window.open with the correct URL and target", () => {
         // Spy on window.open
-        spyOn(window, 'open').and.callThrough();
+        spyOn(window, "open").and.callThrough();
 
         const link = {
-            id: '1',
-            name: 'live',
-            url: 'https://jaganb.dev/',
+            id: "1",
+            name: "live",
+            url: "https://jaganbishoyi.github.io/",
         };
 
         component.navigate(link);
 
-        expect(window.open).toHaveBeenCalledWith('https://jaganb.dev/', '_blank');
+        expect(window.open).toHaveBeenCalledWith("https://jaganbishoyi.github.io/", "_blank");
     });
 });

@@ -1,60 +1,57 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ProjectComponent } from './project.component';
-import { Router } from '@angular/router';
-import { IProject } from '@interfaces/general.interface';
+import { ProjectComponent } from "./project.component";
+import { Router } from "@angular/router";
+import { IProject } from "@interfaces/general.interface";
 
-describe('ProjectComponent', () => {
+describe("ProjectComponent", () => {
     let component: ProjectComponent;
     let fixture: ComponentFixture<ProjectComponent>;
     let router: Router;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [ProjectComponent]
+            declarations: [ProjectComponent],
         });
     });
 
-
     beforeEach(() => {
         router = TestBed.inject(Router); // Get the Router instance
-        spyOn(router, 'navigate'); // Spy on the navigate method
+        spyOn(router, "navigate"); // Spy on the navigate method
 
         fixture = TestBed.createComponent(ProjectComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });
 
-    it('should create', () => {
+    it("should create", () => {
         expect(component).toBeTruthy();
     });
 
-    it('should navigate to respective case study on click of caseStudy button', () => {
+    it("should navigate to respective case study on click of caseStudy button", () => {
         const project: IProject = {
-            name: 'Portfolio',
-            description: ['Portfolio'],
-            image: 'portfolio.png',
-            id: '1',
+            name: "Portfolio",
+            description: ["Portfolio"],
+            image: "portfolio.png",
+            id: "1",
             links: [
                 {
-                    id: '1',
-                    name: 'live',
-                    url: 'https://jaganb.dev/',
+                    id: "1",
+                    name: "live",
+                    url: "https://jaganbishoyi.github.io/",
                 },
                 {
-                    id: '2',
-                    name: 'github',
-                    url: 'https://github.com/jaganbishoyi/jaganbishoyi.github.io',
+                    id: "2",
+                    name: "github",
+                    url: "https://github.com/jaganbishoyi/jaganbishoyi.github.io",
                 },
             ],
-            overview: ['Portfolio'],
-            techs: ['Angular', 'Bootstrap', 'Husky', 'ESLint', 'GitHub'],
+            overview: ["Portfolio"],
+            techs: ["Angular", "Bootstrap", "Husky", "ESLint", "GitHub"],
             featured: [true, 3],
         };
         component.project = project;
         component.caseStudy();
-        expect(router.navigate).toHaveBeenCalledWith(
-            [`/projects/${project.id}/portfolio`],
-        );
+        expect(router.navigate).toHaveBeenCalledWith([`/projects/${project.id}/portfolio`]);
     });
 });

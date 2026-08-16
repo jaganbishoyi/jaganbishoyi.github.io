@@ -6,7 +6,7 @@ In this blog, we’ll walk through how to implement light, dark, and auto modes 
 
 [ngx-mode-switcher](https://www.npmjs.com/package/ngx-mode-switcher) is an Angular library that offers a simpler, cleaner, and more efficient approach to implementing the mode-switching feature.
 
-Demo available @ [https://jaganb.dev/angular-mode-switcher-demo/](https://jaganb.dev/angular-mode-switcher-demo/)
+Demo available @ [https://jaganbishoyi.github.io/angular-mode-switcher-demo/](https://jaganbishoyi.github.io/angular-mode-switcher-demo/)
 
 Code available @ Github [https://github.com/jaganbishoyi/angular-mode-switcher-demo](https://github.com/jaganbishoyi/angular-mode-switcher-demo)
 

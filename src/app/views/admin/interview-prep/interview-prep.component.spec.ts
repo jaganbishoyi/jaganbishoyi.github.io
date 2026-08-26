@@ -6,7 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AdminModule } from '../admin.module';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('InterviewPrepComponent', () => {
     let component: InterviewPrepComponent;
@@ -15,17 +15,18 @@ describe('InterviewPrepComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [RouterTestingModule, AdminModule, HttpClientModule],
-            declarations: [InterviewPrepComponent],
-            providers: [
-                {
-                    provide: ActivatedRoute,
-                    useValue: {
-                        params: of({ category: 'angular' })  // Mock queryParams as an observable with a test value
-                    }
-                }
-            ]
-        });
+    declarations: [InterviewPrepComponent],
+    imports: [RouterTestingModule, AdminModule],
+    providers: [
+        {
+            provide: ActivatedRoute,
+            useValue: {
+                params: of({ category: 'angular' }) // Mock queryParams as an observable with a test value
+            }
+        },
+        provideHttpClient(withInterceptorsFromDi())
+    ]
+});
         fixture = TestBed.createComponent(InterviewPrepComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();

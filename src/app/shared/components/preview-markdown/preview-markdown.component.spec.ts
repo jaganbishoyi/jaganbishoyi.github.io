@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { PreviewMarkdownComponent } from './preview-markdown.component';
 import { MarkdownModule, MarkdownService, SECURITY_CONTEXT } from 'ngx-markdown';
 import { BrowserModule } from '@angular/platform-browser';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('PreviewMarkdownComponent', () => {
     let component: PreviewMarkdownComponent;
@@ -10,13 +11,15 @@ describe('PreviewMarkdownComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [BrowserModule, MarkdownModule, HttpClientTestingModule],
-            declarations: [PreviewMarkdownComponent],
-            providers: [
-                MarkdownService,
-                { provide: SECURITY_CONTEXT, useValue: {} }
-            ]
-        });
+    declarations: [PreviewMarkdownComponent],
+    imports: [BrowserModule, MarkdownModule],
+    providers: [
+        MarkdownService,
+        { provide: SECURITY_CONTEXT, useValue: {} },
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting()
+    ]
+});
         fixture = TestBed.createComponent(PreviewMarkdownComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();

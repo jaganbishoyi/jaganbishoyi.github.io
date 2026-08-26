@@ -2,8 +2,8 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npm run build
-cp ./docs/index.html ./docs/404.html
-cp ./sitemap.xml ./docs/sitemap.xml
+cp ./docs/browser/index.html ./docs/browser/404.html
+cp ./sitemap.xml ./docs/browser/sitemap.xml
 git add .
 git commit -m "Code built successfully." --no-verify
 
